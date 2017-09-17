@@ -15,3 +15,5 @@ Open source library used :
 
 	- EventBus (http://greenrobot.org/eventbus/)
 	- Gson (https://github.com/google/gson)
+
+Google Play Link : https://play.google.com/store/apps/details?id=com.watchcoin
