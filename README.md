@@ -7,6 +7,9 @@ Cryptocurrencies market data are pulled from Kraken exchanges platform.
 
 Others exchanges platforms and functionalities will be implemented soon.
 
+Minimum Android version : 4.4 (KitKat)
+
+Target Android version : 6.0 (Marshmallow)
 
 Open source library used :
 
