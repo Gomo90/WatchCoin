@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/MarketDataTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:textSize="@dimen/marketdata_title_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/RefreshLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MarketDataTitle"
+                android:paddingLeft="3dp"
+                android:paddingBottom="20dp"
+                android:text="@string/Data_update_label"
+                android:textSize="@dimen/refresh_label_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/DateRefreshLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/RefreshLabel"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/RefreshLabel"
+                android:textSize="@dimen/refresh_value_size"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Ask_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/AskPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Bid_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/BidPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Last_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/LastPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/High_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/HighPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Low_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/LowPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/AVG_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/AvgPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Open_price_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/OpenPriceValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_height="3dp"
+                android:background="#FF909090" />
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Volume_value_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/VolumeValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Volume24H_value_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Volume24hValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_height="3dp"
+                android:background="#FF909090" />
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Trade_volume_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TradeVolumeValue"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dp"
+                    android:text="@string/Trade_volume24H_label"
+                    android:textSize="@dimen/marketdata_label_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TradeVolume24Value"
+                    android:gravity="right"
+                    android:textSize="@dimen/marketdata_value_size"
+                    android:textStyle="bold" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

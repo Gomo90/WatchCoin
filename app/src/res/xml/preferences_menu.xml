@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="coin_exchange_platform"
+        android:title="@string/Coin_exchange_title"
+        android:summary="@string/Coin_exchange_summary">
+        <extra
+            android:name="settings"
+            android:value="coin_exchange_configuration" />
+    </Preference>
+
+    <Preference
+        android:key="crypto_currency"
+        android:title="@string/Crypto_currency_title"
+        android:summary="@string/Crypto_currency_summary">
+        <extra
+            android:name="settings"
+            android:value="crypto_currency_configuration" />
+    </Preference>
+
+    <Preference
+        android:key="language"
+        android:title="@string/Language_title"
+        android:summary="@string/Language_summary">
+        <extra
+            android:name="settings"
+            android:value="language_configuration" />
+    </Preference>
+
+</PreferenceScreen>

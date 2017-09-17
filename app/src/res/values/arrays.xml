@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Interval value array -->
+    <string-array name="IntervalValueArray" translatable="false">
+        <item>30 sec</item>
+        <item>1 min</item>
+        <item>3 min</item>
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>15 min</item>
+        <item>30 min</item>
+    </string-array>
+
+    <!-- Currencies value array -->
+    <!--
+    <string-array name="EcurrencyValueArray" translatable="false">
+        <item>BTC/EUR</item>
+        <item>LTC/EUR</item>
+        <item>ETH/EUR</item>
+        <item>ETC/EUR</item>
+        <item>XMR/EUR</item>
+        <item>XRP/EUR</item>
+        <item>EOS/EUR</item>
+    </string-array>
+    -->
+
+    <!-- Currencies preferences entries value array -->
+    <string-array name="KrakenEntriesArray" translatable="false">
+        <item>Augur (REP)</item>
+        <item>Bitcoin (XBT)</item>
+        <item>Bitcoin Cash (BCH)</item>
+        <item>Dash (DASH)</item>
+        <item>Ether (ETH)</item>
+        <item>Ether Classic (ETC)</item>
+        <item>Litecoin (LTC)</item>
+        <item>Monero (XMR)</item>
+        <item>Ripple (XRP)</item>
+        <item>Tether (USDT)</item>
+        <item>Zcash (ZEC)</item>
+    </string-array>
+
+
+    <!-- Values to save for a preference when an entry from entries is selected -->
+    <string-array name="KrakenEntryValuesArray" translatable="false">
+        <item>REP</item>
+        <item>XBT</item>
+        <item>BCH</item>
+        <item>DASH</item>
+        <item>ETH</item>
+        <item>ETC</item>
+        <item>LTC</item>
+        <item>XMR</item>
+        <item>XRP</item>
+        <item>USDT</item>
+        <item>ZEC</item>
+    </string-array>
+
+
+    <!-- Default values selected when the first execution of application -->
+    <string-array name="KrakenDefaultEntryValuesArray" translatable="false">
+        <item>XBT</item>
+        <item>ETH</item>
+    </string-array>
+
+    <!-- Language application -->
+    <string-array name="Language" translatable="false">
+        <item>English</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Português</item>
+    </string-array>
+
+
+</resources>

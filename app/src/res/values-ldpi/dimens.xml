@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- activity_main -->
+    <dimen name="splashscreen_title_size">40sp</dimen>
+
+    <!-- IHMConsole -->
+    <dimen name="toolbar_interval_label_size">12sp</dimen>
+    <dimen name="refresh_label_size">14sp</dimen>
+    <dimen name="refresh_value_size">14sp</dimen>
+    <dimen name="marketdata_title_size">16sp</dimen>
+    <dimen name="marketdata_label_size">14sp</dimen>
+    <dimen name="marketdata_value_size">12sp</dimen>
+
+</resources>

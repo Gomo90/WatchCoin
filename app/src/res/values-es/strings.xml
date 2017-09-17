@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Network error -->
+    <string name= "NetworkError_Message">Ninguna conexión con internet</string>
+
+    <!-- Request execution error -->
+    <string name= "RequestError_Message">Error de ejecución : Revise la configuración</string>
+
+    <!-- No market data error -->
+    <string name= "NoMarketDataError_Message">No hay datos : Revise la configuración</string>
+
+    <!-- Toolbar -->
+    <string name= "Interval_label">Intervalo :</string>
+
+    <string name= "Navigation_drawer_menu1">Datos del mercado</string>
+    <string name= "Navigation_drawer_menu2">Configuración</string>
+
+
+    <!-- Market data -->
+    <string name= "Augur_Market_data_title">Datos del mercado : Augur (%1$s)</string>
+    <string name= "Bitcoin_Market_data_title">Datos del mercado : Bitcoin (%1$s)</string>
+    <string name= "Bitcoin_Cash_Market_data_title">Datos del mercado : Bitcoin Cash (%1$s)</string>
+    <string name= "Dash_Market_data_title">Datos del mercado : Dash (%1$s)</string>
+    <string name= "Eos_Market_data_title">Datos del mercado : EOS (%1$s)</string>
+    <string name= "Etherc_Market_data_title">Datos del mercado : Ether Classic (%1$s)</string>
+    <string name= "Ether_Market_data_title">Datos del mercado : Ether (%1$s)</string>
+    <string name= "Gnosis_Market_data_title">Datos del mercado : Gnosis (%1$s)</string>
+    <string name= "Litcoin_Market_data_title">Datos del mercado : Litcoin (%1$s)</string>
+    <string name= "Monero_Market_data_title">Datos del mercado : Monero (%1$s)</string>
+    <string name= "Ripple_Market_data_title">Datos del mercado : Ripple (%1$s)</string>
+    <string name= "Stellar_Lumens_Market_data_title">Datos del mercado : Stellar Lumens (%1$s)</string>
+    <string name= "Tether_Market_data_title">Datos del mercado : Tether (%1$s)</string>
+    <string name= "Zcash_Market_data_title">Datos del mercado : Zcash (%1$s)</string>
+
+    <string name= "Data_update_label">Actualización :</string>
+    <string name= "Ask_price_label">Precio de oferta :</string>
+    <string name= "Bid_price_label">Precio pedido :</string>
+    <string name= "Last_price_label">Último precio :</string>
+    <string name= "High_price_label">Precio max :</string>
+    <string name= "Low_price_label">Precio bajo :</string>
+    <string name= "AVG_price_label">Precio medio :</string>
+    <string name= "Open_price_label">Precio de apertura :</string>
+    <string name= "Volume_value_label">Volumen :</string>
+    <string name= "Volume24H_value_label">Volumen(24H) :</string>
+    <string name= "Trade_volume_label">Comercio volumen :</string>
+    <string name= "Trade_volume24H_label">Comercio volumen(24H) :</string>
+
+    <!-- Preferences-->
+    <string name= "Toolbar_settings_title">Configuración</string>
+    <string name= "Coin_exchange_title">Mercados</string>
+    <string name= "Coin_exchange_toolbar_title">Mercados</string>
+    <string name= "Coin_exchange_summary">Configurar los mercados</string>
+    <string name= "Crypto_currency_title">Cryptomonedas</string>
+    <string name= "Crypto_currency_toolbar_title">Cryptomonedas</string>
+    <string name= "Crypto_currency_summary">Configurar las cryptomonedas</string>
+    <string name= "Language_title">Idioma</string>
+    <string name= "Language_toolbar_title">Idioma</string>
+    <string name= "Language_summary">Cambiar el idioma de la aplicación</string>
+
+    <!-- Preferences details-->
+
+    <!-- Coin exchange platforms-->
+    <string name= "Kraken_category_plateform_title">Plataforma Kraken</string>
+    <string name= "Kraken_api_title">Kraken API</string>
+    <string name= "Kraken_api_dialogtitle">Kraken URL API</string>
+    <string name= "Kraken_api_default_value">https://api.kraken.com</string>
+
+    <!-- Currencies details-->
+    <string name= "Fiat_currencies_title">Dinero fiduciario</string>
+    <string name= "British_pounds_title">Libra esterlina (GBP)</string>
+    <string name= "Canadian_dollar_title">Dólar canadiense (CAD)</string>
+    <string name= "Euros_title">Euros (EUR)</string>
+    <string name= "Japanese_yen_title">Yen (JPY)</string>
+    <string name= "US_dollar_title">Dólar americano (USD)</string>
+    <string name= "Crypto_currencies_category_title">Cryptomonedas</string>
+    <string name= "Kraken_assets_title">Cryptomonedas - Kraken</string>
+
+    <!-- Languages details-->
+    <string name= "Language_configuration_title">Idioma</string>
+    <string name= "Language_configuration_summary">Cambiar el idioma de la aplicación</string>
+
+
+
+</resources>

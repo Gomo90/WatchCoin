@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="fiat_currencies_configuration"
+        android:title="@string/Fiat_currencies_title">
+
+        <CheckBoxPreference
+            android:key="canadian_dollar_checkbox"
+            android:title="@string/Canadian_dollar_title">
+
+        </CheckBoxPreference>
+
+        <CheckBoxPreference
+            android:key="euros_checkbox"
+            android:title="@string/Euros_title">
+
+        </CheckBoxPreference>
+
+        <CheckBoxPreference
+            android:key="japanese_yen_checkbox"
+            android:title="@string/Japanese_yen_title">
+
+        </CheckBoxPreference>
+
+        <CheckBoxPreference
+            android:key="us_dollar_checkbox"
+            android:title="@string/US_dollar_title"
+            android:defaultValue="true">
+
+        </CheckBoxPreference>
+
+
+
+    </PreferenceCategory>
+
+
+    <MultiSelectListPreference
+        android:key="kraken_assets_list"
+        android:title="@string/Kraken_assets_title"
+        android:entries="@array/KrakenEntriesArray"
+        android:entryValues="@array/KrakenEntryValuesArray"
+        android:defaultValue="@array/KrakenDefaultEntryValuesArray">
+
+    </MultiSelectListPreference>
+
+</PreferenceScreen>
