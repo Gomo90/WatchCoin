@@ -38,6 +38,7 @@
     <MultiSelectListPreference
         android:key="kraken_assets_list"
         android:title="@string/Kraken_assets_title"
+        android:summary="@string/Number_kraken_assets_selected"
         android:entries="@array/KrakenEntriesArray"
         android:entryValues="@array/KrakenEntryValuesArray"
         android:defaultValue="@array/KrakenDefaultEntryValuesArray">
