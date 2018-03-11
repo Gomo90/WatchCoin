@@ -20,6 +20,10 @@ import com.watchcoin.R;
 
 import java.util.Locale;
 
+import java.util.HashSet;
+import java.util.Set;
+
+
 /**
  * PreferencesDetailsFragment shows the different settings menu depending of the choices made by the user
  */
@@ -35,6 +39,8 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
     private SharedPreferences preferencesApp = MainActivity.preferencesApp;
 
     private EditTextPreference krakenUrlAPIValue;
+
+    private MultiSelectListPreference krakenAssetMultiSelectListPreference;
 
 
     @Override
@@ -80,6 +86,9 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
                 ihmConsoleActivity.getToolbar().setTitle(R.string.Crypto_currency_toolbar_title);
 
                 addPreferencesFromResource(R.xml.currencies_details);
+
+                // Update number of assets selected (summary)
+                setNumberAssetsSelected();
 
                 break;
 
@@ -168,6 +177,9 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
             // If the change concern the kraken assets
             if (key.equals("kraken_assets_list")) {
 
+                // Update number of assets selected (summary)
+                setNumberAssetsSelected();
+
                 // Set configChanged = true
                 preferencesEditor.putBoolean("configChanged", Boolean.TRUE);
                 preferencesEditor.commit();
@@ -225,4 +237,18 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
         ihmConsoleActivity.updateViewLanguage();
     }
+
+
+    // Set number of assets selected for each platform
+    private void setNumberAssetsSelected() {
+
+        krakenAssetMultiSelectListPreference = (MultiSelectListPreference) findPreference("kraken_assets_list");
+
+        // Default value if asset list don't exist in shared preferences
+        Set<String> defaultValue = new HashSet<String>();
+
+        krakenAssetMultiSelectListPreference.setSummary(String.format(ihmConsoleActivity.getString(R.string.Number_kraken_assets_selected),
+                MainActivity.preferencesApp.getStringSet("kraken_assets_list", defaultValue).size()));
+
+        }
 }

@@ -362,7 +362,11 @@ public class IHMConsole extends AppCompatActivity
                     // Augur (REP)
                     case "REP":
 
-                        // EUR
+                        // EUR and USD
+
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Augur_USD_asset));
+                        }
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Augur_EUR_asset));
@@ -373,7 +377,7 @@ public class IHMConsole extends AppCompatActivity
                     // Bitcoin (XBT)
                     case "XBT" :
 
-                        // CAD, EUR, GBP, JPY and USD
+                        // CAD, EUR, JPY and USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Bitcoin_USD_asset));
                         }
@@ -420,10 +424,24 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // EOS (EOS)
+                    case "EOS" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Eos_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Eos_EUR_asset));
+                        }
+
+                        break;
+
                     // Ether (ETH)
                     case "ETH" :
 
-                        // CAD, EUR, GBP, JPY and USD
+                        // CAD, EUR, JPY and USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Ether_USD_asset));
                         }
@@ -452,6 +470,20 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Etherclassic_EUR_asset));
+                        }
+
+                        break;
+
+                    // Gnosis (GNO)
+                    case "GNO" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Gnosis_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Gnosis_EUR_asset));
                         }
 
                         break;
@@ -492,8 +524,30 @@ public class IHMConsole extends AppCompatActivity
                             CurrencyValues.add(getString(R.string.Ripple_USD_asset));
                         }
 
+                        if (canadianDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Ripple_CAD_asset));
+                        }
+
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Ripple_EUR_asset));
+                        }
+
+                        if (japaneseYenSelected) {
+                            CurrencyValues.add(getString(R.string.Ripple_JPY_asset));
+                        }
+
+                        break;
+
+                    // Stellar Lumens (XLM)
+                    case "XLM" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Stellatlumens_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Stellarlumens_EUR_asset));
                         }
 
                         break;
@@ -518,6 +572,10 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Zcash_EUR_asset));
+                        }
+
+                        if (japaneseYenSelected) {
+                            CurrencyValues.add(getString(R.string.Zcash_JPY_asset));
                         }
 
                         break;
@@ -642,6 +700,14 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Dash_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "EOS/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Eos_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "EOS/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Eos_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
                 case "ETH/CAD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ether_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
                     break;
@@ -664,6 +730,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "ETC/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Etherc_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "GNO/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Gnosis_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "GNO/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Gnosis_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "LTC/EUR":
@@ -702,8 +776,20 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ripple_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "XLM/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Stellar_Lumens_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "XLM/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Stellar_Lumens_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
                 case "ZEC/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Zcash_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "ZEC/JPY":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Zcash_Market_data_title), getString(R.string.Yen_symbol)));
                     break;
 
                 case "ZEC/USD":
