@@ -75,6 +75,7 @@
     <string name= "US_dollar_title">Dólar americano (USD)</string>
     <string name= "Crypto_currencies_category_title">Cryptomonedas</string>
     <string name= "Kraken_assets_title">Cryptomonedas - Kraken</string>
+    <string name= "Number_kraken_assets_selected">%1$d Cryptomoneda(s) seleccionada(s)</string>
 
     <!-- Languages details-->
     <string name= "Language_configuration_title">Idioma</string>
