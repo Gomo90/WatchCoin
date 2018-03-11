@@ -17,3 +17,23 @@ Open source library used :
 	- Gson (https://github.com/google/gson)
 
 Google Play Link : https://play.google.com/store/apps/details?id=com.watchcoin
+
+
+# WatchCoin V1.1 (11/03/2018)
+
+1- Ten currency pairs added :
+
+XRP/CAD
+XRP/JPY
+EOS/EUR
+EOS/USD
+XLM/EUR
+XLM/USD
+GNO/EUR
+GNO/USD
+REP/USD
+ZEC/JPY
+
+More informations : https://blog.kraken.com/post/1494/kraken-enables-advanced-orders-and-adds-10-currency-pairs/
+
+2- Number of assets selected indicated in the configuration menu
