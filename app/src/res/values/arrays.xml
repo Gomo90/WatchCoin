@@ -31,11 +31,14 @@
         <item>Bitcoin (XBT)</item>
         <item>Bitcoin Cash (BCH)</item>
         <item>Dash (DASH)</item>
+        <item>Eos (EOS)</item>
         <item>Ether (ETH)</item>
         <item>Ether Classic (ETC)</item>
+        <item>Gnosis (GNO)</item>
         <item>Litecoin (LTC)</item>
         <item>Monero (XMR)</item>
         <item>Ripple (XRP)</item>
+        <item>Stellar Lumens (XLM)</item>
         <item>Tether (USDT)</item>
         <item>Zcash (ZEC)</item>
     </string-array>
@@ -47,11 +50,14 @@
         <item>XBT</item>
         <item>BCH</item>
         <item>DASH</item>
+        <item>EOS</item>
         <item>ETH</item>
         <item>ETC</item>
+        <item>GNO</item>
         <item>LTC</item>
         <item>XMR</item>
         <item>XRP</item>
+        <item>XLM</item>
         <item>USDT</item>
         <item>ZEC</item>
     </string-array>

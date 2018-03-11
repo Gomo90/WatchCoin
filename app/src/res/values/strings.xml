@@ -21,6 +21,7 @@
     <string name= "Interval_label">Interval :</string>
 
     <!-- Kraken assets (ecurrency spinner) -->
+    <string name= "Augur_USD_asset" translatable="false">REP/USD</string>
     <string name= "Augur_EUR_asset" translatable="false">REP/EUR</string>
 
     <string name= "Bitcoin_CAD_asset" translatable="false">XBT/CAD</string>
@@ -34,6 +35,9 @@
     <string name= "Dash_EUR_asset" translatable="false">DASH/EUR</string>
     <string name= "Dash_USD_asset" translatable="false">DASH/USD</string>
 
+    <string name= "Eos_EUR_asset" translatable="false">EOS/EUR</string>
+    <string name= "Eos_USD_asset" translatable="false">EOS/USD</string>
+
     <string name= "Ether_CAD_asset" translatable="false">ETH/CAD</string>
     <string name= "Ether_EUR_asset" translatable="false">ETH/EUR</string>
     <string name= "Ether_JPY_asset" translatable="false">ETH/JPY</string>
@@ -42,21 +46,31 @@
     <string name= "Etherclassic_EUR_asset" translatable="false">ETC/EUR</string>
     <string name= "Etherclassic_USD_asset" translatable="false">ETC/USD</string>
 
+    <string name= "Gnosis_EUR_asset" translatable="false">GNO/EUR</string>
+    <string name= "Gnosis_USD_asset" translatable="false">GNO/USD</string>
+
     <string name= "Litecoin_EUR_asset" translatable="false">LTC/EUR</string>
     <string name= "Litecoin_USD_asset" translatable="false">LTC/USD</string>
 
     <string name= "Monero_EUR_asset" translatable="false">XMR/EUR</string>
     <string name= "Monero_USD_asset" translatable="false">XMR/USD</string>
 
+    <string name= "Ripple_CAD_asset" translatable="false">XRP/CAD</string>
     <string name= "Ripple_EUR_asset" translatable="false">XRP/EUR</string>
+    <string name= "Ripple_JPY_asset" translatable="false">XRP/JPY</string>
     <string name= "Ripple_USD_asset" translatable="false">XRP/USD</string>
+
+    <string name= "Stellarlumens_EUR_asset" translatable="false">XLM/EUR</string>
+    <string name= "Stellatlumens_USD_asset" translatable="false">XLM/USD</string>
 
     <string name= "Tether_USD_asset" translatable="false">USDT/USD</string>
 
     <string name= "Zcash_EUR_asset" translatable="false">ZEC/EUR</string>
+    <string name= "Zcash_JPY_asset" translatable="false">ZEC/JPY</string>
     <string name= "Zcash_USD_asset" translatable="false">ZEC/USD</string>
 
     <!-- Kraken pairs (for data polling) -->
+    <string name= "Augur_USD_pair" translatable="false">XREPZUSD</string>
     <string name= "Augur_EUR_pair" translatable="false">XREPZEUR</string>
 
     <string name= "Bitcoin_CAD_pair" translatable="false">XXBTZCAD</string>
@@ -70,6 +84,9 @@
     <string name= "Dash_EUR_pair" translatable="false">DASHEUR</string>
     <string name= "Dash_USD_pair" translatable="false">DASHUSD</string>
 
+    <string name= "Eos_EUR_pair" translatable="false">EOSEUR</string>
+    <string name= "Eos_USD_pair" translatable="false">EOSUSD</string>
+
     <string name= "Ether_CAD_pair" translatable="false">XETHZCAD</string>
     <string name= "Ether_EUR_pair" translatable="false">XETHZEUR</string>
     <string name= "Ether_JPY_pair" translatable="false">XETHZJPY</string>
@@ -78,18 +95,27 @@
     <string name= "Etherclassic_EUR_pair" translatable="false">XETCZEUR</string>
     <string name= "Etherclassic_USD_pair" translatable="false">XETCZUSD</string>
 
+    <string name= "Gnosis_EUR_pair" translatable="false">GNOEUR</string>
+    <string name= "Gnosis_USD_pair" translatable="false">GNOUSD</string>
+
     <string name= "Litecoin_EUR_pair" translatable="false">XLTCZEUR</string>
     <string name= "Litecoin_USD_pair" translatable="false">XLTCZUSD</string>
 
     <string name= "Monero_EUR_pair" translatable="false">XXMRZEUR</string>
     <string name= "Monero_USD_pair" translatable="false">XXMRZUSD</string>
 
+    <string name= "Ripple_CAD_pair" translatable="false">XXRPZCAD</string>
     <string name= "Ripple_EUR_pair" translatable="false">XXRPZEUR</string>
+    <string name= "Ripple_JPY_pair" translatable="false">XXRPZJPY</string>
     <string name= "Ripple_USD_pair" translatable="false">XXRPZUSD</string>
+
+    <string name= "Stellarlumens_EUR_pair" translatable="false">XXLMZEUR</string>
+    <string name= "Stellatlumens_USD_pair" translatable="false">XXLMZUSD</string>
 
     <string name= "Tether_USD_pair" translatable="false">USDTZUSD</string>
 
     <string name= "Zcash_EUR_pair" translatable="false">XZECZEUR</string>
+    <string name= "Zcash_JPY_pair" translatable="false">XZECZJPY</string>
     <string name= "Zcash_USD_pair" translatable="false">XZECZUSD</string>
 
     <!-- Fiat symbol -->
@@ -104,11 +130,14 @@
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Dash Market data (%1$s)</string>
-    <string name= "Etherc_Market_data_title">Ether Classic Market data (%1$s)</string>
+    <string name= "Eos_Market_data_title">EOS Market data (%1$s)</string>
     <string name= "Ether_Market_data_title">Ether Market data (%1$s)</string>
+    <string name= "Etherc_Market_data_title">Ether Classic Market data (%1$s)</string>
+    <string name= "Gnosis_Market_data_title">Gnosis Market data (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Litcoin Market data (%1$s)</string>
     <string name= "Monero_Market_data_title">Monero Market data (%1$s)</string>
     <string name= "Ripple_Market_data_title">Ripple Market data (%1$s)</string>
+    <string name= "Stellar_Lumens_Market_data_title">Stellar Lumens Market data (%1$s)</string>
     <string name= "Tether_Market_data_title">Tether Market data (%1$s)</string>
     <string name= "Zcash_Market_data_title">Zcash Market data (%1$s)</string>
 
@@ -148,12 +177,14 @@
 
     <!-- Currencies details-->
     <string name= "Fiat_currencies_title">Fiat currencies</string>
+    <string name= "British_pounds_title">British pounds (GBP)</string>
     <string name= "Canadian_dollar_title">Canadian dollar (CAD)</string>
     <string name= "Euros_title">Euros (EUR)</string>
     <string name= "Japanese_yen_title">Japanese yen (JPY)</string>
     <string name= "US_dollar_title">US dollar (USD)</string>
     <string name= "Crypto_currencies_category_title">Crypto currencies</string>
     <string name= "Kraken_assets_title">Kraken assets</string>
+    <string name= "Number_kraken_assets_selected">%1$d asset(s) selected</string>
 
     <!-- Languages details-->
     <string name= "Language_configuration_title">Language</string>
