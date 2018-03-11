@@ -10,6 +10,9 @@ public class Result {
     @SerializedName("XREPZEUR")
     private XREPZEUR augurEuroData;
 
+    @SerializedName("XREPZUSD")
+    private XREPZUSD augurUSdollarData;
+
     @SerializedName("XXBTZCAD")
     private XXBTZCAD bitcoinCanadiandollarData;
 
@@ -34,6 +37,12 @@ public class Result {
     @SerializedName("DASHUSD")
     private DASHUSD dashUSdollarData;
 
+    @SerializedName("EOSEUR")
+    private EOSEUR eosEuroData;
+
+    @SerializedName("EOSUSD")
+    private EOSUSD eosUSdollarData;
+
     @SerializedName("XETHZCAD")
     private XETHZCAD etherCanadiandollarData;
 
@@ -52,6 +61,12 @@ public class Result {
     @SerializedName("XETCZUSD")
     private XETCZUSD etherClassicUSdollarData;
 
+    @SerializedName("GNOEUR")
+    private GNOEUR gnosisEuroData;
+
+    @SerializedName("GNOUSD")
+    private GNOUSD gnosisUSdollarData;
+
     @SerializedName("XLTCZEUR")
     private XLTCZEUR litcoinEuroData;
 
@@ -64,17 +79,32 @@ public class Result {
     @SerializedName("XXMRZUSD")
     private XXMRZUSD moneroUSdollarData;
 
+    @SerializedName("XXRPZCAD")
+    private XXRPZCAD rippleCanadiandollarData;
+
     @SerializedName("XXRPZEUR")
     private XXRPZEUR rippleEuroData;
 
+    @SerializedName("XXRPZJPY")
+    private XXRPZJPY rippleYenData;
+
     @SerializedName("XXRPZUSD")
     private XXRPZUSD rippleUSdollarData;
+
+    @SerializedName("XXLMZEUR")
+    private XXLMZEUR stellarLumensEuroData;
+
+    @SerializedName("XXLMZUSD")
+    private XXLMZUSD stellarLumensUSdollarData;
 
     @SerializedName("USDTZUSD")
     private USDTZUSD tetherUSdollarData;
 
     @SerializedName("XZECZEUR")
     private XZECZEUR zcashEuroData;
+
+    @SerializedName("XZECZJPY")
+    private XZECZJPY zcashYenData;
 
     @SerializedName("XZECZUSD")
     private XZECZUSD zcashUSdollarData;
@@ -83,6 +113,11 @@ public class Result {
     public XREPZEUR getAugurEuroData() {
 
         return this.augurEuroData;
+    }
+
+    public XREPZUSD getAugurUSdollarData() {
+
+        return this.augurUSdollarData;
     }
 
     public XXBTZCAD getBitcoinCanadiandollarData() {
@@ -125,6 +160,16 @@ public class Result {
         return this.dashUSdollarData;
     }
 
+    public EOSEUR getEosEuroData() {
+
+        return this.eosEuroData;
+    }
+
+    public EOSUSD getEosUSdollarData() {
+
+        return this.eosUSdollarData;
+    }
+
     public XETHZEUR getEtherEuroData() {
 
         return this.etherEuroData;
@@ -153,6 +198,16 @@ public class Result {
     public XETCZUSD getEtherClassicUSdollarData() {
 
         return this.etherClassicUSdollarData;
+    }
+
+    public GNOEUR getGnosisEuroData() {
+
+        return this.gnosisEuroData;
+    }
+
+    public GNOUSD getGnosisUSdollarData() {
+
+        return this.gnosisUSdollarData;
     }
 
     public XLTCZEUR getLitecoinEuroData() {
@@ -185,6 +240,26 @@ public class Result {
         return this.rippleUSdollarData;
     }
 
+    public XXRPZCAD getRippleCanadiandollarData() {
+
+        return this.rippleCanadiandollarData;
+    }
+
+    public XXRPZJPY getRippleYenData() {
+
+        return this.rippleYenData;
+    }
+
+    public XXLMZEUR getStellarLumensEuroData() {
+
+        return this.stellarLumensEuroData;
+    }
+
+    public XXLMZUSD getStellarLumensUSdollarData() {
+
+        return this.stellarLumensUSdollarData;
+    }
+
     public USDTZUSD getTetherUSdollarData() {
 
         return this.tetherUSdollarData;
@@ -198,5 +273,10 @@ public class Result {
     public XZECZUSD getZcashUSdollarData() {
 
         return this.zcashUSdollarData;
+    }
+
+    public XZECZJPY getZcashYenData() {
+
+        return this.zcashYenData;
     }
 }
