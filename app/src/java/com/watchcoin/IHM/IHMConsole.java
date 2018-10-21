@@ -410,6 +410,24 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Cardano (ADA)
+                    case "ADA" :
+
+                        // CAD, EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Cardano_USD_asset));
+                        }
+
+                        if (canadianDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Cardano_CAD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Cardano_EUR_asset));
+                        }
+
+                        break;
+
                     // DASH (DASH)
                     case "DASH" :
 
@@ -516,6 +534,24 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Quantum (QTUM)
+                    case "QTUM" :
+
+                        // CAD, EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Quantum_USD_asset));
+                        }
+
+                        if (canadianDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Quantum_CAD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Quantum_EUR_asset));
+                        }
+
+                        break;
+
                     // Ripple (XRP)
                     case "XRP" :
 
@@ -558,6 +594,24 @@ public class IHMConsole extends AppCompatActivity
                         // USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Tether_USD_asset));
+                        }
+
+                        break;
+
+                    // Tezos (XTZ)
+                    case "XTZ" :
+
+                        // CAD, EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Tezos_USD_asset));
+                        }
+
+                        if (canadianDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Tezos_CAD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Tezos_EUR_asset));
                         }
 
                         break;
@@ -692,6 +746,18 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "ADA/CAD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cardano_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
+                    break;
+
+                case "ADA/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cardano_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "ADA/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cardano_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
                 case "DASH/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Dash_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
@@ -760,6 +826,18 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Monero_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "QTUM/CAD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Quantum_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
+                    break;
+
+                case "QTUM/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Quantum_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "QTUM/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Quantum_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
                 case "XRP/CAD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ripple_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
                     break;
@@ -782,6 +860,18 @@ public class IHMConsole extends AppCompatActivity
 
                 case "XLM/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Stellar_Lumens_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "XTZ/CAD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
+                    break;
+
+                case "XTZ/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "XTZ/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "ZEC/EUR":
