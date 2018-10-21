@@ -30,6 +30,7 @@
         <item>Augur (REP)</item>
         <item>Bitcoin (XBT)</item>
         <item>Bitcoin Cash (BCH)</item>
+        <item>Cardano (ADA)</item>
         <item>Dash (DASH)</item>
         <item>Eos (EOS)</item>
         <item>Ether (ETH)</item>
@@ -37,9 +38,11 @@
         <item>Gnosis (GNO)</item>
         <item>Litecoin (LTC)</item>
         <item>Monero (XMR)</item>
+        <item>Quantum (QTUM)</item>
         <item>Ripple (XRP)</item>
         <item>Stellar Lumens (XLM)</item>
         <item>Tether (USDT)</item>
+        <item>Tezos (XTZ)</item>
         <item>Zcash (ZEC)</item>
     </string-array>
 
@@ -49,6 +52,7 @@
         <item>REP</item>
         <item>XBT</item>
         <item>BCH</item>
+        <item>ADA</item>
         <item>DASH</item>
         <item>EOS</item>
         <item>ETH</item>
@@ -56,9 +60,11 @@
         <item>GNO</item>
         <item>LTC</item>
         <item>XMR</item>
+        <item>QTUM</item>
         <item>XRP</item>
         <item>XLM</item>
         <item>USDT</item>
+        <item>XTZ</item>
         <item>ZEC</item>
     </string-array>
 

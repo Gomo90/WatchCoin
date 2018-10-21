@@ -32,6 +32,10 @@
     <string name= "Bitcoin_Cash_EUR_asset" translatable="false">BCH/EUR</string>
     <string name= "Bitcoin_Cash_USD_asset" translatable="false">BCH/USD</string>
 
+    <string name= "Cardano_CAD_asset" translatable="false">ADA/CAD</string>
+    <string name= "Cardano_EUR_asset" translatable="false">ADA/EUR</string>
+    <string name= "Cardano_USD_asset" translatable="false">ADA/USD</string>
+
     <string name= "Dash_EUR_asset" translatable="false">DASH/EUR</string>
     <string name= "Dash_USD_asset" translatable="false">DASH/USD</string>
 
@@ -55,6 +59,10 @@
     <string name= "Monero_EUR_asset" translatable="false">XMR/EUR</string>
     <string name= "Monero_USD_asset" translatable="false">XMR/USD</string>
 
+    <string name= "Quantum_CAD_asset" translatable="false">QTUM/CAD</string>
+    <string name= "Quantum_EUR_asset" translatable="false">QTUM/EUR</string>
+    <string name= "Quantum_USD_asset" translatable="false">QTUM/USD</string>
+
     <string name= "Ripple_CAD_asset" translatable="false">XRP/CAD</string>
     <string name= "Ripple_EUR_asset" translatable="false">XRP/EUR</string>
     <string name= "Ripple_JPY_asset" translatable="false">XRP/JPY</string>
@@ -64,6 +72,10 @@
     <string name= "Stellatlumens_USD_asset" translatable="false">XLM/USD</string>
 
     <string name= "Tether_USD_asset" translatable="false">USDT/USD</string>
+
+    <string name= "Tezos_CAD_asset" translatable="false">XTZ/CAD</string>
+    <string name= "Tezos_EUR_asset" translatable="false">XTZ/EUR</string>
+    <string name= "Tezos_USD_asset" translatable="false">XTZ/USD</string>
 
     <string name= "Zcash_EUR_asset" translatable="false">ZEC/EUR</string>
     <string name= "Zcash_JPY_asset" translatable="false">ZEC/JPY</string>
@@ -80,6 +92,10 @@
 
     <string name= "Bitcoin_Cash_EUR_pair" translatable="false">BCHEUR</string>
     <string name= "Bitcoin_Cash_USD_pair" translatable="false">BCHUSD</string>
+
+    <string name= "Cardano_CAD_pair" translatable="false">ADACAD</string>
+    <string name= "Cardano_EUR_pair" translatable="false">ADAEUR</string>
+    <string name= "Cardano_USD_pair" translatable="false">ADAUSD</string>
 
     <string name= "Dash_EUR_pair" translatable="false">DASHEUR</string>
     <string name= "Dash_USD_pair" translatable="false">DASHUSD</string>
@@ -104,6 +120,10 @@
     <string name= "Monero_EUR_pair" translatable="false">XXMRZEUR</string>
     <string name= "Monero_USD_pair" translatable="false">XXMRZUSD</string>
 
+    <string name= "Quantum_CAD_pair" translatable="false">QTUMCAD</string>
+    <string name= "Quantum_EUR_pair" translatable="false">QTUMEUR</string>
+    <string name= "Quantum_USD_pair" translatable="false">QTUMUSD</string>
+
     <string name= "Ripple_CAD_pair" translatable="false">XXRPZCAD</string>
     <string name= "Ripple_EUR_pair" translatable="false">XXRPZEUR</string>
     <string name= "Ripple_JPY_pair" translatable="false">XXRPZJPY</string>
@@ -113,6 +133,10 @@
     <string name= "Stellatlumens_USD_pair" translatable="false">XXLMZUSD</string>
 
     <string name= "Tether_USD_pair" translatable="false">USDTZUSD</string>
+
+    <string name= "Tezos_CAD_pair" translatable="false">XTZCAD</string>
+    <string name= "Tezos_EUR_pair" translatable="false">XTZEUR</string>
+    <string name= "Tezos_USD_pair" translatable="false">XTZUSD</string>
 
     <string name= "Zcash_EUR_pair" translatable="false">XZECZEUR</string>
     <string name= "Zcash_JPY_pair" translatable="false">XZECZJPY</string>
@@ -129,6 +153,7 @@
     <string name= "Augur_Market_data_title">Augur Market data (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
+    <string name= "Cardano_Market_data_title">Cardano Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Dash Market data (%1$s)</string>
     <string name= "Eos_Market_data_title">EOS Market data (%1$s)</string>
     <string name= "Ether_Market_data_title">Ether Market data (%1$s)</string>
@@ -136,9 +161,11 @@
     <string name= "Gnosis_Market_data_title">Gnosis Market data (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Litcoin Market data (%1$s)</string>
     <string name= "Monero_Market_data_title">Monero Market data (%1$s)</string>
+    <string name= "Quantum_Market_data_title">Quantum Market data (%1$s)</string>
     <string name= "Ripple_Market_data_title">Ripple Market data (%1$s)</string>
     <string name= "Stellar_Lumens_Market_data_title">Stellar Lumens Market data (%1$s)</string>
     <string name= "Tether_Market_data_title">Tether Market data (%1$s)</string>
+    <string name= "Tezos_Market_data_title">Tezos Market data (%1$s)</string>
     <string name= "Zcash_Market_data_title">Zcash Market data (%1$s)</string>
 
 
