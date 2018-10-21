@@ -31,6 +31,15 @@ public class Result {
     @SerializedName("BCHUSD")
     private BCHUSD bitcoinCashUSdollarData;
 
+    @SerializedName("ADACAD")
+    private ADACAD cardanoCanadiandollarData;
+
+    @SerializedName("ADAEUR")
+    private ADAEUR cardanoEuroData;
+
+    @SerializedName("ADAUSD")
+    private ADAUSD cardanoUSdollarData;
+
     @SerializedName("DASHEUR")
     private DASHEUR dashEuroData;
 
@@ -79,6 +88,15 @@ public class Result {
     @SerializedName("XXMRZUSD")
     private XXMRZUSD moneroUSdollarData;
 
+    @SerializedName("QTUMCAD")
+    private QTUMCAD quantumCanadiandollarData;
+
+    @SerializedName("QTUMEUR")
+    private QTUMEUR quantumEuroData;
+
+    @SerializedName("QTUMUSD")
+    private QTUMUSD quantumUSollarData;
+
     @SerializedName("XXRPZCAD")
     private XXRPZCAD rippleCanadiandollarData;
 
@@ -99,6 +117,15 @@ public class Result {
 
     @SerializedName("USDTZUSD")
     private USDTZUSD tetherUSdollarData;
+
+    @SerializedName("XTZCAD")
+    private XTZCAD tezosCanadiandollarData;
+
+    @SerializedName("XTZEUR")
+    private XTZEUR tezosEuroData;
+
+    @SerializedName("XTZUSD")
+    private XTZUSD tezosUSdollarData;
 
     @SerializedName("XZECZEUR")
     private XZECZEUR zcashEuroData;
@@ -148,6 +175,21 @@ public class Result {
     public BCHUSD getBitcoinCashUSdollarData() {
 
         return this.bitcoinCashUSdollarData;
+    }
+
+    public ADACAD getCardanoCanadiandollarData(){
+
+        return this.cardanoCanadiandollarData;
+    }
+
+    public ADAEUR getCardanoEuroData() {
+
+        return this.cardanoEuroData;
+    }
+
+    public ADAUSD getCardanoUSdollarData() {
+
+        return this.cardanoUSdollarData;
     }
 
     public DASHEUR getDashEuroData() {
@@ -230,6 +272,21 @@ public class Result {
         return this.moneroUSdollarData;
     }
 
+    public QTUMCAD getQuantumCanadiandollarData() {
+
+        return this.quantumCanadiandollarData;
+    }
+
+    public QTUMEUR getQuantumEuroData() {
+
+        return this.quantumEuroData;
+    }
+
+    public QTUMUSD getQuantumUSollarData() {
+
+        return this.quantumUSollarData;
+    }
+
     public XXRPZEUR getRippleEuroData() {
 
         return this.rippleEuroData;
@@ -263,6 +320,21 @@ public class Result {
     public USDTZUSD getTetherUSdollarData() {
 
         return this.tetherUSdollarData;
+    }
+
+    public XTZCAD getTezosCanadiandollarData() {
+
+        return this.tezosCanadiandollarData;
+    }
+
+    public XTZEUR getTezosEuroData() {
+
+        return this.tezosEuroData;
+    }
+
+    public XTZUSD getTezosUSdollarData() {
+
+        return this.tezosUSdollarData;
     }
 
     public XZECZEUR getZcashEuroData() {
