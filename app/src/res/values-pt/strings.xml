@@ -21,6 +21,7 @@
     <string name= "Augur_Market_data_title">Dados do mercado : Augur (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Dados do mercado : Bitcoin (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Dados do mercado : Bitcoin Cash (%1$s)</string>
+    <string name= "Cardano_Market_data_title">Dados do mercado : Cardano (%1$s)</string>
     <string name= "Dash_Market_data_title">Dados do mercado : Dash (%1$s)</string>
     <string name= "Eos_Market_data_title">Dados do mercado : EOS (%1$s)</string>
     <string name= "Etherc_Market_data_title">Dados do mercado : Ether Classic (%1$s)</string>
@@ -28,9 +29,11 @@
     <string name= "Gnosis_Market_data_title">Dados do mercado : Gnosis (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Dados do mercado : Litcoin (%1$s)</string>
     <string name= "Monero_Market_data_title">Dados do mercado : Monero (%1$s)</string>
+    <string name= "Quantum_Market_data_title">Dados do mercado : Quantum (%1$s)</string>
     <string name= "Ripple_Market_data_title">Dados do mercado : Ripple (%1$s)</string>
     <string name= "Stellar_Lumens_Market_data_title">Dados do mercado : Stellar Lumens (%1$s)</string>
     <string name= "Tether_Market_data_title">Dados do mercado : Tether (%1$s)</string>
+    <string name= "Tezos_Market_data_title">Dados do mercado : Tezos (%1$s)</string>
     <string name= "Zcash_Market_data_title">Dados do mercado : Zcash (%1$s)</string>
 
     <string name= "Data_update_label">Actualização :</string>
