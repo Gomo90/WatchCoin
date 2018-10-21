@@ -37,3 +37,18 @@ ZEC/JPY
 More informations : https://blog.kraken.com/post/1494/kraken-enables-advanced-orders-and-adds-10-currency-pairs/
 
 2- Number of assets selected indicated in the configuration menu
+
+
+# WatchCoin V1.2 (02/08/2018)
+
+1- Update Android targetSDKVersion requirement (API level 26)
+
+
+# WatchCoin V1.3 (21/10/2018)
+1- Nine currency pairs added : 
+	
+(Cardano) ADA/CAD ADA/EUR ADA/USD 
+(Quantum) QTUM/CAD QTUM/EUR QTUM/USD 
+(Tezos) XTZ/CAD XTZ/EUR XTZ/USD
+
+
