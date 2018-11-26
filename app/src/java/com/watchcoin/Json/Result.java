@@ -19,6 +19,9 @@ public class Result {
     @SerializedName("XXBTZEUR")
     private XXBTZEUR bitcoinEuroData;
 
+    @SerializedName("XXBTZGBP")
+    private XXBTZGBP bitcoinPoundData;
+
     @SerializedName("XXBTZUSD")
     private XXBTZUSD bitcoinUSdollarData;
 
@@ -30,6 +33,12 @@ public class Result {
 
     @SerializedName("BCHUSD")
     private BCHUSD bitcoinCashUSdollarData;
+
+    @SerializedName("BSVEUR")
+    private BSVEUR bitcoinCashSVEuroData;
+
+    @SerializedName("BSVUSD")
+    private BSVUSD bitcoinCashSVUSdollarData;
 
     @SerializedName("ADACAD")
     private ADACAD cardanoCanadiandollarData;
@@ -57,6 +66,9 @@ public class Result {
 
     @SerializedName("XETHZEUR")
     private XETHZEUR etherEuroData;
+
+    @SerializedName("XETHZGBP")
+    private XETHZGBP etherPoundData;
 
     @SerializedName("XETHZJPY")
     private XETHZJPY etherYenData;
@@ -157,6 +169,11 @@ public class Result {
         return this.bitcoinEuroData;
     }
 
+    public XXBTZGBP getBitcoinPoundData() {
+
+        return this.bitcoinPoundData;
+    }
+
     public XXBTZUSD getBitcoinUSdollarData() {
 
         return this.bitcoinUSdollarData;
@@ -175,6 +192,16 @@ public class Result {
     public BCHUSD getBitcoinCashUSdollarData() {
 
         return this.bitcoinCashUSdollarData;
+    }
+
+    public BSVEUR getBitcoinCashSVEuroData() {
+
+        return this.bitcoinCashSVEuroData;
+    }
+
+    public BSVUSD getBitcoinCashSVUSdollarData() {
+
+        return this.bitcoinCashSVUSdollarData;
     }
 
     public ADACAD getCardanoCanadiandollarData(){
@@ -220,6 +247,11 @@ public class Result {
     public XETHZCAD getEtherCanadiandollarData() {
 
         return this.etherCanadiandollarData;
+    }
+
+    public XETHZGBP getEtherPoundData() {
+
+        return this.etherPoundData;
     }
 
     public XETHZJPY getEtherYenData() {
