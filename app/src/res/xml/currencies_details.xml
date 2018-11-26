@@ -6,6 +6,12 @@
         android:title="@string/Fiat_currencies_title">
 
         <CheckBoxPreference
+            android:key="british_pounds_checkbox"
+            android:title="@string/British_pounds_title">
+
+        </CheckBoxPreference>
+
+        <CheckBoxPreference
             android:key="canadian_dollar_checkbox"
             android:title="@string/Canadian_dollar_title">
 
