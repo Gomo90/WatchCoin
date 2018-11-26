@@ -26,11 +26,15 @@
 
     <string name= "Bitcoin_CAD_asset" translatable="false">XBT/CAD</string>
     <string name= "Bitcoin_EUR_asset" translatable="false">XBT/EUR</string>
+    <string name= "Bitcoin_GBP_asset" translatable="false">XBT/GBP</string>
     <string name= "Bitcoin_JPY_asset" translatable="false">XBT/JPY</string>
     <string name= "Bitcoin_USD_asset" translatable="false">XBT/USD</string>
 
     <string name= "Bitcoin_Cash_EUR_asset" translatable="false">BCH/EUR</string>
     <string name= "Bitcoin_Cash_USD_asset" translatable="false">BCH/USD</string>
+
+    <string name= "Bitcoin_Cash_SV_EUR_asset" translatable="false">BSV/EUR</string>
+    <string name= "Bitcoin_Cash_SV_USD_asset" translatable="false">BSV/USD</string>
 
     <string name= "Cardano_CAD_asset" translatable="false">ADA/CAD</string>
     <string name= "Cardano_EUR_asset" translatable="false">ADA/EUR</string>
@@ -44,6 +48,7 @@
 
     <string name= "Ether_CAD_asset" translatable="false">ETH/CAD</string>
     <string name= "Ether_EUR_asset" translatable="false">ETH/EUR</string>
+    <string name= "Ether_GBP_asset" translatable="false">ETH/GBP</string>
     <string name= "Ether_JPY_asset" translatable="false">ETH/JPY</string>
     <string name= "Ether_USD_asset" translatable="false">ETH/USD</string>
 
@@ -87,11 +92,15 @@
 
     <string name= "Bitcoin_CAD_pair" translatable="false">XXBTZCAD</string>
     <string name= "Bitcoin_EUR_pair" translatable="false">XXBTZEUR</string>
+    <string name= "Bitcoin_GBP_pair" translatable="false">XXBTZGBP</string>
     <string name= "Bitcoin_JPY_pair" translatable="false">XXBTZJPY</string>
     <string name= "Bitcoin_USD_pair" translatable="false">XXBTZUSD</string>
 
     <string name= "Bitcoin_Cash_EUR_pair" translatable="false">BCHEUR</string>
     <string name= "Bitcoin_Cash_USD_pair" translatable="false">BCHUSD</string>
+
+    <string name= "Bitcoin_Cash_SV_EUR_pair" translatable="false">BSVEUR</string>
+    <string name= "Bitcoin_Cash_SV_USD_pair" translatable="false">BSVUSD</string>
 
     <string name= "Cardano_CAD_pair" translatable="false">ADACAD</string>
     <string name= "Cardano_EUR_pair" translatable="false">ADAEUR</string>
@@ -105,6 +114,7 @@
 
     <string name= "Ether_CAD_pair" translatable="false">XETHZCAD</string>
     <string name= "Ether_EUR_pair" translatable="false">XETHZEUR</string>
+    <string name= "Ether_GBP_pair" translatable="false">XETHZGBP</string>
     <string name= "Ether_JPY_pair" translatable="false">XETHZJPY</string>
     <string name= "Ether_USD_pair" translatable="false">XETHZUSD</string>
 
@@ -147,12 +157,14 @@
     <string name= "US_dollar_symbol" translatable="false">$</string>
     <string name= "Euro_symbol" translatable="false">€</string>
     <string name= "Yen_symbol" translatable="false">¥</string>
+    <string name= "Pounds_symbol" translatable="false">£</string>
 
 
     <!-- Market data -->
     <string name= "Augur_Market_data_title">Augur Market data (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
+    <string name= "Bitcoin_Cash_SV_Market_data_title">Bitcoin Cash Satoshi Vision Market data (%1$s)</string>
     <string name= "Cardano_Market_data_title">Cardano Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Dash Market data (%1$s)</string>
     <string name= "Eos_Market_data_title">EOS Market data (%1$s)</string>
