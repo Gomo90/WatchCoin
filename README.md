@@ -51,4 +51,13 @@ More informations : https://blog.kraken.com/post/1494/kraken-enables-advanced-or
 (Quantum) QTUM/CAD QTUM/EUR QTUM/USD 
 (Tezos) XTZ/CAD XTZ/EUR XTZ/USD
 
+# Version 1.4 : (25/11/2018)
 
+- Two currency pairs added : 	
+	
+Bitcoin SV (Satoshi Vision) BSV/USD BSV/EUR
+	
+- Restore pounds currency pairs :
+	
+(Bitcoin) XBT/GBP
+(Ether)   ETH/GBP
