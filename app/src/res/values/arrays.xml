@@ -30,6 +30,7 @@
         <item>Augur (REP)</item>
         <item>Bitcoin (XBT)</item>
         <item>Bitcoin Cash (BCH)</item>
+        <item>Bitcoin Cash Satoshi Vision (BSV)</item>
         <item>Cardano (ADA)</item>
         <item>Dash (DASH)</item>
         <item>Eos (EOS)</item>
@@ -52,6 +53,7 @@
         <item>REP</item>
         <item>XBT</item>
         <item>BCH</item>
+        <item>BSV</item>
         <item>ADA</item>
         <item>DASH</item>
         <item>EOS</item>
