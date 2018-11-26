@@ -220,9 +220,13 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Bitcoin (XBT)
                 case "XBT" :
 
-                    // CAD, EUR, JPY and USD
+                    // CAD, EUR, GBP, JPY and USD
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Bitcoin_USD_pair).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Bitcoin_GBP_pair).concat(","));
                     }
 
                     if (canadianDollarSelected) {
@@ -249,6 +253,20 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     if (eurosSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Bitcoin_Cash_EUR_pair).concat(","));
+                    }
+
+                    break;
+
+                // Bitcoin Satoshi Vision Cash (BCH)
+                case "BSV" :
+
+                    // EUR and USD
+                    if (americanDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Bitcoin_Cash_SV_USD_pair).concat(","));
+                    }
+
+                    if (eurosSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Bitcoin_Cash_SV_EUR_pair).concat(","));
                     }
 
                     break;
@@ -302,9 +320,13 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Ether (ETH)
                 case "ETH" :
 
-                    // CAD, EUR, JPY and USD
+                    // CAD, EUR, GBP, JPY and USD
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Ether_USD_pair).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Ether_GBP_pair).concat(","));
                     }
 
                     if (canadianDollarSelected) {
@@ -593,6 +615,23 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     break;
 
+                case "XBT/GBP" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Bitcoin_Market_data_title), ihmConsole.getString(R.string.Pounds_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getBitcoinPoundData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getBitcoinPoundData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getBitcoinPoundData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getBitcoinPoundData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getBitcoinPoundData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getBitcoinPoundData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getBitcoinPoundData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getBitcoinPoundData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getBitcoinPoundData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getBitcoinPoundData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getBitcoinPoundData().getTradesArray().get(1)));
+
+                    break;
+
                 case "XBT/USD" :
 
                     cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Bitcoin_Market_data_title), ihmConsole.getString(R.string.US_dollar_symbol)));
@@ -658,6 +697,40 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                     cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getBitcoinCashEuroData().getVolumeArray().get(1));
                     cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getBitcoinCashEuroData().getTradesArray().get(0)));
                     cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getBitcoinCashEuroData().getTradesArray().get(1)));
+
+                    break;
+
+                case "BSV/USD" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Bitcoin_Cash_SV_Market_data_title), ihmConsole.getString(R.string.US_dollar_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getBitcoinCashSVUSdollarData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getBitcoinCashSVUSdollarData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getBitcoinCashSVUSdollarData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getBitcoinCashSVUSdollarData().getTradesArray().get(1)));
+
+                    break;
+
+                case "BSV/EUR" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Bitcoin_Cash_SV_Market_data_title), ihmConsole.getString(R.string.Euro_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getBitcoinCashSVEuroData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getBitcoinCashSVEuroData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getBitcoinCashSVEuroData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getBitcoinCashSVEuroData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getBitcoinCashSVEuroData().getTradesArray().get(1)));
 
                     break;
 
@@ -811,6 +884,23 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                     cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getEtherEuroData().getVolumeArray().get(1));
                     cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getEtherEuroData().getTradesArray().get(0)));
                     cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getEtherEuroData().getTradesArray().get(1)));
+
+                    break;
+
+                case "ETH/GBP" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Ether_Market_data_title), ihmConsole.getString(R.string.Pounds_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getEtherPoundData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getEtherPoundData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getEtherPoundData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getEtherPoundData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getEtherPoundData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getEtherPoundData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getEtherPoundData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getEtherPoundData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getEtherPoundData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getEtherPoundData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getEtherPoundData().getTradesArray().get(1)));
 
                     break;
 
