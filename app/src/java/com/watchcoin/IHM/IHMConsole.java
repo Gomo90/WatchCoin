@@ -377,9 +377,13 @@ public class IHMConsole extends AppCompatActivity
                     // Bitcoin (XBT)
                     case "XBT" :
 
-                        // CAD, EUR, JPY and USD
+                        // CAD, EUR, GBP, JPY and USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Bitcoin_USD_asset));
+                        }
+
+                        if (britishPoundsSelected) {
+                            CurrencyValues.add(getString(R.string.Bitcoin_GBP_asset));
                         }
 
                         if (canadianDollarSelected) {
@@ -406,6 +410,20 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Bitcoin_Cash_EUR_asset));
+                        }
+
+                        break;
+
+                    // Bitcoin Cash Satoshi Vision(BSV)
+                    case "BSV" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Bitcoin_Cash_SV_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Bitcoin_Cash_SV_EUR_asset));
                         }
 
                         break;
@@ -459,9 +477,13 @@ public class IHMConsole extends AppCompatActivity
                     // Ether (ETH)
                     case "ETH" :
 
-                        // CAD, EUR, JPY and USD
+                        // CAD, EUR, GBP, JPY and USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Ether_USD_asset));
+                        }
+
+                        if (britishPoundsSelected) {
+                            CurrencyValues.add(getString(R.string.Ether_GBP_asset));
                         }
 
                         if (canadianDollarSelected) {
@@ -730,6 +752,10 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "XBT/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
                 case "XBT/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
@@ -744,6 +770,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "BCH/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "BSV/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_SV_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "BSV/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_SV_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
                 case "ADA/CAD":
@@ -780,6 +814,10 @@ public class IHMConsole extends AppCompatActivity
 
                 case "ETH/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ether_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "ETH/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ether_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
 
                 case "ETH/JPY":
