@@ -21,7 +21,6 @@
     <string name= "Augur_Market_data_title">Données de marché : Augur (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Données de marché : Bitcoin (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Données de marché : Bitcoin Cash (%1$s)</string>
-    <string name= "Bitcoin_Cash_SV_Market_data_title">Données de marché : Bitcoin Cash Satoshi Vision Market data (%1$s)</string>
     <string name= "Cardano_Market_data_title">Données de marché : Cardano (%1$s)</string>
     <string name= "Dash_Market_data_title">Données de marché : Dash (%1$s)</string>
     <string name= "Eos_Market_data_title">Données de marché : EOS (%1$s)</string>

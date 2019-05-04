@@ -33,9 +33,6 @@
     <string name= "Bitcoin_Cash_EUR_asset" translatable="false">BCH/EUR</string>
     <string name= "Bitcoin_Cash_USD_asset" translatable="false">BCH/USD</string>
 
-    <string name= "Bitcoin_Cash_SV_EUR_asset" translatable="false">BSV/EUR</string>
-    <string name= "Bitcoin_Cash_SV_USD_asset" translatable="false">BSV/USD</string>
-
     <string name= "Cardano_CAD_asset" translatable="false">ADA/CAD</string>
     <string name= "Cardano_EUR_asset" translatable="false">ADA/EUR</string>
     <string name= "Cardano_USD_asset" translatable="false">ADA/USD</string>
@@ -98,9 +95,6 @@
 
     <string name= "Bitcoin_Cash_EUR_pair" translatable="false">BCHEUR</string>
     <string name= "Bitcoin_Cash_USD_pair" translatable="false">BCHUSD</string>
-
-    <string name= "Bitcoin_Cash_SV_EUR_pair" translatable="false">BSVEUR</string>
-    <string name= "Bitcoin_Cash_SV_USD_pair" translatable="false">BSVUSD</string>
 
     <string name= "Cardano_CAD_pair" translatable="false">ADACAD</string>
     <string name= "Cardano_EUR_pair" translatable="false">ADAEUR</string>

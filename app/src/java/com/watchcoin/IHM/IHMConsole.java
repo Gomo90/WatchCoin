@@ -414,20 +414,6 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
-                    // Bitcoin Cash Satoshi Vision(BSV)
-                    case "BSV" :
-
-                        // EUR and USD
-                        if (americanDollarSelected) {
-                            CurrencyValues.add(getString(R.string.Bitcoin_Cash_SV_USD_asset));
-                        }
-
-                        if (eurosSelected) {
-                            CurrencyValues.add(getString(R.string.Bitcoin_Cash_SV_EUR_asset));
-                        }
-
-                        break;
-
                     // Cardano (ADA)
                     case "ADA" :
 
@@ -770,14 +756,6 @@ public class IHMConsole extends AppCompatActivity
 
                 case "BCH/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_Market_data_title), getString(R.string.Euro_symbol)));
-                    break;
-
-                case "BSV/USD":
-                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_SV_Market_data_title), getString(R.string.US_dollar_symbol)));
-                    break;
-
-                case "BSV/EUR":
-                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Cash_SV_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
                 case "ADA/CAD":

@@ -34,12 +34,6 @@ public class Result {
     @SerializedName("BCHUSD")
     private BCHUSD bitcoinCashUSdollarData;
 
-    @SerializedName("BSVEUR")
-    private BSVEUR bitcoinCashSVEuroData;
-
-    @SerializedName("BSVUSD")
-    private BSVUSD bitcoinCashSVUSdollarData;
-
     @SerializedName("ADACAD")
     private ADACAD cardanoCanadiandollarData;
 
@@ -192,16 +186,6 @@ public class Result {
     public BCHUSD getBitcoinCashUSdollarData() {
 
         return this.bitcoinCashUSdollarData;
-    }
-
-    public BSVEUR getBitcoinCashSVEuroData() {
-
-        return this.bitcoinCashSVEuroData;
-    }
-
-    public BSVUSD getBitcoinCashSVUSdollarData() {
-
-        return this.bitcoinCashSVUSdollarData;
     }
 
     public ADACAD getCardanoCanadiandollarData(){
