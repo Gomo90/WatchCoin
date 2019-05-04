@@ -31,6 +31,7 @@
         <item>Bitcoin (XBT)</item>
         <item>Bitcoin Cash (BCH)</item>
         <item>Cardano (ADA)</item>
+        <item>Cosmos (ATOM)</item>
         <item>Dash (DASH)</item>
         <item>Eos (EOS)</item>
         <item>Ether (ETH)</item>
@@ -53,6 +54,7 @@
         <item>XBT</item>
         <item>BCH</item>
         <item>ADA</item>
+        <item>ATOM</item>
         <item>DASH</item>
         <item>EOS</item>
         <item>ETH</item>

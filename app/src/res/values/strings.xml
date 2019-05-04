@@ -37,6 +37,10 @@
     <string name= "Cardano_EUR_asset" translatable="false">ADA/EUR</string>
     <string name= "Cardano_USD_asset" translatable="false">ADA/USD</string>
 
+    <string name= "Cosmos_EUR_asset" translatable="false">ATOM/EUR</string>
+    <string name= "Cosmos_USD_asset" translatable="false">ATOM/USD</string>
+    <string name= "Cosmos_CAD_asset" translatable="false">ATOM/CAD</string>
+
     <string name= "Dash_EUR_asset" translatable="false">DASH/EUR</string>
     <string name= "Dash_USD_asset" translatable="false">DASH/USD</string>
 
@@ -100,6 +104,10 @@
     <string name= "Cardano_EUR_pair" translatable="false">ADAEUR</string>
     <string name= "Cardano_USD_pair" translatable="false">ADAUSD</string>
 
+    <string name= "Cosmos_EUR_pair" translatable="false">ATOMEUR</string>
+    <string name= "Cosmos_USD_pair" translatable="false">ATOMUSD</string>
+    <string name= "Cosmos_CAD_pair" translatable="false">ATOMCAD</string>
+
     <string name= "Dash_EUR_pair" translatable="false">DASHEUR</string>
     <string name= "Dash_USD_pair" translatable="false">DASHUSD</string>
 
@@ -158,8 +166,8 @@
     <string name= "Augur_Market_data_title">Augur Market data (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
-    <string name= "Bitcoin_Cash_SV_Market_data_title">Bitcoin Cash Satoshi Vision Market data (%1$s)</string>
     <string name= "Cardano_Market_data_title">Cardano Market data (%1$s)</string>
+    <string name= "Cosmos_Market_data_title">Cosmos Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Dash Market data (%1$s)</string>
     <string name= "Eos_Market_data_title">EOS Market data (%1$s)</string>
     <string name= "Ether_Market_data_title">Ether Market data (%1$s)</string>

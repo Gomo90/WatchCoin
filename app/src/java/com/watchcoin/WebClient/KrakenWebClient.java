@@ -257,6 +257,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     break;
 
+
                 // Cardano (ADA)
                 case "ADA" :
 
@@ -271,6 +272,24 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     if (eurosSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Cardano_EUR_pair).concat(","));
+                    }
+
+                    break;
+
+                // Cosmos (ATOM)
+                case "ATOM" :
+
+                    //CAD, EUR and USD
+                    if (americanDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Cosmos_USD_pair).concat(","));
+                    }
+
+                    if(canadianDollarSelected){
+                        assetsList.append(ihmConsole.getString(R.string.Cosmos_CAD_pair).concat(","));
+                    }
+
+                    if (eurosSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Cosmos_EUR_pair).concat(","));
                     }
 
                     break;
@@ -683,6 +702,57 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                     cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getBitcoinCashEuroData().getVolumeArray().get(1));
                     cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getBitcoinCashEuroData().getTradesArray().get(0)));
                     cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getBitcoinCashEuroData().getTradesArray().get(1)));
+
+                    break;
+
+                case "ATOM/USD" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Cosmos_Market_data_title), ihmConsole.getString(R.string.US_dollar_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getCosmosUSdollarData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getCosmosUSdollarData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getCosmosUSdollarData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getCosmosUSdollarData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getCosmosUSdollarData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getCosmosUSdollarData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getCosmosUSdollarData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getCosmosUSdollarData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getCosmosUSdollarData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getCosmosUSdollarData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getCosmosUSdollarData().getTradesArray().get(1)));
+
+                    break;
+
+                case "ATOM/EUR" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Cosmos_Market_data_title), ihmConsole.getString(R.string.Euro_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getCosmosEuroData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getCosmosEuroData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getCosmosEuroData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getCosmosEuroData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getCosmosEuroData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getCosmosEuroData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getCosmosEuroData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getCosmosEuroData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getCosmosEuroData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getCosmosEuroData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getCosmosEuroData().getTradesArray().get(1)));
+
+                    break;
+
+                case "ATOM/CAD" :
+
+                    cryptoCurrencyDataMap.put("marketDataCurrency", String.format(ihmConsole.getString(R.string.Cosmos_Market_data_title), ihmConsole.getString(R.string.Euro_symbol)));
+                    cryptoCurrencyDataMap.put("askPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getAskArray().get(0));
+                    cryptoCurrencyDataMap.put("bidPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getBidArray().get(0));
+                    cryptoCurrencyDataMap.put("lastPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getLastPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("highPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getHighPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("lowPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getLowPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("avgPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getAvgPriceArray().get(0));
+                    cryptoCurrencyDataMap.put("openPriceValue", currencyData.getResult().getCosmosCanadiandollarData().getOpeningPrice());
+                    cryptoCurrencyDataMap.put("volumeValue", currencyData.getResult().getCosmosCanadiandollarData().getVolumeArray().get(0));
+                    cryptoCurrencyDataMap.put("volume24Value", currencyData.getResult().getCosmosCanadiandollarData().getVolumeArray().get(1));
+                    cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(currencyData.getResult().getCosmosCanadiandollarData().getTradesArray().get(0)));
+                    cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(currencyData.getResult().getCosmosCanadiandollarData().getTradesArray().get(1)));
 
                     break;
 

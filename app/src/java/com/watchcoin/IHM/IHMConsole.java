@@ -414,6 +414,7 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+
                     // Cardano (ADA)
                     case "ADA" :
 
@@ -428,6 +429,24 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Cardano_EUR_asset));
+                        }
+
+                        break;
+
+                    // Cosmos (ATOM)
+                    case "ATOM" :
+
+                        // CAD, EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Cosmos_USD_asset));
+                        }
+
+                        if(canadianDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Cosmos_CAD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Cosmos_EUR_asset));
                         }
 
                         break;
@@ -768,6 +787,18 @@ public class IHMConsole extends AppCompatActivity
 
                 case "ADA/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cardano_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "ATOM/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "ATOM/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "ATOM/CAD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
                     break;
 
                 case "DASH/EUR":

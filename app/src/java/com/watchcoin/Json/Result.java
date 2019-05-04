@@ -34,6 +34,15 @@ public class Result {
     @SerializedName("BCHUSD")
     private BCHUSD bitcoinCashUSdollarData;
 
+    @SerializedName("ATOMEUR")
+    private ATOMEUR cosmosEuroData;
+
+    @SerializedName("ATOMUSD")
+    private ATOMUSD cosmosUSdollarData;
+
+    @SerializedName("ATOMCAD")
+    private ATOMCAD cosmosCanadiandollarData;
+
     @SerializedName("ADACAD")
     private ADACAD cardanoCanadiandollarData;
 
@@ -186,6 +195,21 @@ public class Result {
     public BCHUSD getBitcoinCashUSdollarData() {
 
         return this.bitcoinCashUSdollarData;
+    }
+
+    public ATOMEUR getCosmosEuroData() {
+
+        return this.cosmosEuroData;
+    }
+
+    public ATOMUSD getCosmosUSdollarData() {
+
+        return this.cosmosUSdollarData;
+    }
+
+    public ATOMCAD getCosmosCanadiandollarData() {
+
+        return this.cosmosCanadiandollarData;
     }
 
     public ADACAD getCardanoCanadiandollarData(){

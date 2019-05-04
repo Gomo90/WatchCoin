@@ -22,6 +22,7 @@
     <string name= "Bitcoin_Market_data_title">Datos del mercado : Bitcoin (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Datos del mercado : Bitcoin Cash (%1$s)</string>
     <string name= "Cardano_Market_data_title">Datos del mercado : Cardano (%1$s)</string>
+    <string name= "Cosmos_Market_data_title">Datos del mercado : Cosmos Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Datos del mercado : Dash (%1$s)</string>
     <string name= "Eos_Market_data_title">Datos del mercado : EOS (%1$s)</string>
     <string name= "Etherc_Market_data_title">Datos del mercado : Ether Classic (%1$s)</string>
