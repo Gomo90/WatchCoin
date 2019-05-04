@@ -57,15 +57,15 @@ More informations : https://blog.kraken.com/post/1494/kraken-enables-advanced-or
 	
 Bitcoin SV (Satoshi Vision) BSV/USD BSV/EUR
 
-# Version 1.5 : (04/05/2019)
-
-	- Three pairs added :
-	
-	Cosmos ATOM/USD ATOM/EUR ATOM/CAD
-	
-	- Bitcoin SV (Satoshi Vision) delisted
-	
 - Restore pounds currency pairs :
 	
 (Bitcoin) XBT/GBP
 (Ether)   ETH/GBP
+
+# Version 1.5 : (04/05/2019)
+
+- Three pairs added :
+	
+Cosmos ATOM/USD ATOM/EUR ATOM/CAD
+	
+- Bitcoin SV (Satoshi Vision) delisted
