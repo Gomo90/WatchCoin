@@ -24,6 +24,9 @@
     <string name= "Augur_USD_asset" translatable="false">REP/USD</string>
     <string name= "Augur_EUR_asset" translatable="false">REP/EUR</string>
 
+    <string name= "BAT_USD_asset" translatable="false">BAT/USD</string>
+    <string name= "BAT_EUR_asset" translatable="false">BAT/EUR</string>
+
     <string name= "Bitcoin_CAD_asset" translatable="false">XBT/CAD</string>
     <string name= "Bitcoin_EUR_asset" translatable="false">XBT/EUR</string>
     <string name= "Bitcoin_GBP_asset" translatable="false">XBT/GBP</string>
@@ -83,6 +86,9 @@
     <string name= "Tezos_EUR_asset" translatable="false">XTZ/EUR</string>
     <string name= "Tezos_USD_asset" translatable="false">XTZ/USD</string>
 
+    <string name= "Waves_EUR_asset" translatable="false">WAVES/EUR</string>
+    <string name= "Waves_USD_asset" translatable="false">WAVES/USD</string>
+
     <string name= "Zcash_EUR_asset" translatable="false">ZEC/EUR</string>
     <string name= "Zcash_JPY_asset" translatable="false">ZEC/JPY</string>
     <string name= "Zcash_USD_asset" translatable="false">ZEC/USD</string>
@@ -90,6 +96,9 @@
     <!-- Kraken pairs (for data polling) -->
     <string name= "Augur_USD_pair" translatable="false">XREPZUSD</string>
     <string name= "Augur_EUR_pair" translatable="false">XREPZEUR</string>
+
+    <string name= "BAT_USD_pair" translatable="false">BATUSD</string>
+    <string name= "BAT_EUR_pair" translatable="false">BATEUR</string>
 
     <string name= "Bitcoin_CAD_pair" translatable="false">XXBTZCAD</string>
     <string name= "Bitcoin_EUR_pair" translatable="false">XXBTZEUR</string>
@@ -150,6 +159,9 @@
     <string name= "Tezos_EUR_pair" translatable="false">XTZEUR</string>
     <string name= "Tezos_USD_pair" translatable="false">XTZUSD</string>
 
+    <string name= "Waves_EUR_pair" translatable="false">WAVESEUR</string>
+    <string name= "Waves_USD_pair" translatable="false">WAVESUSD</string>
+
     <string name= "Zcash_EUR_pair" translatable="false">XZECZEUR</string>
     <string name= "Zcash_JPY_pair" translatable="false">XZECZJPY</string>
     <string name= "Zcash_USD_pair" translatable="false">XZECZUSD</string>
@@ -164,6 +176,7 @@
 
     <!-- Market data -->
     <string name= "Augur_Market_data_title">Augur Market data (%1$s)</string>
+    <string name= "BAT_Market_data_title">Basic Attention Token Market data (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
     <string name= "Cardano_Market_data_title">Cardano Market data (%1$s)</string>
@@ -180,6 +193,7 @@
     <string name= "Stellar_Lumens_Market_data_title">Stellar Lumens Market data (%1$s)</string>
     <string name= "Tether_Market_data_title">Tether Market data (%1$s)</string>
     <string name= "Tezos_Market_data_title">Tezos Market data (%1$s)</string>
+    <string name= "Waves_Market_data_title">Waves Market data (%1$s)</string>
     <string name= "Zcash_Market_data_title">Zcash Market data (%1$s)</string>
 
 

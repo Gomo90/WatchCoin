@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
+        app:iconSpaceReserved="false"
         android:key="coin_exchange_platform"
         android:title="@string/Coin_exchange_title"
         android:summary="@string/Coin_exchange_summary">
@@ -11,6 +13,7 @@
     </Preference>
 
     <Preference
+        app:iconSpaceReserved="false"
         android:key="crypto_currency"
         android:title="@string/Crypto_currency_title"
         android:summary="@string/Crypto_currency_summary">
@@ -20,6 +23,7 @@
     </Preference>
 
     <Preference
+        app:iconSpaceReserved="false"
         android:key="language"
         android:title="@string/Language_title"
         android:summary="@string/Language_summary">

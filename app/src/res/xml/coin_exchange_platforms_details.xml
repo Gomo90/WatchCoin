@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         android:key="kraken_configuration_platform"
-        android:title="@string/Kraken_category_plateform_title">
+        android:title="@string/Kraken_category_plateform_title"
+        app:iconSpaceReserved="false">
 
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:key="kraken_url_api"
             android:title="@string/Kraken_api_title"
             android:dialogTitle="@string/Kraken_api_dialogtitle"

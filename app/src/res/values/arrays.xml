@@ -28,6 +28,7 @@
     <!-- Currencies preferences entries value array -->
     <string-array name="KrakenEntriesArray" translatable="false">
         <item>Augur (REP)</item>
+        <item>Basic Attention Token (BAT)</item>
         <item>Bitcoin (XBT)</item>
         <item>Bitcoin Cash (BCH)</item>
         <item>Cardano (ADA)</item>
@@ -44,6 +45,7 @@
         <item>Stellar Lumens (XLM)</item>
         <item>Tether (USDT)</item>
         <item>Tezos (XTZ)</item>
+        <item>Waves (Waves)</item>
         <item>Zcash (ZEC)</item>
     </string-array>
 
@@ -51,6 +53,7 @@
     <!-- Values to save for a preference when an entry from entries is selected -->
     <string-array name="KrakenEntryValuesArray" translatable="false">
         <item>REP</item>
+        <item>BAT</item>
         <item>XBT</item>
         <item>BCH</item>
         <item>ADA</item>
@@ -67,6 +70,7 @@
         <item>XLM</item>
         <item>USDT</item>
         <item>XTZ</item>
+        <item>WAVES</item>
         <item>ZEC</item>
     </string-array>
 

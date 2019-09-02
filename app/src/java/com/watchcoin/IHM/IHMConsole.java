@@ -6,17 +6,16 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import androidx.annotation.Nullable;
+import com.google.android.material.navigation.NavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -374,6 +373,21 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Basic Attention Token (BAT)
+                    case "BAT":
+
+                        // EUR and USD
+
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.BAT_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.BAT_EUR_asset));
+                        }
+
+                        break;
+
                     // Bitcoin (XBT)
                     case "XBT" :
 
@@ -643,6 +657,20 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Waves (WAVES)
+                    case "WAVES" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Waves_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Waves_EUR_asset));
+                        }
+
+                        break;
+
                     // Zcash (ZEC)
                     case "ZEC" :
 
@@ -747,6 +775,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "REP/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Augur_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "BAT/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.BAT_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "BAT/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.BAT_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
                 case "XBT/CAD":
@@ -919,6 +955,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "XTZ/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "WAVES/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Waves_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "WAVES/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Waves_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
                 case "ZEC/EUR":
