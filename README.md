@@ -69,3 +69,15 @@ Bitcoin SV (Satoshi Vision) BSV/USD BSV/EUR
 Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	
 - Bitcoin SV (Satoshi Vision) delisted
+
+
+# Version 1.6 : (02/09/2019)
+
+ - Four currency pairs added :
+
+(Basic Attention Token) BAT/USD BAT/EUR
+(Waves) WAVES/USD WAVES/EUR
+
+- Migrate project to AndroidX library APIs
+
+
