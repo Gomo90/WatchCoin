@@ -81,3 +81,19 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 - Migrate project to AndroidX library APIs
 
 
+# Version 1.7 : (27/10/2019)
+
+	- Six currency pairs added :
+	
+	(DAI) DAI/USD DAI/EUR
+	(LINK) LINK/USD LINK/EUR
+	(Siacoin) SC/USD SC/EUR
+	
+	
+# Version 1.8 : (17/11/2019)
+
+	- Six currency pairs added :
+	
+	(NANO) NANO/USD NANO/EUR
+	(OmiseGo) OMG/USD OMG/EUR
+	(Pax Gold) PAXG/USD PAXG/EUR
