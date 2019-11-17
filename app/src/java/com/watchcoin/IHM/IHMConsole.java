@@ -465,6 +465,20 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Dai (DAI)
+                    case "DAI" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Dai_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Dai_EUR_asset));
+                        }
+
+                        break;
+
                     // DASH (DASH)
                     case "DASH" :
 
@@ -547,6 +561,20 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Chainlink (LINK)
+                    case "LINK" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Chainlink_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Chainlink_EUR_asset));
+                        }
+
+                        break;
+
                     // Litecoin (LTC)
                     case "LTC" :
 
@@ -571,6 +599,48 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Monero_EUR_asset));
+                        }
+
+                        break;
+
+                    // Nano (NANO)
+                    case "NANO" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Nano_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Nano_EUR_asset));
+                        }
+
+                        break;
+
+                    // OmiseGO (OMG)
+                    case "OMG" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.OmiseGO_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.OmiseGO_EUR_asset));
+                        }
+
+                        break;
+
+                    // Pax Gold (PAXG)
+                    case "PAXG" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Paxg_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Paxg_EUR_asset));
                         }
 
                         break;
@@ -611,6 +681,20 @@ public class IHMConsole extends AppCompatActivity
 
                         if (japaneseYenSelected) {
                             CurrencyValues.add(getString(R.string.Ripple_JPY_asset));
+                        }
+
+                        break;
+
+                    // Siacoin (SC)
+                    case "SC" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Siacoin_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Siacoin_EUR_asset));
                         }
 
                         break;
@@ -837,6 +921,14 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.Canadian_dollar_symbol)));
                     break;
 
+                case "DAI/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Dai_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "DAI/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Dai_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
                 case "DASH/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Dash_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
@@ -889,6 +981,14 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Gnosis_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "LINK/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "LINK/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
                 case "LTC/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Litcoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
@@ -907,6 +1007,30 @@ public class IHMConsole extends AppCompatActivity
 
                 case "XMR/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Monero_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "NANO/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Nano_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "NANO/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Nano_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "OMG/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.OmiseGO_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "OMG/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.OmiseGO_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "PAXG/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Paxg_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "PAXG/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Paxg_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "QTUM/CAD":
@@ -935,6 +1059,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "XRP/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ripple_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "SC/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Siacoin_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "SC/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Siacoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
                 case "XLM/EUR":

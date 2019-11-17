@@ -44,6 +44,9 @@
     <string name= "Cosmos_USD_asset" translatable="false">ATOM/USD</string>
     <string name= "Cosmos_CAD_asset" translatable="false">ATOM/CAD</string>
 
+    <string name= "Dai_EUR_asset" translatable="false">DAI/EUR</string>
+    <string name= "Dai_USD_asset" translatable="false">DAI/USD</string>
+
     <string name= "Dash_EUR_asset" translatable="false">DASH/EUR</string>
     <string name= "Dash_USD_asset" translatable="false">DASH/USD</string>
 
@@ -62,11 +65,23 @@
     <string name= "Gnosis_EUR_asset" translatable="false">GNO/EUR</string>
     <string name= "Gnosis_USD_asset" translatable="false">GNO/USD</string>
 
+    <string name= "Chainlink_EUR_asset" translatable="false">LINK/EUR</string>
+    <string name= "Chainlink_USD_asset" translatable="false">LINK/USD</string>
+
     <string name= "Litecoin_EUR_asset" translatable="false">LTC/EUR</string>
     <string name= "Litecoin_USD_asset" translatable="false">LTC/USD</string>
 
     <string name= "Monero_EUR_asset" translatable="false">XMR/EUR</string>
     <string name= "Monero_USD_asset" translatable="false">XMR/USD</string>
+
+    <string name= "Nano_EUR_asset" translatable="false">NANO/EUR</string>
+    <string name= "Nano_USD_asset" translatable="false">NANO/USD</string>
+
+    <string name= "OmiseGO_EUR_asset" translatable="false">OMG/EUR</string>
+    <string name= "OmiseGO_USD_asset" translatable="false">OMG/USD</string>
+
+    <string name= "Paxg_EUR_asset" translatable="false">PAXG/EUR</string>
+    <string name= "Paxg_USD_asset" translatable="false">PAXG/USD</string>
 
     <string name= "Quantum_CAD_asset" translatable="false">QTUM/CAD</string>
     <string name= "Quantum_EUR_asset" translatable="false">QTUM/EUR</string>
@@ -76,6 +91,9 @@
     <string name= "Ripple_EUR_asset" translatable="false">XRP/EUR</string>
     <string name= "Ripple_JPY_asset" translatable="false">XRP/JPY</string>
     <string name= "Ripple_USD_asset" translatable="false">XRP/USD</string>
+
+    <string name= "Siacoin_EUR_asset" translatable="false">SC/EUR</string>
+    <string name= "Siacoin_USD_asset" translatable="false">SC/USD</string>
 
     <string name= "Stellarlumens_EUR_asset" translatable="false">XLM/EUR</string>
     <string name= "Stellatlumens_USD_asset" translatable="false">XLM/USD</string>
@@ -117,6 +135,9 @@
     <string name= "Cosmos_USD_pair" translatable="false">ATOMUSD</string>
     <string name= "Cosmos_CAD_pair" translatable="false">ATOMCAD</string>
 
+    <string name= "Dai_EUR_pair" translatable="false">DAIEUR</string>
+    <string name= "Dai_USD_pair" translatable="false">DAIUSD</string>
+
     <string name= "Dash_EUR_pair" translatable="false">DASHEUR</string>
     <string name= "Dash_USD_pair" translatable="false">DASHUSD</string>
 
@@ -135,11 +156,23 @@
     <string name= "Gnosis_EUR_pair" translatable="false">GNOEUR</string>
     <string name= "Gnosis_USD_pair" translatable="false">GNOUSD</string>
 
+    <string name= "Chainlink_EUR_pair" translatable="false">LINKEUR</string>
+    <string name= "Chainlink_USD_pair" translatable="false">LINKUSD</string>
+
     <string name= "Litecoin_EUR_pair" translatable="false">XLTCZEUR</string>
     <string name= "Litecoin_USD_pair" translatable="false">XLTCZUSD</string>
 
     <string name= "Monero_EUR_pair" translatable="false">XXMRZEUR</string>
     <string name= "Monero_USD_pair" translatable="false">XXMRZUSD</string>
+
+    <string name= "Nano_EUR_pair" translatable="false">NANOEUR</string>
+    <string name= "Nano_USD_pair" translatable="false">NANOUSD</string>
+
+    <string name= "OmiseGO_EUR_pair" translatable="false">OMGEUR</string>
+    <string name= "OmiseGO_USD_pair" translatable="false">OMGUSD</string>
+
+    <string name= "Paxg_EUR_pair" translatable="false">PAXGEUR</string>
+    <string name= "Paxg_USD_pair" translatable="false">PAXGUSD</string>
 
     <string name= "Quantum_CAD_pair" translatable="false">QTUMCAD</string>
     <string name= "Quantum_EUR_pair" translatable="false">QTUMEUR</string>
@@ -149,6 +182,9 @@
     <string name= "Ripple_EUR_pair" translatable="false">XXRPZEUR</string>
     <string name= "Ripple_JPY_pair" translatable="false">XXRPZJPY</string>
     <string name= "Ripple_USD_pair" translatable="false">XXRPZUSD</string>
+
+    <string name= "Siacoin_EUR_pair" translatable="false">SCEUR</string>
+    <string name= "Siacoin_USD_pair" translatable="false">SCUSD</string>
 
     <string name= "Stellarlumens_EUR_pair" translatable="false">XXLMZEUR</string>
     <string name= "Stellatlumens_USD_pair" translatable="false">XXLMZUSD</string>
@@ -181,15 +217,21 @@
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
     <string name= "Cardano_Market_data_title">Cardano Market data (%1$s)</string>
     <string name= "Cosmos_Market_data_title">Cosmos Market data (%1$s)</string>
+    <string name= "Dai_Market_data_title">Dai Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Dash Market data (%1$s)</string>
     <string name= "Eos_Market_data_title">EOS Market data (%1$s)</string>
     <string name= "Ether_Market_data_title">Ether Market data (%1$s)</string>
     <string name= "Etherc_Market_data_title">Ether Classic Market data (%1$s)</string>
     <string name= "Gnosis_Market_data_title">Gnosis Market data (%1$s)</string>
+    <string name= "Chainlink_Market_data_title">Link Market data (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Litcoin Market data (%1$s)</string>
     <string name= "Monero_Market_data_title">Monero Market data (%1$s)</string>
+    <string name= "Nano_Market_data_title">Nano Market data (%1$s)</string>
+    <string name= "OmiseGO_Market_data_title">OmiseGO Market data (%1$s)</string>
+    <string name= "Paxg_Market_data_title">Pax Gold Market data (%1$s)</string>
     <string name= "Quantum_Market_data_title">Quantum Market data (%1$s)</string>
     <string name= "Ripple_Market_data_title">Ripple Market data (%1$s)</string>
+    <string name= "Siacoin_Market_data_title">Siacoin Market data (%1$s)</string>
     <string name= "Stellar_Lumens_Market_data_title">Stellar Lumens Market data (%1$s)</string>
     <string name= "Tether_Market_data_title">Tether Market data (%1$s)</string>
     <string name= "Tezos_Market_data_title">Tezos Market data (%1$s)</string>

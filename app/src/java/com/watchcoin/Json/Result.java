@@ -13,6 +13,12 @@ public class Result {
     @SerializedName("XREPZUSD")
     private XREPZUSD augurUSdollarData;
 
+    @SerializedName("BATUSD")
+    private BATUSD batUSdollarData;
+
+    @SerializedName("BATEUR")
+    private BATEUR batEuroData;
+
     @SerializedName("XXBTZCAD")
     private XXBTZCAD bitcoinCanadiandollarData;
 
@@ -51,6 +57,12 @@ public class Result {
 
     @SerializedName("ADAUSD")
     private ADAUSD cardanoUSdollarData;
+
+    @SerializedName("DAIEUR")
+    private DAIEUR daiEuroData;
+
+    @SerializedName("DAIUSD")
+    private DAIUSD daiUSdollarData;
 
     @SerializedName("DASHEUR")
     private DASHEUR dashEuroData;
@@ -91,6 +103,12 @@ public class Result {
     @SerializedName("GNOUSD")
     private GNOUSD gnosisUSdollarData;
 
+    @SerializedName("LINKEUR")
+    private LINKEUR linkEuroData;
+
+    @SerializedName("LINKUSD")
+    private LINKUSD linkUSdollarData;
+
     @SerializedName("XLTCZEUR")
     private XLTCZEUR litcoinEuroData;
 
@@ -102,6 +120,24 @@ public class Result {
 
     @SerializedName("XXMRZUSD")
     private XXMRZUSD moneroUSdollarData;
+
+    @SerializedName("NANOEUR")
+    private NANOEUR nanoEuroData;
+
+    @SerializedName("NANOUSD")
+    private NANOUSD nanoUSdollarData;
+
+    @SerializedName("OMGEUR")
+    private OMGEUR omisegoEuroData;
+
+    @SerializedName("OMGUSD")
+    private OMGUSD omisegoUSdollarData;
+
+    @SerializedName("PAXGEUR")
+    private PAXGEUR paxgEuroData;
+
+    @SerializedName("PAXGUSD")
+    private PAXGUSD paxgUSdollarData;
 
     @SerializedName("QTUMCAD")
     private QTUMCAD quantumCanadiandollarData;
@@ -124,6 +160,12 @@ public class Result {
     @SerializedName("XXRPZUSD")
     private XXRPZUSD rippleUSdollarData;
 
+    @SerializedName("SCEUR")
+    private SCEUR siacoinEuroData;
+
+    @SerializedName("SCUSD")
+    private SCUSD siacoinUDdollarData;
+
     @SerializedName("XXLMZEUR")
     private XXLMZEUR stellarLumensEuroData;
 
@@ -141,6 +183,12 @@ public class Result {
 
     @SerializedName("XTZUSD")
     private XTZUSD tezosUSdollarData;
+
+    @SerializedName("WAVESUSD")
+    private WAVESUSD wavesUSdollarData;
+
+    @SerializedName("WAVESEUR")
+    private WAVESEUR wavesEuroData;
 
     @SerializedName("XZECZEUR")
     private XZECZEUR zcashEuroData;
@@ -160,6 +208,16 @@ public class Result {
     public XREPZUSD getAugurUSdollarData() {
 
         return this.augurUSdollarData;
+    }
+
+    public BATUSD getBatUSdollarData() {
+
+        return this.batUSdollarData;
+    }
+
+    public BATEUR getBatEuroData() {
+
+        return this.batEuroData;
     }
 
     public XXBTZCAD getBitcoinCanadiandollarData() {
@@ -227,6 +285,16 @@ public class Result {
         return this.cardanoUSdollarData;
     }
 
+    public DAIEUR getDaiEuroData() {
+
+        return this.daiEuroData;
+    }
+
+    public DAIUSD getDaiUSdollarData() {
+
+        return this.daiUSdollarData;
+    }
+
     public DASHEUR getDashEuroData() {
 
         return this.dashEuroData;
@@ -292,6 +360,16 @@ public class Result {
         return this.gnosisUSdollarData;
     }
 
+    public LINKEUR getLinkEuroData() {
+
+        return this.linkEuroData;
+    }
+
+    public LINKUSD getLinkUSdollarData() {
+
+        return this.linkUSdollarData;
+    }
+
     public XLTCZEUR getLitecoinEuroData() {
 
         return this.litcoinEuroData;
@@ -310,6 +388,36 @@ public class Result {
     public XXMRZUSD getMoneroUSdollarData() {
 
         return this.moneroUSdollarData;
+    }
+
+    public NANOEUR getNanoEuroData() {
+
+        return this.nanoEuroData;
+    }
+
+    public NANOUSD getNanoUSdollarData() {
+
+        return this.nanoUSdollarData;
+    }
+
+    public OMGEUR getOmiseGOEuroData() {
+
+        return this.omisegoEuroData;
+    }
+
+    public OMGUSD getOmiseGOUSdollarData() {
+
+        return this.omisegoUSdollarData;
+    }
+
+    public PAXGEUR getPaxgEuroData() {
+
+        return this.paxgEuroData;
+    }
+
+    public PAXGUSD getPaxgUSdollarData() {
+
+        return this.paxgUSdollarData;
     }
 
     public QTUMCAD getQuantumCanadiandollarData() {
@@ -347,6 +455,16 @@ public class Result {
         return this.rippleYenData;
     }
 
+    public SCEUR getSiacoinEuroData() {
+
+        return this.siacoinEuroData;
+    }
+
+    public SCUSD getSiacoinUSdollarData() {
+
+        return this.siacoinUDdollarData;
+    }
+
     public XXLMZEUR getStellarLumensEuroData() {
 
         return this.stellarLumensEuroData;
@@ -375,6 +493,16 @@ public class Result {
     public XTZUSD getTezosUSdollarData() {
 
         return this.tezosUSdollarData;
+    }
+
+    public WAVESUSD getWavesUSdollarData() {
+
+        return this.wavesUSdollarData;
+    }
+
+    public WAVESEUR getWavesEuroData() {
+
+        return this.wavesEuroData;
     }
 
     public XZECZEUR getZcashEuroData() {
