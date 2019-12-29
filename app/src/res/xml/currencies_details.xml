@@ -29,6 +29,13 @@
         </CheckBoxPreference>
 
         <CheckBoxPreference
+            android:key="swiss_franc_checkbox"
+            android:title="@string/Swiss_franc_title"
+            app:iconSpaceReserved="false">
+
+        </CheckBoxPreference>
+
+        <CheckBoxPreference
             android:key="japanese_yen_checkbox"
             android:title="@string/Japanese_yen_title"
             app:iconSpaceReserved="false">

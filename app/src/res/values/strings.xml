@@ -29,6 +29,7 @@
 
     <string name= "Bitcoin_CAD_asset" translatable="false">XBT/CAD</string>
     <string name= "Bitcoin_EUR_asset" translatable="false">XBT/EUR</string>
+    <string name= "Bitcoin_CHF_asset" translatable="false">XBT/CHF</string>
     <string name= "Bitcoin_GBP_asset" translatable="false">XBT/GBP</string>
     <string name= "Bitcoin_JPY_asset" translatable="false">XBT/JPY</string>
     <string name= "Bitcoin_USD_asset" translatable="false">XBT/USD</string>
@@ -55,6 +56,7 @@
 
     <string name= "Ether_CAD_asset" translatable="false">ETH/CAD</string>
     <string name= "Ether_EUR_asset" translatable="false">ETH/EUR</string>
+    <string name= "Ether_CHF_asset" translatable="false">ETH/CHF</string>
     <string name= "Ether_GBP_asset" translatable="false">ETH/GBP</string>
     <string name= "Ether_JPY_asset" translatable="false">ETH/JPY</string>
     <string name= "Ether_USD_asset" translatable="false">ETH/USD</string>
@@ -70,6 +72,9 @@
 
     <string name= "Litecoin_EUR_asset" translatable="false">LTC/EUR</string>
     <string name= "Litecoin_USD_asset" translatable="false">LTC/USD</string>
+
+    <string name= "Lisk_EUR_asset" translatable="false">LSK/EUR</string>
+    <string name= "Lisk_USD_asset" translatable="false">LSK/USD</string>
 
     <string name= "Monero_EUR_asset" translatable="false">XMR/EUR</string>
     <string name= "Monero_USD_asset" translatable="false">XMR/USD</string>
@@ -120,6 +125,7 @@
 
     <string name= "Bitcoin_CAD_pair" translatable="false">XXBTZCAD</string>
     <string name= "Bitcoin_EUR_pair" translatable="false">XXBTZEUR</string>
+    <string name= "Bitcoin_CHF_pair" translatable="false">XBTCHF</string>
     <string name= "Bitcoin_GBP_pair" translatable="false">XXBTZGBP</string>
     <string name= "Bitcoin_JPY_pair" translatable="false">XXBTZJPY</string>
     <string name= "Bitcoin_USD_pair" translatable="false">XXBTZUSD</string>
@@ -146,6 +152,7 @@
 
     <string name= "Ether_CAD_pair" translatable="false">XETHZCAD</string>
     <string name= "Ether_EUR_pair" translatable="false">XETHZEUR</string>
+    <string name= "Ether_CHF_pair" translatable="false">ETHCHF</string>
     <string name= "Ether_GBP_pair" translatable="false">XETHZGBP</string>
     <string name= "Ether_JPY_pair" translatable="false">XETHZJPY</string>
     <string name= "Ether_USD_pair" translatable="false">XETHZUSD</string>
@@ -161,6 +168,9 @@
 
     <string name= "Litecoin_EUR_pair" translatable="false">XLTCZEUR</string>
     <string name= "Litecoin_USD_pair" translatable="false">XLTCZUSD</string>
+
+    <string name= "Lisk_EUR_pair" translatable="false">LSKEUR</string>
+    <string name= "Lisk_USD_pair" translatable="false">LSKUSD</string>
 
     <string name= "Monero_EUR_pair" translatable="false">XXMRZEUR</string>
     <string name= "Monero_USD_pair" translatable="false">XXMRZUSD</string>
@@ -206,6 +216,7 @@
     <string name= "Canadian_dollar_symbol" translatable="false">C$</string>
     <string name= "US_dollar_symbol" translatable="false">$</string>
     <string name= "Euro_symbol" translatable="false">€</string>
+    <string name= "Swiss_Franc_symbol" translatable="false">CHF</string>
     <string name= "Yen_symbol" translatable="false">¥</string>
     <string name= "Pounds_symbol" translatable="false">£</string>
 
@@ -225,6 +236,7 @@
     <string name= "Gnosis_Market_data_title">Gnosis Market data (%1$s)</string>
     <string name= "Chainlink_Market_data_title">Link Market data (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Litcoin Market data (%1$s)</string>
+    <string name= "Lisk_Market_data_title">Lisk Market data (%1$s)</string>
     <string name= "Monero_Market_data_title">Monero Market data (%1$s)</string>
     <string name= "Nano_Market_data_title">Nano Market data (%1$s)</string>
     <string name= "OmiseGO_Market_data_title">OmiseGO Market data (%1$s)</string>
@@ -277,6 +289,7 @@
     <string name= "British_pounds_title">British pounds (GBP)</string>
     <string name= "Canadian_dollar_title">Canadian dollar (CAD)</string>
     <string name= "Euros_title">Euros (EUR)</string>
+    <string name= "Swiss_franc_title">Swiss Franc (CHF)</string>
     <string name= "Japanese_yen_title">Japanese yen (JPY)</string>
     <string name= "US_dollar_title">US dollar (USD)</string>
     <string name= "Crypto_currencies_category_title">Crypto currencies</string>

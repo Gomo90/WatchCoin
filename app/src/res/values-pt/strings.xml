@@ -32,6 +32,7 @@
     <string name= "Gnosis_Market_data_title">Dados do mercado : Gnosis (%1$s)</string>
     <string name= "Chainlink_Market_data_title">Dados do mercado : Link (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Dados do mercado : Litcoin (%1$s)</string>
+    <string name= "Lisk_Market_data_title">Dados do mercado : Lisk (%1$s)</string>
     <string name= "Monero_Market_data_title">Dados do mercado : Monero (%1$s)</string>
     <string name= "Nano_Market_data_title">Dados do mercado : Nano (%1$s)</string>
     <string name= "OmiseGO_Market_data_title">Dados do mercado : OmiseGO (%1$s)</string>
@@ -83,6 +84,7 @@
     <string name= "British_pounds_title">Libra esterlina (GBP)</string>
     <string name= "Canadian_dollar_title">Dólar canadense (CAD)</string>
     <string name= "Euros_title">Euros (EUR)</string>
+    <string name= "Swiss_franc_title">Franco Suíço (CHF)</string>
     <string name= "Japanese_yen_title">Yen (JPY)</string>
     <string name= "US_dollar_title">Dólar americano (USD)</string>
     <string name= "Crypto_currencies_category_title">Cryptomoedas</string>

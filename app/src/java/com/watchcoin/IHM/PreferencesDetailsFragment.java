@@ -160,7 +160,7 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
             // If the change concern the fiat currencies configuration
             if (key.equals("british_pounds_checkbox") || key.equals("canadian_dollar_checkbox") || key.equals("euros_checkbox")
-                    || key.equals("japanese_yen_checkbox") || key.equals("us_dollar_checkbox")) {
+                    || key.equals("japanese_yen_checkbox") || key.equals("us_dollar_checkbox") || key.equals("swiss_franc_checkbox")) {
 
                 // Set configChanged = true
                 preferencesEditor.putBoolean("configChanged", Boolean.TRUE);

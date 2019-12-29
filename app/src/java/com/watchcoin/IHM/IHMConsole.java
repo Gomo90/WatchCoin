@@ -337,10 +337,12 @@ public class IHMConsole extends AppCompatActivity
             boolean britishPoundsSelected = sharedPreferencesApp.getBoolean("british_pounds_checkbox", Boolean.FALSE);
             boolean canadianDollarSelected = sharedPreferencesApp.getBoolean("canadian_dollar_checkbox", Boolean.FALSE);
             boolean eurosSelected = sharedPreferencesApp.getBoolean("euros_checkbox", Boolean.FALSE);
+            boolean swissFrancSelected = sharedPreferencesApp.getBoolean("swiss_franc_checkbox", Boolean.FALSE);
             boolean japaneseYenSelected = sharedPreferencesApp.getBoolean("japanese_yen_checkbox", Boolean.FALSE);
 
             // If any fiat currencies are not selected
-            if (!americanDollarSelected && !britishPoundsSelected && !canadianDollarSelected && !eurosSelected && !japaneseYenSelected) {
+            if (!americanDollarSelected && !britishPoundsSelected && !canadianDollarSelected && !eurosSelected && !japaneseYenSelected
+                && !swissFrancSelected) {
 
                 // US dollar activated by default
                 SharedPreferences.Editor preferencesEditor = sharedPreferencesApp.edit();
@@ -391,7 +393,7 @@ public class IHMConsole extends AppCompatActivity
                     // Bitcoin (XBT)
                     case "XBT" :
 
-                        // CAD, EUR, GBP, JPY and USD
+                        // CAD, EUR, CHF, GBP, JPY and USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Bitcoin_USD_asset));
                         }
@@ -406,6 +408,10 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Bitcoin_EUR_asset));
+                        }
+
+                        if (swissFrancSelected) {
+                            CurrencyValues.add(getString(R.string.Bitcoin_CHF_asset));
                         }
 
                         if (japaneseYenSelected) {
@@ -510,7 +516,7 @@ public class IHMConsole extends AppCompatActivity
                     // Ether (ETH)
                     case "ETH" :
 
-                        // CAD, EUR, GBP, JPY and USD
+                        // CAD, EUR, CHF, GBP, JPY and USD
                         if (americanDollarSelected) {
                             CurrencyValues.add(getString(R.string.Ether_USD_asset));
                         }
@@ -525,6 +531,10 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Ether_EUR_asset));
+                        }
+
+                        if (swissFrancSelected) {
+                            CurrencyValues.add(getString(R.string.Ether_CHF_asset));
                         }
 
                         if (japaneseYenSelected) {
@@ -585,6 +595,20 @@ public class IHMConsole extends AppCompatActivity
 
                         if (eurosSelected) {
                             CurrencyValues.add(getString(R.string.Litecoin_EUR_asset));
+                        }
+
+                        break;
+
+                    // Lisk(LSK)
+                    case "LSK" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Lisk_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Lisk_EUR_asset));
                         }
 
                         break;
@@ -877,6 +901,10 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "XBT/CHF":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Market_data_title), getString(R.string.Swiss_Franc_symbol)));
+                    break;
+
                 case "XBT/GBP":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Bitcoin_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
@@ -953,6 +981,10 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ether_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "ETH/CHF":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ether_Market_data_title), getString(R.string.Swiss_Franc_symbol)));
+                    break;
+
                 case "ETH/GBP":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Ether_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
@@ -995,6 +1027,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "LTC/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Litcoin_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "LSK/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Lisk_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "LSK/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Lisk_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "USDT/USD":

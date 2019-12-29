@@ -25,6 +25,9 @@ public class Result {
     @SerializedName("XXBTZEUR")
     private XXBTZEUR bitcoinEuroData;
 
+    @SerializedName("XBTCHF")
+    private XBTCHF bitcoinSwissFrancData;
+
     @SerializedName("XXBTZGBP")
     private XXBTZGBP bitcoinPoundData;
 
@@ -82,6 +85,9 @@ public class Result {
     @SerializedName("XETHZEUR")
     private XETHZEUR etherEuroData;
 
+    @SerializedName("ETHCHF")
+    private ETHCHF etherSwissFrancData;
+
     @SerializedName("XETHZGBP")
     private XETHZGBP etherPoundData;
 
@@ -114,6 +120,12 @@ public class Result {
 
     @SerializedName("XLTCZUSD")
     private XLTCZUSD litcoinUSdollarData;
+
+    @SerializedName("LSKEUR")
+    private LSKEUR liskEuroData;
+
+    @SerializedName("LSKUSD")
+    private LSKUSD liskUSdollarData;
 
     @SerializedName("XXMRZEUR")
     private XXMRZEUR moneroEuroData;
@@ -230,6 +242,11 @@ public class Result {
         return this.bitcoinEuroData;
     }
 
+    public XBTCHF getBitcoinSwissFrancData() {
+
+        return this.bitcoinSwissFrancData;
+    }
+
     public XXBTZGBP getBitcoinPoundData() {
 
         return this.bitcoinPoundData;
@@ -320,6 +337,11 @@ public class Result {
         return this.etherEuroData;
     }
 
+    public ETHCHF getEtherSwissFrancData() {
+
+        return this.etherSwissFrancData;
+    }
+
     public XETHZCAD getEtherCanadiandollarData() {
 
         return this.etherCanadiandollarData;
@@ -378,6 +400,16 @@ public class Result {
     public XLTCZUSD getLitecoinUSdollarData() {
 
         return this.litcoinUSdollarData;
+    }
+
+    public LSKEUR getLiskEuroData() {
+
+        return this.liskEuroData;
+    }
+
+    public LSKUSD getLiskUSdollarData() {
+
+        return this.liskUSdollarData;
     }
 
     public XXMRZEUR getMoneroEuroData() {
