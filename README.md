@@ -97,3 +97,14 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	(NANO) NANO/USD NANO/EUR
 	(OmiseGo) OMG/USD OMG/EUR
 	(Pax Gold) PAXG/USD PAXG/EUR
+
+# Version 1.9 : (29/12/2019)	
+	
+	- Two currency pairs added : 	
+	
+	(Lisk)LSK/USD LSK/EUR
+	
+	- Swiss Franc currency pairs added :
+	
+	(Bitcoin) XBT/CHF
+	(Ether)   ETH/CHF
