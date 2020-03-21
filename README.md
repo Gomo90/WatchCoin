@@ -108,3 +108,11 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	
 	(Bitcoin) XBT/CHF
 	(Ether)   ETH/CHF
+
+# Version 1.10 : (21/03/2019)
+
+	- Six currency pairs added :
+	
+	(Algorand) ALGO/USD ALGO/EUR
+	(Tron) TRX/USD TRX/EUR
+	(USD Coin) USDC/USD USDC/EUR
