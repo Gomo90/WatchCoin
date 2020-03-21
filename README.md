@@ -109,7 +109,7 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	(Bitcoin) XBT/CHF
 	(Ether)   ETH/CHF
 
-# Version 1.10 : (21/03/2019)
+# Version 1.10 : (21/03/2020)
 
 	- Six currency pairs added :
 	
