@@ -360,6 +360,21 @@ public class IHMConsole extends AppCompatActivity
 
                 switch (krakenAsset) {
 
+                    // Algorand (ALGO)
+                    case "ALGO":
+
+                        // EUR and USD
+
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Algorand_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Algorand_EUR_asset));
+                        }
+
+                        break;
+
                     // Augur (REP)
                     case "REP":
 
@@ -765,6 +780,34 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
+                    // Tron (TRX)
+                    case "TRX" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.Tron_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.Tron_EUR_asset));
+                        }
+
+                        break;
+
+                    // USD Coin (USDC)
+                    case "USDC" :
+
+                        // EUR and USD
+                        if (americanDollarSelected) {
+                            CurrencyValues.add(getString(R.string.USDCoin_USD_asset));
+                        }
+
+                        if (eurosSelected) {
+                            CurrencyValues.add(getString(R.string.USDCoin_EUR_asset));
+                        }
+
+                        break;
+
                     // Waves (WAVES)
                     case "WAVES" :
 
@@ -876,6 +919,14 @@ public class IHMConsole extends AppCompatActivity
 
             // Update market data title
             switch (eCurrency.getSelectedItem().toString()) {
+
+                case "ALGO/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Algorand_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "ALGO/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Algorand_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
 
                 case "REP/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Augur_Market_data_title), getString(R.string.US_dollar_symbol)));
@@ -1127,6 +1178,22 @@ public class IHMConsole extends AppCompatActivity
 
                 case "XTZ/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "TRX/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tron_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "TRX/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tron_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "USD/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.USDCoin_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "USD/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.USDCoin_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "WAVES/USD":

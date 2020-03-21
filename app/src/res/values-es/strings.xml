@@ -18,6 +18,7 @@
 
 
     <!-- Market data -->
+    <string name= "Algorand_Market_data_title">Datos del mercado : Algorand (%1$s)</string>
     <string name= "Augur_Market_data_title">Datos del mercado : Augur (%1$s)</string>
     <string name= "BAT_Market_data_title">Datos del mercado : Basic Attention Token (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Datos del mercado : Bitcoin (%1$s)</string>
@@ -43,6 +44,8 @@
     <string name= "Stellar_Lumens_Market_data_title">Datos del mercado : Stellar Lumens (%1$s)</string>
     <string name= "Tether_Market_data_title">Datos del mercado : Tether (%1$s)</string>
     <string name= "Tezos_Market_data_title">Datos del mercado : Tezos (%1$s)</string>
+    <string name= "Tron_Market_data_title">Datos del mercado : Tron (%1$s)</string>
+    <string name= "USDCoin_Market_data_title">Datos del mercado : USD Coin (%1$s)</string>
     <string name= "Waves_Market_data_title">Datos del mercado : Waves (%1$s)</string>
     <string name= "Zcash_Market_data_title">Datos del mercado : Zcash (%1$s)</string>
 

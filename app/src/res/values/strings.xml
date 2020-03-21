@@ -21,6 +21,9 @@
     <string name= "Interval_label">Interval :</string>
 
     <!-- Kraken assets (ecurrency spinner) -->
+    <string name= "Algorand_USD_asset" translatable="false">ALGO/USD</string>
+    <string name= "Algorand_EUR_asset" translatable="false">ALGO/EUR</string>
+
     <string name= "Augur_USD_asset" translatable="false">REP/USD</string>
     <string name= "Augur_EUR_asset" translatable="false">REP/EUR</string>
 
@@ -109,6 +112,12 @@
     <string name= "Tezos_EUR_asset" translatable="false">XTZ/EUR</string>
     <string name= "Tezos_USD_asset" translatable="false">XTZ/USD</string>
 
+    <string name= "Tron_EUR_asset" translatable="false">TRX/EUR</string>
+    <string name= "Tron_USD_asset" translatable="false">TRX/USD</string>
+
+    <string name= "USDCoin_EUR_asset" translatable="false">USDC/EUR</string>
+    <string name= "USDCoin_USD_asset" translatable="false">USDC/USD</string>
+
     <string name= "Waves_EUR_asset" translatable="false">WAVES/EUR</string>
     <string name= "Waves_USD_asset" translatable="false">WAVES/USD</string>
 
@@ -117,6 +126,9 @@
     <string name= "Zcash_USD_asset" translatable="false">ZEC/USD</string>
 
     <!-- Kraken pairs (for data polling) -->
+    <string name= "Algorand_USD_pair" translatable="false">ALGOUSD</string>
+    <string name= "Algorand_EUR_pair" translatable="false">ALGOEUR</string>
+
     <string name= "Augur_USD_pair" translatable="false">XREPZUSD</string>
     <string name= "Augur_EUR_pair" translatable="false">XREPZEUR</string>
 
@@ -205,6 +217,12 @@
     <string name= "Tezos_EUR_pair" translatable="false">XTZEUR</string>
     <string name= "Tezos_USD_pair" translatable="false">XTZUSD</string>
 
+    <string name= "Tron_EUR_pair" translatable="false">TRXEUR</string>
+    <string name= "Tron_USD_pair" translatable="false">TRXUSD</string>
+
+    <string name= "USDCoin_EUR_pair" translatable="false">USDCEUR</string>
+    <string name= "USDCoin_USD_pair" translatable="false">USDCUSD</string>
+
     <string name= "Waves_EUR_pair" translatable="false">WAVESEUR</string>
     <string name= "Waves_USD_pair" translatable="false">WAVESUSD</string>
 
@@ -222,6 +240,7 @@
 
 
     <!-- Market data -->
+    <string name= "Algorand_Market_data_title">Algorand Market data (%1$s)</string>
     <string name= "Augur_Market_data_title">Augur Market data (%1$s)</string>
     <string name= "BAT_Market_data_title">Basic Attention Token Market data (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
@@ -247,6 +266,8 @@
     <string name= "Stellar_Lumens_Market_data_title">Stellar Lumens Market data (%1$s)</string>
     <string name= "Tether_Market_data_title">Tether Market data (%1$s)</string>
     <string name= "Tezos_Market_data_title">Tezos Market data (%1$s)</string>
+    <string name= "Tron_Market_data_title">Tron Market data (%1$s)</string>
+    <string name= "USDCoin_Market_data_title">USD Coin Market data (%1$s)</string>
     <string name= "Waves_Market_data_title">Waves Market data (%1$s)</string>
     <string name= "Zcash_Market_data_title">Zcash Market data (%1$s)</string>
 

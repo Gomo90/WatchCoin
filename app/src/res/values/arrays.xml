@@ -27,6 +27,7 @@
 
     <!-- Currencies preferences entries value array -->
     <string-array name="KrakenEntriesArray" translatable="false">
+        <item>Algorand (ALGO)</item>
         <item>Augur (REP)</item>
         <item>Basic Attention Token (BAT)</item>
         <item>Bitcoin (XBT)</item>
@@ -41,6 +42,7 @@
         <item>Gnosis (GNO)</item>
         <item>Chainlink (LINK)</item>
         <item>Litecoin (LTC)</item>
+        <item>Lisk (LSK)</item>
         <item>Monero (XMR)</item>
         <item>Nano (NANO)</item>
         <item>OmiseGO (OMG)</item>
@@ -51,6 +53,8 @@
         <item>Stellar Lumens (XLM)</item>
         <item>Tether (USDT)</item>
         <item>Tezos (XTZ)</item>
+        <item>Tron (TRX)</item>
+        <item>USD Coin (USDC)</item>
         <item>Waves (Waves)</item>
         <item>Zcash (ZEC)</item>
     </string-array>
@@ -58,6 +62,7 @@
 
     <!-- Values to save for a preference when an entry from entries is selected -->
     <string-array name="KrakenEntryValuesArray" translatable="false">
+        <item>ALGO</item>
         <item>REP</item>
         <item>BAT</item>
         <item>XBT</item>
@@ -72,6 +77,7 @@
         <item>GNO</item>
         <item>LINK</item>
         <item>LTC</item>
+        <item>LSK</item>
         <item>XMR</item>
         <item>NANO</item>
         <item>OMG</item>
@@ -82,6 +88,8 @@
         <item>XLM</item>
         <item>USDT</item>
         <item>XTZ</item>
+        <item>TRX</item>
+        <item>USDC</item>
         <item>WAVES</item>
         <item>ZEC</item>
     </string-array>
