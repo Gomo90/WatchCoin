@@ -7,6 +7,12 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Result {
 
+    @SerializedName("ALGOEUR")
+    private ALGOEUR algoEuroData;
+
+    @SerializedName("ALGOUSD")
+    private ALGOUSD algoUSdollarData;
+
     @SerializedName("XREPZEUR")
     private XREPZEUR augurEuroData;
 
@@ -40,6 +46,9 @@ public class Result {
     @SerializedName("BCHEUR")
     private BCHEUR bitcoinCashEuroData;
 
+    @SerializedName("BCHGBP")
+    private BCHGBP bitcoinCashPoundData;
+
     @SerializedName("BCHUSD")
     private BCHUSD bitcoinCashUSdollarData;
 
@@ -48,12 +57,6 @@ public class Result {
 
     @SerializedName("ATOMUSD")
     private ATOMUSD cosmosUSdollarData;
-
-    @SerializedName("ATOMCAD")
-    private ATOMCAD cosmosCanadiandollarData;
-
-    @SerializedName("ADACAD")
-    private ADACAD cardanoCanadiandollarData;
 
     @SerializedName("ADAEUR")
     private ADAEUR cardanoEuroData;
@@ -118,6 +121,9 @@ public class Result {
     @SerializedName("XLTCZEUR")
     private XLTCZEUR litcoinEuroData;
 
+    @SerializedName("LTCGBP")
+    private LTCGBP litcoinPoundData;
+
     @SerializedName("XLTCZUSD")
     private XLTCZUSD litcoinUSdollarData;
 
@@ -151,9 +157,6 @@ public class Result {
     @SerializedName("PAXGUSD")
     private PAXGUSD paxgUSdollarData;
 
-    @SerializedName("QTUMCAD")
-    private QTUMCAD quantumCanadiandollarData;
-
     @SerializedName("QTUMEUR")
     private QTUMEUR quantumEuroData;
 
@@ -166,11 +169,14 @@ public class Result {
     @SerializedName("XXRPZEUR")
     private XXRPZEUR rippleEuroData;
 
-    @SerializedName("XXRPZJPY")
-    private XXRPZJPY rippleYenData;
+    @SerializedName("XRPGBP")
+    private XRPGBP ripplePoundData;
 
     @SerializedName("XXRPZUSD")
     private XXRPZUSD rippleUSdollarData;
+
+    @SerializedName("XXRPZJPY")
+    private XXRPZJPY rippleYenData;
 
     @SerializedName("SCEUR")
     private SCEUR siacoinEuroData;
@@ -184,17 +190,35 @@ public class Result {
     @SerializedName("XXLMZUSD")
     private XXLMZUSD stellarLumensUSdollarData;
 
+    @SerializedName("USDTCHF")
+    private USDTCHF tetherSwissFrancData;
+
+    @SerializedName("USDTEUR")
+    private USDTEUR tetherEuroData;
+
     @SerializedName("USDTZUSD")
     private USDTZUSD tetherUSdollarData;
 
-    @SerializedName("XTZCAD")
-    private XTZCAD tezosCanadiandollarData;
+    @SerializedName("USDTJPY")
+    private USDTJPY tetherYenData;
 
     @SerializedName("XTZEUR")
     private XTZEUR tezosEuroData;
 
     @SerializedName("XTZUSD")
     private XTZUSD tezosUSdollarData;
+
+    @SerializedName("TRXEUR")
+    private TRXEUR tronEuroData;
+
+    @SerializedName("TRXUSD")
+    private TRXUSD tronUSdollarData;
+
+    @SerializedName("USDCEUR")
+    private USDCEUR usdcEuroData;
+
+    @SerializedName("USDCUSD")
+    private USDCUSD usdcUSdollarData;
 
     @SerializedName("WAVESUSD")
     private WAVESUSD wavesUSdollarData;
@@ -205,12 +229,19 @@ public class Result {
     @SerializedName("XZECZEUR")
     private XZECZEUR zcashEuroData;
 
-    @SerializedName("XZECZJPY")
-    private XZECZJPY zcashYenData;
-
     @SerializedName("XZECZUSD")
     private XZECZUSD zcashUSdollarData;
 
+
+    public ALGOEUR getAlgorandEuroData() {
+
+        return this.algoEuroData;
+    }
+
+    public ALGOUSD getAlgorandUSdollarData() {
+
+        return this.algoUSdollarData;
+    }
 
     public XREPZEUR getAugurEuroData() {
 
@@ -267,6 +298,11 @@ public class Result {
         return this.bitcoinCashEuroData;
     }
 
+    public BCHGBP getBitcoinCashPoundData() {
+
+        return this.bitcoinCashPoundData;
+    }
+
     public BCHUSD getBitcoinCashUSdollarData() {
 
         return this.bitcoinCashUSdollarData;
@@ -280,16 +316,6 @@ public class Result {
     public ATOMUSD getCosmosUSdollarData() {
 
         return this.cosmosUSdollarData;
-    }
-
-    public ATOMCAD getCosmosCanadiandollarData() {
-
-        return this.cosmosCanadiandollarData;
-    }
-
-    public ADACAD getCardanoCanadiandollarData(){
-
-        return this.cardanoCanadiandollarData;
     }
 
     public ADAEUR getCardanoEuroData() {
@@ -397,6 +423,11 @@ public class Result {
         return this.litcoinEuroData;
     }
 
+    public LTCGBP getLitecoinPoundData() {
+
+        return this.litcoinPoundData;
+    }
+
     public XLTCZUSD getLitecoinUSdollarData() {
 
         return this.litcoinUSdollarData;
@@ -452,11 +483,6 @@ public class Result {
         return this.paxgUSdollarData;
     }
 
-    public QTUMCAD getQuantumCanadiandollarData() {
-
-        return this.quantumCanadiandollarData;
-    }
-
     public QTUMEUR getQuantumEuroData() {
 
         return this.quantumEuroData;
@@ -470,6 +496,11 @@ public class Result {
     public XXRPZEUR getRippleEuroData() {
 
         return this.rippleEuroData;
+    }
+
+    public XRPGBP getRipplePoundData() {
+
+        return this.ripplePoundData;
     }
 
     public XXRPZUSD getRippleUSdollarData() {
@@ -507,14 +538,24 @@ public class Result {
         return this.stellarLumensUSdollarData;
     }
 
+    public USDTCHF getTetherSwissFrancData() {
+
+        return this.tetherSwissFrancData;
+    }
+
+    public USDTEUR getTetherEuroData() {
+
+        return this.tetherEuroData;
+    }
+
     public USDTZUSD getTetherUSdollarData() {
 
         return this.tetherUSdollarData;
     }
 
-    public XTZCAD getTezosCanadiandollarData() {
+    public USDTJPY getTetherYenData() {
 
-        return this.tezosCanadiandollarData;
+        return this.tetherYenData;
     }
 
     public XTZEUR getTezosEuroData() {
@@ -525,6 +566,26 @@ public class Result {
     public XTZUSD getTezosUSdollarData() {
 
         return this.tezosUSdollarData;
+    }
+
+    public TRXEUR getTronEuroData() {
+
+        return this.tronEuroData;
+    }
+
+    public TRXUSD getTronUSdollarData() {
+
+        return this.tronUSdollarData;
+    }
+
+    public USDCEUR getUsdcEuroData() {
+
+        return this.usdcEuroData;
+    }
+
+    public USDCUSD getUsdcUSdollarData() {
+
+        return this.usdcUSdollarData;
     }
 
     public WAVESUSD getWavesUSdollarData() {
@@ -545,10 +606,5 @@ public class Result {
     public XZECZUSD getZcashUSdollarData() {
 
         return this.zcashUSdollarData;
-    }
-
-    public XZECZJPY getZcashYenData() {
-
-        return this.zcashYenData;
     }
 }

@@ -16,124 +16,17 @@
     <string name= "Navigation_drawer_menu1">Market data</string>
     <string name= "Navigation_drawer_menu2">Settings</string>
 
-
     <!-- Toolbar -->
     <string name= "Interval_label">Interval :</string>
 
     <!-- Kraken assets (ecurrency spinner) -->
-    <string name= "Algorand_USD_asset" translatable="false">ALGO/USD</string>
-    <string name= "Algorand_EUR_asset" translatable="false">ALGO/EUR</string>
-
-    <string name= "Augur_USD_asset" translatable="false">REP/USD</string>
-    <string name= "Augur_EUR_asset" translatable="false">REP/EUR</string>
-
-    <string name= "BAT_USD_asset" translatable="false">BAT/USD</string>
-    <string name= "BAT_EUR_asset" translatable="false">BAT/EUR</string>
-
-    <string name= "Bitcoin_CAD_asset" translatable="false">XBT/CAD</string>
-    <string name= "Bitcoin_EUR_asset" translatable="false">XBT/EUR</string>
-    <string name= "Bitcoin_CHF_asset" translatable="false">XBT/CHF</string>
-    <string name= "Bitcoin_GBP_asset" translatable="false">XBT/GBP</string>
-    <string name= "Bitcoin_JPY_asset" translatable="false">XBT/JPY</string>
-    <string name= "Bitcoin_USD_asset" translatable="false">XBT/USD</string>
-
-    <string name= "Bitcoin_Cash_EUR_asset" translatable="false">BCH/EUR</string>
-    <string name= "Bitcoin_Cash_USD_asset" translatable="false">BCH/USD</string>
-
-    <string name= "Cardano_CAD_asset" translatable="false">ADA/CAD</string>
-    <string name= "Cardano_EUR_asset" translatable="false">ADA/EUR</string>
-    <string name= "Cardano_USD_asset" translatable="false">ADA/USD</string>
-
-    <string name= "Cosmos_EUR_asset" translatable="false">ATOM/EUR</string>
-    <string name= "Cosmos_USD_asset" translatable="false">ATOM/USD</string>
-    <string name= "Cosmos_CAD_asset" translatable="false">ATOM/CAD</string>
-
-    <string name= "Dai_EUR_asset" translatable="false">DAI/EUR</string>
-    <string name= "Dai_USD_asset" translatable="false">DAI/USD</string>
-
-    <string name= "Dash_EUR_asset" translatable="false">DASH/EUR</string>
-    <string name= "Dash_USD_asset" translatable="false">DASH/USD</string>
-
-    <string name= "Eos_EUR_asset" translatable="false">EOS/EUR</string>
-    <string name= "Eos_USD_asset" translatable="false">EOS/USD</string>
-
-    <string name= "Ether_CAD_asset" translatable="false">ETH/CAD</string>
-    <string name= "Ether_EUR_asset" translatable="false">ETH/EUR</string>
-    <string name= "Ether_CHF_asset" translatable="false">ETH/CHF</string>
-    <string name= "Ether_GBP_asset" translatable="false">ETH/GBP</string>
-    <string name= "Ether_JPY_asset" translatable="false">ETH/JPY</string>
-    <string name= "Ether_USD_asset" translatable="false">ETH/USD</string>
-
-    <string name= "Etherclassic_EUR_asset" translatable="false">ETC/EUR</string>
-    <string name= "Etherclassic_USD_asset" translatable="false">ETC/USD</string>
-
-    <string name= "Gnosis_EUR_asset" translatable="false">GNO/EUR</string>
-    <string name= "Gnosis_USD_asset" translatable="false">GNO/USD</string>
-
-    <string name= "Chainlink_EUR_asset" translatable="false">LINK/EUR</string>
-    <string name= "Chainlink_USD_asset" translatable="false">LINK/USD</string>
-
-    <string name= "Litecoin_EUR_asset" translatable="false">LTC/EUR</string>
-    <string name= "Litecoin_USD_asset" translatable="false">LTC/USD</string>
-
-    <string name= "Lisk_EUR_asset" translatable="false">LSK/EUR</string>
-    <string name= "Lisk_USD_asset" translatable="false">LSK/USD</string>
-
-    <string name= "Monero_EUR_asset" translatable="false">XMR/EUR</string>
-    <string name= "Monero_USD_asset" translatable="false">XMR/USD</string>
-
-    <string name= "Nano_EUR_asset" translatable="false">NANO/EUR</string>
-    <string name= "Nano_USD_asset" translatable="false">NANO/USD</string>
-
-    <string name= "OmiseGO_EUR_asset" translatable="false">OMG/EUR</string>
-    <string name= "OmiseGO_USD_asset" translatable="false">OMG/USD</string>
-
-    <string name= "Paxg_EUR_asset" translatable="false">PAXG/EUR</string>
-    <string name= "Paxg_USD_asset" translatable="false">PAXG/USD</string>
-
-    <string name= "Quantum_CAD_asset" translatable="false">QTUM/CAD</string>
-    <string name= "Quantum_EUR_asset" translatable="false">QTUM/EUR</string>
-    <string name= "Quantum_USD_asset" translatable="false">QTUM/USD</string>
-
-    <string name= "Ripple_CAD_asset" translatable="false">XRP/CAD</string>
-    <string name= "Ripple_EUR_asset" translatable="false">XRP/EUR</string>
-    <string name= "Ripple_JPY_asset" translatable="false">XRP/JPY</string>
-    <string name= "Ripple_USD_asset" translatable="false">XRP/USD</string>
-
-    <string name= "Siacoin_EUR_asset" translatable="false">SC/EUR</string>
-    <string name= "Siacoin_USD_asset" translatable="false">SC/USD</string>
-
-    <string name= "Stellarlumens_EUR_asset" translatable="false">XLM/EUR</string>
-    <string name= "Stellatlumens_USD_asset" translatable="false">XLM/USD</string>
-
-    <string name= "Tether_USD_asset" translatable="false">USDT/USD</string>
-
-    <string name= "Tezos_CAD_asset" translatable="false">XTZ/CAD</string>
-    <string name= "Tezos_EUR_asset" translatable="false">XTZ/EUR</string>
-    <string name= "Tezos_USD_asset" translatable="false">XTZ/USD</string>
-
-    <string name= "Tron_EUR_asset" translatable="false">TRX/EUR</string>
-    <string name= "Tron_USD_asset" translatable="false">TRX/USD</string>
-
-    <string name= "USDCoin_EUR_asset" translatable="false">USDC/EUR</string>
-    <string name= "USDCoin_USD_asset" translatable="false">USDC/USD</string>
-
-    <string name= "Waves_EUR_asset" translatable="false">WAVES/EUR</string>
-    <string name= "Waves_USD_asset" translatable="false">WAVES/USD</string>
-
-    <string name= "Zcash_EUR_asset" translatable="false">ZEC/EUR</string>
-    <string name= "Zcash_JPY_asset" translatable="false">ZEC/JPY</string>
-    <string name= "Zcash_USD_asset" translatable="false">ZEC/USD</string>
+    <string name= "Kraken_asset" translatable="false">%1$s/%2$s</string>
 
     <!-- Kraken pairs (for data polling) -->
-    <string name= "Algorand_USD_pair" translatable="false">ALGOUSD</string>
-    <string name= "Algorand_EUR_pair" translatable="false">ALGOEUR</string>
+    <string name= "Kraken_pair" translatable="false">%1$s%2$s</string>
 
     <string name= "Augur_USD_pair" translatable="false">XREPZUSD</string>
     <string name= "Augur_EUR_pair" translatable="false">XREPZEUR</string>
-
-    <string name= "BAT_USD_pair" translatable="false">BATUSD</string>
-    <string name= "BAT_EUR_pair" translatable="false">BATEUR</string>
 
     <string name= "Bitcoin_CAD_pair" translatable="false">XXBTZCAD</string>
     <string name= "Bitcoin_EUR_pair" translatable="false">XXBTZEUR</string>
@@ -141,26 +34,6 @@
     <string name= "Bitcoin_GBP_pair" translatable="false">XXBTZGBP</string>
     <string name= "Bitcoin_JPY_pair" translatable="false">XXBTZJPY</string>
     <string name= "Bitcoin_USD_pair" translatable="false">XXBTZUSD</string>
-
-    <string name= "Bitcoin_Cash_EUR_pair" translatable="false">BCHEUR</string>
-    <string name= "Bitcoin_Cash_USD_pair" translatable="false">BCHUSD</string>
-
-    <string name= "Cardano_CAD_pair" translatable="false">ADACAD</string>
-    <string name= "Cardano_EUR_pair" translatable="false">ADAEUR</string>
-    <string name= "Cardano_USD_pair" translatable="false">ADAUSD</string>
-
-    <string name= "Cosmos_EUR_pair" translatable="false">ATOMEUR</string>
-    <string name= "Cosmos_USD_pair" translatable="false">ATOMUSD</string>
-    <string name= "Cosmos_CAD_pair" translatable="false">ATOMCAD</string>
-
-    <string name= "Dai_EUR_pair" translatable="false">DAIEUR</string>
-    <string name= "Dai_USD_pair" translatable="false">DAIUSD</string>
-
-    <string name= "Dash_EUR_pair" translatable="false">DASHEUR</string>
-    <string name= "Dash_USD_pair" translatable="false">DASHUSD</string>
-
-    <string name= "Eos_EUR_pair" translatable="false">EOSEUR</string>
-    <string name= "Eos_USD_pair" translatable="false">EOSUSD</string>
 
     <string name= "Ether_CAD_pair" translatable="false">XETHZCAD</string>
     <string name= "Ether_EUR_pair" translatable="false">XETHZEUR</string>
@@ -172,62 +45,28 @@
     <string name= "Etherclassic_EUR_pair" translatable="false">XETCZEUR</string>
     <string name= "Etherclassic_USD_pair" translatable="false">XETCZUSD</string>
 
-    <string name= "Gnosis_EUR_pair" translatable="false">GNOEUR</string>
-    <string name= "Gnosis_USD_pair" translatable="false">GNOUSD</string>
-
-    <string name= "Chainlink_EUR_pair" translatable="false">LINKEUR</string>
-    <string name= "Chainlink_USD_pair" translatable="false">LINKUSD</string>
-
     <string name= "Litecoin_EUR_pair" translatable="false">XLTCZEUR</string>
+    <string name= "Litecoin_GBP_pair" translatable="false">LTCGBP</string>
     <string name= "Litecoin_USD_pair" translatable="false">XLTCZUSD</string>
-
-    <string name= "Lisk_EUR_pair" translatable="false">LSKEUR</string>
-    <string name= "Lisk_USD_pair" translatable="false">LSKUSD</string>
 
     <string name= "Monero_EUR_pair" translatable="false">XXMRZEUR</string>
     <string name= "Monero_USD_pair" translatable="false">XXMRZUSD</string>
 
-    <string name= "Nano_EUR_pair" translatable="false">NANOEUR</string>
-    <string name= "Nano_USD_pair" translatable="false">NANOUSD</string>
-
-    <string name= "OmiseGO_EUR_pair" translatable="false">OMGEUR</string>
-    <string name= "OmiseGO_USD_pair" translatable="false">OMGUSD</string>
-
-    <string name= "Paxg_EUR_pair" translatable="false">PAXGEUR</string>
-    <string name= "Paxg_USD_pair" translatable="false">PAXGUSD</string>
-
-    <string name= "Quantum_CAD_pair" translatable="false">QTUMCAD</string>
-    <string name= "Quantum_EUR_pair" translatable="false">QTUMEUR</string>
-    <string name= "Quantum_USD_pair" translatable="false">QTUMUSD</string>
-
     <string name= "Ripple_CAD_pair" translatable="false">XXRPZCAD</string>
     <string name= "Ripple_EUR_pair" translatable="false">XXRPZEUR</string>
+    <string name= "Ripple_GBP_pair" translatable="false">XRPGBP</string>
     <string name= "Ripple_JPY_pair" translatable="false">XXRPZJPY</string>
     <string name= "Ripple_USD_pair" translatable="false">XXRPZUSD</string>
-
-    <string name= "Siacoin_EUR_pair" translatable="false">SCEUR</string>
-    <string name= "Siacoin_USD_pair" translatable="false">SCUSD</string>
 
     <string name= "Stellarlumens_EUR_pair" translatable="false">XXLMZEUR</string>
     <string name= "Stellatlumens_USD_pair" translatable="false">XXLMZUSD</string>
 
+    <string name= "Tether_EUR_pair" translatable="false">USDTEUR</string>
+    <string name= "Tether_CHF_pair" translatable="false">USDTCHF</string>
+    <string name= "Tether_JPY_pair" translatable="false">USDTJPY</string>
     <string name= "Tether_USD_pair" translatable="false">USDTZUSD</string>
 
-    <string name= "Tezos_CAD_pair" translatable="false">XTZCAD</string>
-    <string name= "Tezos_EUR_pair" translatable="false">XTZEUR</string>
-    <string name= "Tezos_USD_pair" translatable="false">XTZUSD</string>
-
-    <string name= "Tron_EUR_pair" translatable="false">TRXEUR</string>
-    <string name= "Tron_USD_pair" translatable="false">TRXUSD</string>
-
-    <string name= "USDCoin_EUR_pair" translatable="false">USDCEUR</string>
-    <string name= "USDCoin_USD_pair" translatable="false">USDCUSD</string>
-
-    <string name= "Waves_EUR_pair" translatable="false">WAVESEUR</string>
-    <string name= "Waves_USD_pair" translatable="false">WAVESUSD</string>
-
     <string name= "Zcash_EUR_pair" translatable="false">XZECZEUR</string>
-    <string name= "Zcash_JPY_pair" translatable="false">XZECZJPY</string>
     <string name= "Zcash_USD_pair" translatable="false">XZECZUSD</string>
 
     <!-- Fiat symbol -->
@@ -237,6 +76,14 @@
     <string name= "Swiss_Franc_symbol" translatable="false">CHF</string>
     <string name= "Yen_symbol" translatable="false">¥</string>
     <string name= "Pounds_symbol" translatable="false">£</string>
+
+    <!-- Fiat data -->
+    <string name= "Canadian_dollar" translatable="false">CAD</string>
+    <string name= "Euro" translatable="false">EUR</string>
+    <string name= "Pounds" translatable="false">GBP</string>
+    <string name= "US_dollar" translatable="false">USD</string>
+    <string name= "Yen" translatable="false">JPY</string>
+
 
 
     <!-- Market data -->

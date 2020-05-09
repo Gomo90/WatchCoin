@@ -204,16 +204,39 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
             switch (krakenAsset) {
 
-                // Algorand (ALGO)
+                // Algorand (ALGO) | Basic Attention Token (BAT) | Cardano (ADA) | Cosmos (ATOM) | DAI (DIA)
+                // DASH (DASH) | EOS (EOS) | Gnosis (GNO) | Chainlink (LINK) | Lisk (LSK) | Nano (NANO)
+                // OmiseGO (OMG) | Pax Gold (PAXG) | Quantum (QTUM) | Siacoin (SC) | Tezos (XTZ) | Tron (TRX)
+                // USDC (USD Coin) | Waves (WAVES)
                 case "ALGO":
+                case "BAT" :
+                case "ADA" :
+                case "ATOM" :
+                case "DAI" :
+                case "DASH" :
+                case "EOS" :
+                case "GNO" :
+                case "LINK" :
+                case "LSK" :
+                case "NANO" :
+                case "OMG" :
+                case "PAXG" :
+                case "QTUM" :
+                case "SC" :
+                case "XTZ" :
+                case "TRX" :
+                case "USDC" :
+                case "WAVES" :
 
                     // EUR and USD
                     if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Algorand_USD_pair).concat(","));
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.US_dollar)).concat(","));
                     }
 
                     if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Algorand_EUR_pair).concat(","));
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.Euro)).concat(","));
                     }
 
                     break;
@@ -228,20 +251,6 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     if (eurosSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Augur_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // Basic Attention Token (BAT)
-                case "BAT" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.BAT_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.BAT_EUR_pair).concat(","));
                     }
 
                     break;
@@ -279,93 +288,20 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Bitcoin Cash (BCH)
                 case "BCH" :
 
-                    // EUR and USD
+                    // EUR, GBP and USD
                     if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Bitcoin_Cash_USD_pair).concat(","));
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.US_dollar)).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.Pounds)).concat(","));
                     }
 
                     if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Bitcoin_Cash_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-
-                // Cardano (ADA)
-                case "ADA" :
-
-                    // CAD, EUR and USD
-                    if (canadianDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Cardano_CAD_pair).concat(","));
-                    }
-
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Cardano_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Cardano_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // Cosmos (ATOM)
-                case "ATOM" :
-
-                    //CAD, EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Cosmos_USD_pair).concat(","));
-                    }
-
-                    if(canadianDollarSelected){
-                        assetsList.append(ihmConsole.getString(R.string.Cosmos_CAD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Cosmos_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-
-                // DAI (DIA)
-                case "DAI" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Dai_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Dai_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // DASH (DASH)
-                case "DASH" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Dash_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Dash_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // EOS (EOS)
-                case "EOS" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Eos_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Eos_EUR_pair).concat(","));
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.Euro)).concat(","));
                     }
 
                     break;
@@ -400,7 +336,6 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     break;
 
-
                 // Ether Classic (ETC)
                 case "ETC" :
 
@@ -415,52 +350,16 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     break;
 
-
-                // Gnosis (GNO)
-                case "GNO" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Gnosis_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Gnosis_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-
-                // Chainlink (LINK)
-                case "LINK" :
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Chainlink_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Chainlink_EUR_pair).concat(","));
-                    }
-                    break;
-
-                 // Lisk (LSK)
-                case "LSK" :
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Lisk_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Lisk_EUR_pair).concat(","));
-                    }
-                    break;
-
                 // Litecoin (LTC)
                 case "LTC" :
 
-                    // EUR and USD
+                    // EUR, GBP and USD
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Litecoin_USD_pair).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Litecoin_GBP_pair).concat(","));
                     }
 
                     if (eurosSelected) {
@@ -483,72 +382,16 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     break;
 
-                // Nano (NANO)
-                case "NANO" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Nano_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Nano_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // OmiseGO (OMG)
-                case "OMG" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.OmiseGO_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.OmiseGO_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // Pax Gold (PAXG)
-                case "PAXG" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Paxg_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Paxg_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // Quantum (QTUM)
-                case "QTUM" :
-
-                    // CAD, EUR and USD
-                    if(canadianDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Quantum_CAD_pair).concat(","));
-                    }
-
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Quantum_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Quantum_EUR_pair).concat(","));
-                    }
-
-                    break;
-
                 // Ripple (XRP)
                 case "XRP" :
 
-                    // CAD, EUR, JPY and USD
+                    // CAD, EUR, GBP, JPY and USD
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Ripple_USD_pair).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Ripple_GBP_pair).concat(","));
                     }
 
                     if (canadianDollarSelected) {
@@ -561,20 +404,6 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                     if (japaneseYenSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Ripple_JPY_pair).concat(","));
-                    }
-
-                    break;
-
-                // Siacoin (SC)
-                case "SC" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Siacoin_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Siacoin_EUR_pair).concat(","));
                     }
 
                     break;
@@ -596,69 +425,21 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Tether (USDT)
                 case "USDT" :
 
-                    // USD
+                    // EUR, CHF, JPY and USD
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Tether_USD_pair).concat(","));
                     }
 
-                    break;
-
-                // Tezos (XTZ)
-                case "XTZ" :
-
-                    // CAD, EUR and USD
-                    if (canadianDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Tezos_CAD_pair).concat(","));
-                    }
-
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Tezos_USD_pair).concat(","));
-                    }
-
                     if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Tezos_EUR_pair).concat(","));
+                        assetsList.append(ihmConsole.getString(R.string.Tether_EUR_pair).concat(","));
                     }
 
-                    break;
-
-                // Tron (TRX)
-                case "TRX" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Tron_USD_pair).concat(","));
+                    if (swissFrancSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Tether_CHF_pair).concat(","));
                     }
 
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Tron_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // USDC (USD Coin)
-                case "USDC" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.USDCoin_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.USDCoin_EUR_pair).concat(","));
-                    }
-
-                    break;
-
-                // Waves (WAVES)
-                case "WAVES" :
-
-                    // EUR and USD
-                    if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Waves_USD_pair).concat(","));
-                    }
-
-                    if (eurosSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Waves_EUR_pair).concat(","));
+                    if (japaneseYenSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Tether_JPY_pair).concat(","));
                     }
 
                     break;
@@ -666,17 +447,13 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Zcash (ZEC)
                 case "ZEC" :
 
-                    // EUR, JPY and USD
+                    // EUR and USD
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Zcash_USD_pair).concat(","));
                     }
 
                     if (eurosSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Zcash_EUR_pair).concat(","));
-                    }
-
-                    if (japaneseYenSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Zcash_JPY_pair).concat(","));
                     }
 
                     break;

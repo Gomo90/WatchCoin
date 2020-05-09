@@ -2,6 +2,7 @@ package com.watchcoin.Json;
 
 /**
  * Class used for JSON data deserialization received by the Kraken API
- * concerning the Cosmos Canadian dollar datas
+ * concerning the Tether pound sterling datas
  */
-public class ATOMCAD extends CurrencyElements {}
+public class USDTJPY extends CurrencyElements {
+}

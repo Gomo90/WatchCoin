@@ -269,6 +269,23 @@ public class CurrencyData {
 
                 break;
 
+            case "BCH/GBP" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Bitcoin_Cash_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getBitcoinCashPoundData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getBitcoinCashPoundData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getBitcoinCashPoundData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getBitcoinCashPoundData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getBitcoinCashPoundData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getBitcoinCashPoundData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getBitcoinCashPoundData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getBitcoinCashPoundData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getBitcoinCashPoundData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getBitcoinCashPoundData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getBitcoinCashPoundData().getTradesArray().get(1)));
+
+                break;
+
             case "ATOM/USD" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cosmos_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
@@ -300,40 +317,6 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getCosmosEuroData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getCosmosEuroData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getCosmosEuroData().getTradesArray().get(1)));
-
-                break;
-
-            case "ATOM/CAD" :
-
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cosmos_Market_data_title), resources.getString(R.string.Euro_symbol)));
-                cryptoCurrencyDataMap.put("askPriceValue", result.getCosmosCanadiandollarData().getAskArray().get(0));
-                cryptoCurrencyDataMap.put("bidPriceValue", result.getCosmosCanadiandollarData().getBidArray().get(0));
-                cryptoCurrencyDataMap.put("lastPriceValue", result.getCosmosCanadiandollarData().getLastPriceArray().get(0));
-                cryptoCurrencyDataMap.put("highPriceValue", result.getCosmosCanadiandollarData().getHighPriceArray().get(0));
-                cryptoCurrencyDataMap.put("lowPriceValue", result.getCosmosCanadiandollarData().getLowPriceArray().get(0));
-                cryptoCurrencyDataMap.put("avgPriceValue", result.getCosmosCanadiandollarData().getAvgPriceArray().get(0));
-                cryptoCurrencyDataMap.put("openPriceValue", result.getCosmosCanadiandollarData().getOpeningPrice());
-                cryptoCurrencyDataMap.put("volumeValue", result.getCosmosCanadiandollarData().getVolumeArray().get(0));
-                cryptoCurrencyDataMap.put("volume24Value", result.getCosmosCanadiandollarData().getVolumeArray().get(1));
-                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getCosmosCanadiandollarData().getTradesArray().get(0)));
-                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getCosmosCanadiandollarData().getTradesArray().get(1)));
-
-                break;
-
-            case "ADA/CAD" :
-
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cardano_Market_data_title), resources.getString(R.string.Canadian_dollar_symbol)));
-                cryptoCurrencyDataMap.put("askPriceValue", result.getCardanoCanadiandollarData().getAskArray().get(0));
-                cryptoCurrencyDataMap.put("bidPriceValue", result.getCardanoCanadiandollarData().getBidArray().get(0));
-                cryptoCurrencyDataMap.put("lastPriceValue", result.getCardanoCanadiandollarData().getLastPriceArray().get(0));
-                cryptoCurrencyDataMap.put("highPriceValue", result.getCardanoCanadiandollarData().getHighPriceArray().get(0));
-                cryptoCurrencyDataMap.put("lowPriceValue", result.getCardanoCanadiandollarData().getLowPriceArray().get(0));
-                cryptoCurrencyDataMap.put("avgPriceValue", result.getCardanoCanadiandollarData().getAvgPriceArray().get(0));
-                cryptoCurrencyDataMap.put("openPriceValue", result.getCardanoCanadiandollarData().getOpeningPrice());
-                cryptoCurrencyDataMap.put("volumeValue", result.getCardanoCanadiandollarData().getVolumeArray().get(0));
-                cryptoCurrencyDataMap.put("volume24Value", result.getCardanoCanadiandollarData().getVolumeArray().get(1));
-                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getCardanoCanadiandollarData().getTradesArray().get(0)));
-                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getCardanoCanadiandollarData().getTradesArray().get(1)));
 
                 break;
 
@@ -728,6 +711,23 @@ public class CurrencyData {
 
                 break;
 
+            case "LTC/GBP" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Litcoin_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getLitecoinPoundData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getLitecoinPoundData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getLitecoinPoundData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getLitecoinPoundData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getLitecoinPoundData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getLitecoinPoundData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getLitecoinPoundData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getLitecoinPoundData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getLitecoinPoundData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getLitecoinPoundData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getLitecoinPoundData().getTradesArray().get(1)));
+
+                break;
+
             case "LTC/USD" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Litcoin_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
@@ -742,6 +742,57 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getLitecoinUSdollarData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getLitecoinUSdollarData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getLitecoinUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "USDT/CHF" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tether_Market_data_title), resources.getString(R.string.Swiss_Franc_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getTetherSwissFrancData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getTetherSwissFrancData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getTetherSwissFrancData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getTetherSwissFrancData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getTetherSwissFrancData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getTetherSwissFrancData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getTetherSwissFrancData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getTetherSwissFrancData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getTetherSwissFrancData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getTetherSwissFrancData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getTetherSwissFrancData().getTradesArray().get(1)));
+
+                break;
+
+            case "USDT/EUR" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tether_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getTetherEuroData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getTetherEuroData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getTetherEuroData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getTetherEuroData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getTetherEuroData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getTetherEuroData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getTetherEuroData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getTetherEuroData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getTetherEuroData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getTetherEuroData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getTetherEuroData().getTradesArray().get(1)));
+
+                break;
+
+            case "USDT/JPY" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tether_Market_data_title), resources.getString(R.string.Yen_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getTetherYenData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getTetherYenData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getTetherYenData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getTetherYenData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getTetherYenData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getTetherYenData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getTetherYenData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getTetherYenData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getTetherYenData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getTetherYenData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getTetherYenData().getTradesArray().get(1)));
 
                 break;
 
@@ -898,23 +949,6 @@ public class CurrencyData {
 
                 break;
 
-            case "QTUM/CAD" :
-
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Quantum_Market_data_title), resources.getString(R.string.Canadian_dollar_symbol)));
-                cryptoCurrencyDataMap.put("askPriceValue", result.getQuantumCanadiandollarData().getAskArray().get(0));
-                cryptoCurrencyDataMap.put("bidPriceValue", result.getQuantumCanadiandollarData().getBidArray().get(0));
-                cryptoCurrencyDataMap.put("lastPriceValue", result.getQuantumCanadiandollarData().getLastPriceArray().get(0));
-                cryptoCurrencyDataMap.put("highPriceValue", result.getQuantumCanadiandollarData().getHighPriceArray().get(0));
-                cryptoCurrencyDataMap.put("lowPriceValue", result.getQuantumCanadiandollarData().getLowPriceArray().get(0));
-                cryptoCurrencyDataMap.put("avgPriceValue", result.getQuantumCanadiandollarData().getAvgPriceArray().get(0));
-                cryptoCurrencyDataMap.put("openPriceValue", result.getQuantumCanadiandollarData().getOpeningPrice());
-                cryptoCurrencyDataMap.put("volumeValue", result.getQuantumCanadiandollarData().getVolumeArray().get(0));
-                cryptoCurrencyDataMap.put("volume24Value", result.getQuantumCanadiandollarData().getVolumeArray().get(1));
-                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getQuantumCanadiandollarData().getTradesArray().get(0)));
-                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getQuantumCanadiandollarData().getTradesArray().get(1)));
-
-                break;
-
             case "QTUM/EUR" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Quantum_Market_data_title), resources.getString(R.string.Euro_symbol)));
@@ -980,6 +1014,23 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getRippleEuroData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getRippleEuroData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getRippleEuroData().getTradesArray().get(1)));
+
+                break;
+
+            case "XRP/GBP" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Ripple_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getRipplePoundData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getRipplePoundData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getRipplePoundData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getRipplePoundData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getRipplePoundData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getRipplePoundData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getRipplePoundData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getRipplePoundData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getRipplePoundData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getRipplePoundData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getRipplePoundData().getTradesArray().get(1)));
 
                 break;
 
@@ -1082,23 +1133,6 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getStellarLumensUSdollarData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getStellarLumensUSdollarData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getStellarLumensUSdollarData().getTradesArray().get(1)));
-
-                break;
-
-            case "XTZ/CAD" :
-
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tezos_Market_data_title), resources.getString(R.string.Canadian_dollar_symbol)));
-                cryptoCurrencyDataMap.put("askPriceValue", result.getTezosCanadiandollarData().getAskArray().get(0));
-                cryptoCurrencyDataMap.put("bidPriceValue", result.getTezosCanadiandollarData().getBidArray().get(0));
-                cryptoCurrencyDataMap.put("lastPriceValue", result.getTezosCanadiandollarData().getLastPriceArray().get(0));
-                cryptoCurrencyDataMap.put("highPriceValue", result.getTezosCanadiandollarData().getHighPriceArray().get(0));
-                cryptoCurrencyDataMap.put("lowPriceValue", result.getTezosCanadiandollarData().getLowPriceArray().get(0));
-                cryptoCurrencyDataMap.put("avgPriceValue", result.getTezosCanadiandollarData().getAvgPriceArray().get(0));
-                cryptoCurrencyDataMap.put("openPriceValue", result.getTezosCanadiandollarData().getOpeningPrice());
-                cryptoCurrencyDataMap.put("volumeValue", result.getTezosCanadiandollarData().getVolumeArray().get(0));
-                cryptoCurrencyDataMap.put("volume24Value", result.getTezosCanadiandollarData().getVolumeArray().get(1));
-                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getTezosCanadiandollarData().getTradesArray().get(0)));
-                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getTezosCanadiandollarData().getTradesArray().get(1)));
 
                 break;
 
@@ -1252,23 +1286,6 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getZcashEuroData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getZcashEuroData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getZcashEuroData().getTradesArray().get(1)));
-
-                break;
-
-            case "ZEC/JPY" :
-
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Zcash_Market_data_title), resources.getString(R.string.Yen_symbol)));
-                cryptoCurrencyDataMap.put("askPriceValue", result.getZcashYenData().getAskArray().get(0));
-                cryptoCurrencyDataMap.put("bidPriceValue", result.getZcashYenData().getBidArray().get(0));
-                cryptoCurrencyDataMap.put("lastPriceValue", result.getZcashYenData().getLastPriceArray().get(0));
-                cryptoCurrencyDataMap.put("highPriceValue", result.getZcashYenData().getHighPriceArray().get(0));
-                cryptoCurrencyDataMap.put("lowPriceValue", result.getZcashYenData().getLowPriceArray().get(0));
-                cryptoCurrencyDataMap.put("avgPriceValue", result.getZcashYenData().getAvgPriceArray().get(0));
-                cryptoCurrencyDataMap.put("openPriceValue", result.getZcashYenData().getOpeningPrice());
-                cryptoCurrencyDataMap.put("volumeValue", result.getZcashYenData().getVolumeArray().get(0));
-                cryptoCurrencyDataMap.put("volume24Value", result.getZcashYenData().getVolumeArray().get(1));
-                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getZcashYenData().getTradesArray().get(0)));
-                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getZcashYenData().getTradesArray().get(1)));
 
                 break;
 
