@@ -116,3 +116,20 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	(Algorand) ALGO/USD ALGO/EUR
 	(Tron) TRX/USD TRX/EUR
 	(USD Coin) USDC/USD USDC/EUR
+
+# Version 1.11 : (09/05/2020)
+
+	- Six currency pairs added :
+	
+	(Bitcoin Cash) BCH/GBP
+	(Litecoin) LTC/GBP
+	(Ripple) XRP/GBP
+	(Tether) USDT/EUR USDT/CHF USDT/JPY
+	
+	- Five currency pairs deleted (not referenced anymore on Kraken platform) :
+	
+	(Cosmos)  ATOM/CAD
+	(Cardano) ADA/CAD
+	(ZCash)   ZEC/JPY
+	(Tezos)   XTZ/CAD
+	(Quantum) QTUM/CAD
