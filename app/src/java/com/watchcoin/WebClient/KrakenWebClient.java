@@ -206,7 +206,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
                 // Algorand (ALGO) | Basic Attention Token (BAT) | Cardano (ADA) | Cosmos (ATOM) | DAI (DIA)
                 // DASH (DASH) | EOS (EOS) | Gnosis (GNO) | Chainlink (LINK) | Lisk (LSK) | Nano (NANO)
-                // OmiseGO (OMG) | Pax Gold (PAXG) | Quantum (QTUM) | Siacoin (SC) | Tezos (XTZ) | Tron (TRX)
+                // OmiseGO (OMG) | Orchid (OXT) |Pax Gold (PAXG) | Quantum (QTUM) | Siacoin (SC) | Tezos (XTZ) | Tron (TRX)
                 // USDC (USD Coin) | Waves (WAVES)
                 case "ALGO":
                 case "BAT" :
@@ -220,6 +220,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 case "LSK" :
                 case "NANO" :
                 case "OMG" :
+                case "OXT" :
                 case "PAXG" :
                 case "QTUM" :
                 case "SC" :

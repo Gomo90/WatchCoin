@@ -363,7 +363,7 @@ public class IHMConsole extends AppCompatActivity
 
                     // Algorand (ALGO) | Augur (REP) | Basic Attention Token (BAT) | Cardano (ADA) | Cosmos (ATOM)
                     // Dai (DAI) | DASH (DASH) | EOS (EOS) | Ether Classic (ETC) | Gnosis (GNO) | Chainlink (LINK)
-                    // Lisk(LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Pax Gold (PAXG) | Quantum (QTUM)
+                    // Lisk(LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG) | Quantum (QTUM)
                     // Siacoin (SC) | Stellar Lumens (XLM) | Tezos (XTZ) | Tron (TRX) | USD Coin (USDC)
                     // Waves (WAVES) | Zcash (ZEC)
                     case "ALGO":
@@ -381,6 +381,7 @@ public class IHMConsole extends AppCompatActivity
                     case "XMR" :
                     case "NANO" :
                     case "OMG" :
+                    case "OXT" :
                     case "PAXG" :
                     case "QTUM" :
                     case "SC" :
@@ -794,6 +795,14 @@ public class IHMConsole extends AppCompatActivity
 
                 case "OMG/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.OmiseGO_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "OXT/EUR":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Orchid_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "OXT/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Orchid_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "PAXG/EUR":

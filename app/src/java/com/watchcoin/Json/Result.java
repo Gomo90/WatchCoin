@@ -151,6 +151,12 @@ public class Result {
     @SerializedName("OMGUSD")
     private OMGUSD omisegoUSdollarData;
 
+    @SerializedName("OXTEUR")
+    private OXTEUR orchidEuroData;
+
+    @SerializedName("OXTUSD")
+    private OXTUSD orchidUSdollarData;
+
     @SerializedName("PAXGEUR")
     private PAXGEUR paxgEuroData;
 
@@ -471,6 +477,16 @@ public class Result {
     public OMGUSD getOmiseGOUSdollarData() {
 
         return this.omisegoUSdollarData;
+    }
+
+    public OXTEUR getOrchidEuroData() {
+
+        return this.orchidEuroData;
+    }
+
+    public OXTUSD getOrchidUSdollarData() {
+
+        return this.orchidUSdollarData;
     }
 
     public PAXGEUR getPaxgEuroData() {

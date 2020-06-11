@@ -915,6 +915,40 @@ public class CurrencyData {
 
                 break;
 
+            case "OXT/EUR" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Orchid_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getOrchidEuroData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getOrchidEuroData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getOrchidEuroData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getOrchidEuroData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getOrchidEuroData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getOrchidEuroData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getOrchidEuroData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getOrchidEuroData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getOrchidEuroData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getOrchidEuroData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getOrchidEuroData().getTradesArray().get(1)));
+
+                break;
+
+            case "OXT/USD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Orchid_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getOrchidUSdollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getOrchidUSdollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getOrchidUSdollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getOrchidUSdollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getOrchidUSdollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getOrchidUSdollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getOrchidUSdollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getOrchidUSdollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getOrchidUSdollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getOrchidUSdollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getOrchidUSdollarData().getTradesArray().get(1)));
+
+                break;
+
             case "PAXG/EUR" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Paxg_Market_data_title), resources.getString(R.string.Euro_symbol)));
