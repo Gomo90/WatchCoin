@@ -135,3 +135,7 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	(Quantum) QTUM/CAD
 
 # Version 1.12 : (11/06/2020)
+
+	- Two currency pairs added : 	
+	
+	(Orchid)OXT/USD OXT/EUR
