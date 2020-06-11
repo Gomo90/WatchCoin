@@ -133,3 +133,5 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	(ZCash)   ZEC/JPY
 	(Tezos)   XTZ/CAD
 	(Quantum) QTUM/CAD
+
+# Version 1.12 : (11/06/2020)
