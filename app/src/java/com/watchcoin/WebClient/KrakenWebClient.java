@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import static com.watchcoin.MainActivity.preferencesApp;
@@ -185,6 +186,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
         dataPolling.setKrakenApiAddress(preferencesApp.getString("kraken_url_api", ihmConsole.getDefaultKrakenApiAddress()));
 
         // Fiat currencies configuration
+        boolean australianDollarSelected = sharedPreferencesApp.getBoolean("australian_dollar_checkbox", Boolean.FALSE);
         boolean americanDollarSelected = sharedPreferencesApp.getBoolean("us_dollar_checkbox", Boolean.FALSE);
         boolean britishPoundsSelected = sharedPreferencesApp.getBoolean("british_pounds_checkbox", Boolean.FALSE);
         boolean canadianDollarSelected = sharedPreferencesApp.getBoolean("canadian_dollar_checkbox", Boolean.FALSE);
@@ -193,8 +195,10 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
         boolean japaneseYenSelected = sharedPreferencesApp.getBoolean("japanese_yen_checkbox", Boolean.FALSE);
 
         // Set kraken assets selected
+        Set<String> krakenAssetsList = new HashSet<>();
 
-        Set<String> krakenAssetsList = sharedPreferencesApp.getStringSet("kraken_assets_list", null);
+        krakenAssetsList.addAll(sharedPreferencesApp.getStringSet("kraken_assets_list", null));
+        krakenAssetsList.addAll(sharedPreferencesApp.getStringSet("defi_kraken_assets_list", null));
 
         // Build the asset list chain for the data polling instance
         assetsList.append("pair=");
@@ -204,18 +208,22 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
             switch (krakenAsset) {
 
-                // Algorand (ALGO) | Basic Attention Token (BAT) | Cardano (ADA) | Cosmos (ATOM) | DAI (DIA)
-                // DASH (DASH) | EOS (EOS) | Gnosis (GNO) | Chainlink (LINK) | Lisk (LSK) | Nano (NANO)
-                // OmiseGO (OMG) | Orchid (OXT) |Pax Gold (PAXG) | Quantum (QTUM) | Siacoin (SC) | Tezos (XTZ) | Tron (TRX)
-                // USDC (USD Coin) | Waves (WAVES)
+                // Algorand (ALGO) | Augur (REP) | Basic Attention Token (BAT) | Cardano (ADA) | Compound (COMP)
+                // Cosmos (ATOM) | Dai (DAI) | DASH (DASH) | EOS (EOS) | Ether Classic (ETC) | Gnosis (GNO) | Chainlink (LINK)
+                // Kava (KAVA) | Kyber Network (KNC) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG) | Quantum (QTUM)
+                // Siacoin (SC) | Stellar Lumens (XLM) | Storj (STORJ) | Tezos (XTZ) | Tron (TRX) | USD Coin (USDC)
+                // Waves (WAVES) | Zcash (ZEC)
                 case "ALGO":
                 case "BAT" :
                 case "ADA" :
                 case "ATOM" :
+                case "COMP":
                 case "DAI" :
                 case "DASH" :
                 case "EOS" :
                 case "GNO" :
+                case "KAVA" :
+                case "KNC" :
                 case "LINK" :
                 case "LSK" :
                 case "NANO" :
@@ -224,6 +232,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 case "PAXG" :
                 case "QTUM" :
                 case "SC" :
+                case "STORJ" :
                 case "XTZ" :
                 case "TRX" :
                 case "USDC" :
@@ -259,7 +268,11 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Bitcoin (XBT)
                 case "XBT" :
 
-                    // CAD, EUR, CHF, GBP, JPY and USD
+                    // AUD, CAD, EUR, CHF, GBP, JPY and USD
+                    if (australianDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Bitcoin_AUD_pair).concat(","));
+                    }
+
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Bitcoin_USD_pair).concat(","));
                     }
@@ -289,7 +302,12 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Bitcoin Cash (BCH)
                 case "BCH" :
 
-                    // EUR, GBP and USD
+                    // AUD, EUR, GBP and USD
+                    if (australianDollarSelected) {
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.Australian_dollar)).concat(","));
+                    }
+
                     if (americanDollarSelected) {
                         assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
                                 ihmConsole.getString(R.string.US_dollar)).concat(","));
@@ -310,7 +328,11 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Ether (ETH)
                 case "ETH" :
 
-                    // CAD, EUR, CHF, GBP, JPY and USD
+                    // AUD, CAD, EUR, CHF, GBP, JPY and USD
+                    if (australianDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Ether_AUD_pair).concat(","));
+                    }
+
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Ether_USD_pair).concat(","));
                     }
@@ -354,7 +376,11 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Litecoin (LTC)
                 case "LTC" :
 
-                    // EUR, GBP and USD
+                    // AUD, EUR, GBP and USD
+                    if (australianDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Litecoin_AUD_pair).concat(","));
+                    }
+
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Litecoin_USD_pair).concat(","));
                     }
@@ -386,7 +412,11 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Ripple (XRP)
                 case "XRP" :
 
-                    // CAD, EUR, GBP, JPY and USD
+                    // AUD, CAD, EUR, GBP, JPY and USD
+                    if (australianDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Ripple_AUD_pair).concat(","));
+                    }
+
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Ripple_USD_pair).concat(","));
                     }
@@ -426,7 +456,11 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 // Tether (USDT)
                 case "USDT" :
 
-                    // EUR, CHF, JPY and USD
+                    // AUD, EUR, CHF, JPY and USD
+                    if (australianDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Tether_AUD_pair).concat(","));
+                    }
+
                     if (americanDollarSelected) {
                         assetsList.append(ihmConsole.getString(R.string.Tether_USD_pair).concat(","));
                     }

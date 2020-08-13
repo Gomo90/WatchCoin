@@ -96,6 +96,19 @@
         <item>ZEC</item>
     </string-array>
 
+    <string-array name="DeFiKrakenEntriesArray" translatable="false">
+        <item>Compound (COMP)</item>
+        <item>Kava (KAVA)</item>
+        <item>Kyber Network (KNC)</item>
+        <item>Storj (STORJ)</item>
+    </string-array>
+
+    <string-array name="DeFiKrakenEntryValuesArray" translatable="false">
+        <item>COMP</item>
+        <item>KAVA</item>
+        <item>KNC</item>
+        <item>STORJ</item>
+    </string-array>
 
     <!-- Default values selected when the first execution of application -->
     <string-array name="KrakenDefaultEntryValuesArray" translatable="false">

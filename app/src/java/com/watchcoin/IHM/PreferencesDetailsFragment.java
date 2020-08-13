@@ -17,10 +17,13 @@ import android.util.DisplayMetrics;
 import com.watchcoin.MainActivity;
 import com.watchcoin.R;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 
 
 /**
@@ -40,6 +43,8 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
     private EditTextPreference krakenUrlAPIValue;
 
     private MultiSelectListPreference krakenAssetMultiSelectListPreference;
+
+    private List<String> MultiSelectLists = Arrays.asList("kraken_assets_list", "defi_kraken_assets_list");
 
 
     @Override
@@ -87,7 +92,10 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
                 addPreferencesFromResource(R.xml.currencies_details);
 
                 // Update number of assets selected (summary)
-                setNumberAssetsSelected();
+                for (String list : MultiSelectLists) {
+
+                    setNumberAssetsSelected(list);
+                }
 
                 break;
 
@@ -159,7 +167,7 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
         if (findPreference(key) instanceof CheckBoxPreference) {
 
             // If the change concern the fiat currencies configuration
-            if (key.equals("british_pounds_checkbox") || key.equals("canadian_dollar_checkbox") || key.equals("euros_checkbox")
+            if (key.equals("australian_dollar_checkbox") || key.equals("british_pounds_checkbox") || key.equals("canadian_dollar_checkbox") || key.equals("euros_checkbox")
                     || key.equals("japanese_yen_checkbox") || key.equals("us_dollar_checkbox") || key.equals("swiss_franc_checkbox")) {
 
                 // Set configChanged = true
@@ -174,15 +182,15 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
         if (findPreference(key) instanceof MultiSelectListPreference) {
 
             // If the change concern the kraken assets
-            if (key.equals("kraken_assets_list")) {
+            //if (key.equals("kraken_assets_list")) {
 
                 // Update number of assets selected (summary)
-                setNumberAssetsSelected();
+                setNumberAssetsSelected(key);
 
                 // Set configChanged = true
                 preferencesEditor.putBoolean("configChanged", Boolean.TRUE);
                 preferencesEditor.commit();
-            }
+            //}
         }
 
         if (findPreference(key) instanceof ListPreference) {
@@ -239,15 +247,15 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
 
     // Set number of assets selected for each platform
-    private void setNumberAssetsSelected() {
+    private void setNumberAssetsSelected(String assetsList) {
 
-        krakenAssetMultiSelectListPreference = (MultiSelectListPreference) findPreference("kraken_assets_list");
+        krakenAssetMultiSelectListPreference = (MultiSelectListPreference) findPreference(assetsList);
 
         // Default value if asset list don't exist in shared preferences
         Set<String> defaultValue = new HashSet<String>();
 
         krakenAssetMultiSelectListPreference.setSummary(String.format(ihmConsoleActivity.getString(R.string.Number_kraken_assets_selected),
-                MainActivity.preferencesApp.getStringSet("kraken_assets_list", defaultValue).size()));
-
+                MainActivity.preferencesApp.getStringSet(assetsList, defaultValue).size()));
+        
         }
 }

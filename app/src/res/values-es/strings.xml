@@ -24,6 +24,7 @@
     <string name= "Bitcoin_Market_data_title">Datos del mercado : Bitcoin (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Datos del mercado : Bitcoin Cash (%1$s)</string>
     <string name= "Cardano_Market_data_title">Datos del mercado : Cardano (%1$s)</string>
+    <string name= "Compound_Market_data_title">Datos del mercado : Compound (%1$s)</string>
     <string name= "Cosmos_Market_data_title">Datos del mercado : Cosmos Market data (%1$s)</string>
     <string name= "Dai_Market_data_title">Datos del mercado : Dai (%1$s)</string>
     <string name= "Dash_Market_data_title">Datos del mercado : Dash (%1$s)</string>
@@ -31,6 +32,8 @@
     <string name= "Etherc_Market_data_title">Datos del mercado : Ether Classic (%1$s)</string>
     <string name= "Ether_Market_data_title">Datos del mercado : Ether (%1$s)</string>
     <string name= "Gnosis_Market_data_title">Datos del mercado : Gnosis (%1$s)</string>
+    <string name= "Kava_Market_data_title">Datos del mercado : Kava (%1$s)</string>
+    <string name= "Kyber_Network_Market_data_title">Datos del mercado : Knc (%1$s)</string>
     <string name= "Chainlink_Market_data_title">Datos del mercado : Link (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Datos del mercado : Litcoin (%1$s)</string>
     <string name= "Lisk_Market_data_title">Datos del mercado : Lisk (%1$s)</string>
@@ -43,6 +46,7 @@
     <string name= "Ripple_Market_data_title">Datos del mercado : Ripple (%1$s)</string>
     <string name= "Siacoin_Market_data_title">Datos del mercado : Siacoin (%1$s)</string>
     <string name= "Stellar_Lumens_Market_data_title">Datos del mercado : Stellar Lumens (%1$s)</string>
+    <string name= "Storj_Market_data_title">Datos del mercado : Storj (%1$s)</string>
     <string name= "Tether_Market_data_title">Datos del mercado : Tether (%1$s)</string>
     <string name= "Tezos_Market_data_title">Datos del mercado : Tezos (%1$s)</string>
     <string name= "Tron_Market_data_title">Datos del mercado : Tron (%1$s)</string>
@@ -85,15 +89,16 @@
 
     <!-- Currencies details-->
     <string name= "Fiat_currencies_title">Dinero fiduciario</string>
+    <string name= "Australian_dollar_title">Dólar australiano (AUD)</string>
     <string name= "British_pounds_title">Libra esterlina (GBP)</string>
     <string name= "Canadian_dollar_title">Dólar canadiense (CAD)</string>
     <string name= "Euros_title">Euros (EUR)</string>
     <string name= "Swiss_franc_title">Franco Suizo (CHF)</string>
     <string name= "Japanese_yen_title">Yen (JPY)</string>
     <string name= "US_dollar_title">Dólar americano (USD)</string>
-    <string name= "Crypto_currencies_category_title">Cryptomonedas</string>
     <string name= "Kraken_assets_title">Cryptomonedas - Kraken</string>
     <string name= "Number_kraken_assets_selected">%1$d Cryptomoneda(s) seleccionada(s)</string>
+    <string name= "DeFi_Kraken_assets_title">Cryptomonedas - Finanzas descentralizadas (DeFi)</string>
 
     <!-- Languages details-->
     <string name= "Language_configuration_title">Idioma</string>

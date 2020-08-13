@@ -8,6 +8,13 @@
         app:iconSpaceReserved="false">
 
         <CheckBoxPreference
+            android:key="australian_dollar_checkbox"
+            android:title="@string/Australian_dollar_title"
+            app:iconSpaceReserved="false">
+
+        </CheckBoxPreference>
+
+        <CheckBoxPreference
             android:key="british_pounds_checkbox"
             android:title="@string/British_pounds_title"
             app:iconSpaceReserved="false">
@@ -62,6 +69,16 @@
         android:entries="@array/KrakenEntriesArray"
         android:entryValues="@array/KrakenEntryValuesArray"
         android:defaultValue="@array/KrakenDefaultEntryValuesArray"
+        app:iconSpaceReserved="false">
+
+    </MultiSelectListPreference>
+
+    <MultiSelectListPreference
+        android:key="defi_kraken_assets_list"
+        android:title="@string/DeFi_Kraken_assets_title"
+        android:summary="@string/Number_kraken_assets_selected"
+        android:entries="@array/DeFiKrakenEntriesArray"
+        android:entryValues="@array/DeFiKrakenEntryValuesArray"
         app:iconSpaceReserved="false">
 
     </MultiSelectListPreference>

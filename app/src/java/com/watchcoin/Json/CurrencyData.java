@@ -133,6 +133,23 @@ public class CurrencyData {
 
                 break;
 
+            case "XBT/AUD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Bitcoin_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getBitcoinAustralianDollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getBitcoinAustralianDollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getBitcoinAustralianDollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getBitcoinAustralianDollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getBitcoinAustralianDollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getBitcoinAustralianDollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getBitcoinAustralianDollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getBitcoinAustralianDollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getBitcoinAustralianDollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getBitcoinAustralianDollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getBitcoinAustralianDollarData().getTradesArray().get(1)));
+
+                break;
+
             case "XBT/CAD" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Bitcoin_Market_data_title), resources.getString(R.string.Canadian_dollar_symbol)));
@@ -232,6 +249,23 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getBitcoinYenData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getBitcoinYenData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getBitcoinYenData().getTradesArray().get(1)));
+
+                break;
+
+            case "BCH/AUD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Bitcoin_Cash_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getBitcoinCashAustralianDollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getBitcoinCashAustralianDollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getBitcoinCashAustralianDollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getBitcoinCashAustralianDollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getBitcoinCashAustralianDollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getBitcoinCashAustralianDollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getBitcoinCashAustralianDollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getBitcoinCashAustralianDollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getBitcoinCashAustralianDollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getBitcoinCashAustralianDollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getBitcoinCashAustralianDollarData().getTradesArray().get(1)));
 
                 break;
 
@@ -354,6 +388,40 @@ public class CurrencyData {
 
                 break;
 
+            case "COMP/EUR" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Compound_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getCompoundEuroData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getCompoundEuroData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getCompoundEuroData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getCompoundEuroData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getCompoundEuroData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getCompoundEuroData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getCompoundEuroData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getCompoundEuroData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getCompoundEuroData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getCompoundEuroData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getCompoundEuroData().getTradesArray().get(1)));
+
+                break;
+
+            case "COMP/USD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Compound_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getCompoundUSdollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getCompoundUSdollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getCompoundUSdollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getCompoundUSdollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getCompoundUSdollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getCompoundUSdollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getCompoundUSdollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getCompoundUSdollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getCompoundUSdollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getCompoundUSdollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getCompoundUSdollarData().getTradesArray().get(1)));
+
+                break;
+
             case "DAI/USD" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Dai_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
@@ -453,6 +521,23 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getEosUSdollarData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getEosUSdollarData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getEosUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "ETH/AUD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Ether_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getEtherAustralianDollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getEtherAustralianDollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getEtherAustralianDollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getEtherAustralianDollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getEtherAustralianDollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getEtherAustralianDollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getEtherAustralianDollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getEtherAustralianDollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getEtherAustralianDollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getEtherAustralianDollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getEtherAustralianDollarData().getTradesArray().get(1)));
 
                 break;
 
@@ -626,6 +711,74 @@ public class CurrencyData {
 
                 break;
 
+            case "KAVA/USD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kava_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getKavaUSdollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getKavaUSdollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getKavaUSdollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getKavaUSdollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getKavaUSdollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getKavaUSdollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getKavaUSdollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getKavaUSdollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getKavaUSdollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getKavaUSdollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getKavaUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "KAVA/EUR" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kava_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getKavaEuroData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getKavaEuroData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getKavaEuroData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getKavaEuroData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getKavaEuroData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getKavaEuroData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getKavaEuroData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getKavaEuroData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getKavaEuroData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getKavaEuroData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getKavaEuroData().getTradesArray().get(1)));
+
+                break;
+
+            case "KNC/USD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kyber_Network_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getKyberNetworkUSdollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getKyberNetworkUSdollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getKyberNetworkUSdollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getKyberNetworkUSdollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getKyberNetworkUSdollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getKyberNetworkUSdollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getKyberNetworkUSdollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getKyberNetworkUSdollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getKyberNetworkUSdollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getKyberNetworkUSdollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getKyberNetworkUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "KNC/EUR" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kyber_Network_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getKyberNetworkEuroData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getKyberNetworkEuroData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getKyberNetworkEuroData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getKyberNetworkEuroData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getKyberNetworkEuroData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getKyberNetworkEuroData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getKyberNetworkEuroData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getKyberNetworkEuroData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getKyberNetworkEuroData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getKyberNetworkEuroData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getKyberNetworkEuroData().getTradesArray().get(1)));
+
+                break;
+
             case "LINK/USD" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
@@ -694,6 +847,23 @@ public class CurrencyData {
 
                 break;
 
+            case "LTC/AUD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Litcoin_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getLitecoinAustralianDollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getLitecoinAustralianDollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getLitecoinAustralianDollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getLitecoinAustralianDollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getLitecoinAustralianDollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getLitecoinAustralianDollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getLitecoinAustralianDollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getLitecoinAustralianDollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getLitecoinAustralianDollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getLitecoinAustralianDollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getLitecoinAustralianDollarData().getTradesArray().get(1)));
+
+                break;
+
             case "LTC/EUR" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Litcoin_Market_data_title), resources.getString(R.string.Euro_symbol)));
@@ -742,6 +912,23 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getLitecoinUSdollarData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getLitecoinUSdollarData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getLitecoinUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "USDT/AUD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tether_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getTetherAustralianDollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getTetherAustralianDollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getTetherAustralianDollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getTetherAustralianDollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getTetherAustralianDollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getTetherAustralianDollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getTetherAustralianDollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getTetherAustralianDollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getTetherAustralianDollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getTetherAustralianDollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getTetherAustralianDollarData().getTradesArray().get(1)));
 
                 break;
 
@@ -1017,6 +1204,23 @@ public class CurrencyData {
 
                 break;
 
+            case "XRP/AUD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Ripple_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getRippleAustralianDollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getRippleAustralianDollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getRippleAustralianDollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getRippleAustralianDollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getRippleAustralianDollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getRippleAustralianDollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getRippleAustralianDollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getRippleAustralianDollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getRippleAustralianDollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getRippleAustralianDollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getRippleAustralianDollarData().getTradesArray().get(1)));
+
+                break;
+
             case "XRP/CAD" :
 
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Ripple_Market_data_title), resources.getString(R.string.Canadian_dollar_symbol)));
@@ -1167,6 +1371,40 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getStellarLumensUSdollarData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getStellarLumensUSdollarData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getStellarLumensUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "STORJ/USD" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Storj_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getStorjUSdollarData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getStorjUSdollarData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getStorjUSdollarData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getStorjUSdollarData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getStorjUSdollarData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getStorjUSdollarData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getStorjUSdollarData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getStorjUSdollarData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getStorjUSdollarData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getStorjUSdollarData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getStorjUSdollarData().getTradesArray().get(1)));
+
+                break;
+
+            case "STORJ/EUR" :
+
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Storj_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                cryptoCurrencyDataMap.put("askPriceValue", result.getStorjEuroData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getStorjEuroData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getStorjEuroData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getStorjEuroData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getStorjEuroData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getStorjEuroData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getStorjEuroData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getStorjEuroData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getStorjEuroData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getStorjEuroData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getStorjEuroData().getTradesArray().get(1)));
 
                 break;
 
