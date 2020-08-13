@@ -139,3 +139,22 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	- Two currency pairs added : 	
 	
 	(Orchid)OXT/USD OXT/EUR
+
+
+# Version 1.13 : (13/08/2020)
+
+ 	- Australian dollar currency pairs added :
+    
+    	(Bitcoin) 		XBT/AUD
+    	(Bitcoin Cash) 	BCH/AUD
+    	(Ether)   		ETH/AUD
+    	(Litcoin)		LTC/AUD
+    	(Tether)		USDT/AUD
+    	(Ripple)		XRP/AUD
+    
+    	- Eight currency pairs added (DeFi Token) :
+    
+    	(Compound)		COMP/USD COMP/EUR
+    	(KAVA)			KAVA/USD KAVA/USD
+    	(Kyber Network)	KNC/USD KNC/EUR
+    	(Storj)			STORJ/USD STORJ/EUR
