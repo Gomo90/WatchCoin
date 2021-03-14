@@ -158,3 +158,27 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
     	(KAVA)			KAVA/USD KAVA/USD
     	(Kyber Network)	KNC/USD KNC/EUR
     	(Storj)			STORJ/USD STORJ/EUR
+
+# Version 1.14 : (15/08/2020)
+
+	- Crash launcher application correction
+	
+# Version 1.15 : (28/12/2020)
+
+	- Twenty one pairs added :
+	
+	(The Graph)    	GRTEUR / GRTUSD
+	(Decentraland)  MANAEUR / MANAUSD
+	(Aave)			AAVEEUR / AAVEUSD / AAVEGBP
+	(Keep)			KEEPEUR / KEEPUSD
+	(tBTC)			TBTCEUR / TBTCUSD
+	(Aragon)		ANTEUR / ANTUSD
+	(Kusama) 		KSMEUR /KSMUSD
+	(Filecoin)		FILEUR / FILUSD
+	(Balancer)		BALEUR / BALUSD
+	(Curve)			CRVEUR / CRVUSD
+	
+	- Six currency pairs added (DeFi Token) :
+	(Synthetix)		SNXEUR / SNXUSD
+	(Uniswap)		UNIEUR / UNIUSD
+	(Yearn.finance)	YFIEUR / YFIUSD
