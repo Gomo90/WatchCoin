@@ -79,6 +79,7 @@
         android:summary="@string/Number_kraken_assets_selected"
         android:entries="@array/DeFiKrakenEntriesArray"
         android:entryValues="@array/DeFiKrakenEntryValuesArray"
+        android:defaultValue="@array/DeFiKrakenDefaultEntryValuesArray"
         app:iconSpaceReserved="false">
 
     </MultiSelectListPreference>

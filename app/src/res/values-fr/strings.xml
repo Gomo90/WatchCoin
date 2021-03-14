@@ -18,22 +18,31 @@
 
 
     <!-- Market data -->
+    <string name= "Aave_Market_data_title">Données de marché : Aave (%1$s)</string>
     <string name= "Algorand_Market_data_title">Données de marché : Algorand (%1$s)</string>
+    <string name= "Aragon_Market_data_title">Données de marché : Aragon (%1$s)</string>
     <string name= "Augur_Market_data_title">Données de marché : Augur (%1$s)</string>
+    <string name= "Balancer_Market_data_title">Données de marché : Augur (%1$s)</string>
     <string name= "BAT_Market_data_title">Données de marché : Basic Attention Token (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Données de marché : Bitcoin (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Données de marché : Bitcoin Cash (%1$s)</string>
     <string name= "Cardano_Market_data_title">Données de marché : Cardano (%1$s)</string>
     <string name= "Compound_Market_data_title">Données de marché : Compound (%1$s)</string>
     <string name= "Cosmos_Market_data_title">Données de marché : Cosmos (%1$s)</string>
+    <string name= "Curve_Market_data_title">Données de marché : Curve (%1$s)</string>
     <string name= "Dai_Market_data_title">Données de marché : Dai (%1$s)</string>
     <string name= "Dash_Market_data_title">Données de marché : Dash (%1$s)</string>
+    <string name= "Decentraland_Market_data_title">Données de marché : Decentraland (%1$s)</string>
     <string name= "Eos_Market_data_title">Données de marché : EOS (%1$s)</string>
     <string name= "Etherc_Market_data_title">Données de marché : Ether Classic (%1$s)</string>
     <string name= "Ether_Market_data_title">Données de marché : Ether (%1$s)</string>
+    <string name= "Filecoin_Market_data_title">Données de marché : Filecoin (%1$s)</string>
     <string name= "Gnosis_Market_data_title">Données de marché : Gnosis (%1$s)</string>
+    <string name= "Graph_Market_data_title">Données de marché : Graph (%1$s)</string>
     <string name= "Kava_Market_data_title">Données de marché : Kava (%1$s)</string>
+    <string name= "Keep_Market_data_title">Données de marché : Keep (%1$s)</string>
     <string name= "Kyber_Network_Market_data_title">Données de marché : Knc (%1$s)</string>
+    <string name= "Kusama_Market_data_title">Données de marché : Kusama (%1$s)</string>
     <string name= "Chainlink_Market_data_title">Données de marché : Link (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Données de marché : Litcoin (%1$s)</string>
     <string name= "Lisk_Market_data_title">Données de marché : Lisk (%1$s)</string>
@@ -42,16 +51,21 @@
     <string name= "OmiseGO_Market_data_title">Données de marché : OmiseGO (%1$s)</string>
     <string name= "Orchid_Market_data_title">Données de marché : Orchid (%1$s)</string>
     <string name= "Paxg_Market_data_title">Données de marché : Pax Gold (%1$s)</string>
+    <string name= "Polkadot_Market_data_title">Données de marché : Polkadot (%1$s)</string>
     <string name= "Quantum_Market_data_title">Données de marché : Quantum (%1$s)</string>
     <string name= "Ripple_Market_data_title">Données de marché : Ripple (%1$s)</string>
     <string name= "Siacoin_Market_data_title">Données de marché : Siacoin (%1$s)</string>
     <string name= "Stellar_Lumens_Market_data_title">Données de marché : Stellar Lumens (%1$s)</string>
     <string name= "Storj_Market_data_title">Données de marché : Storj (%1$s)</string>
+    <string name= "Synthetix_Market_data_title">Données de marché : Synthetix (%1$s)</string>
+    <string name= "tBTC_Market_data_title">Données de marché : tBTC (%1$s)</string>
     <string name= "Tether_Market_data_title">Données de marché : Tether (%1$s)</string>
     <string name= "Tezos_Market_data_title">Données de marché : Tezos (%1$s)</string>
     <string name= "Tron_Market_data_title">Données de marché : Tron (%1$s)</string>
+    <string name= "Uniswap_Market_data_title">Données de marché : Uniswap (%1$s)</string>
     <string name= "USDCoin_Market_data_title">Données de marché : USD Coin (%1$s)</string>
     <string name= "Waves_Market_data_title">Données de marché : Waves (%1$s)</string>
+    <string name= "Yearn_Market_data_title">Données de marché : Yearn (%1$s)</string>
     <string name= "Zcash_Market_data_title">Données de marché : Zcash (%1$s)</string>
 
     <string name= "Data_update_label">Mise à jour :</string>

@@ -94,22 +94,31 @@
 
 
     <!-- Market data -->
+    <string name= "Aave_Market_data_title">Aave Market data (%1$s)</string>
     <string name= "Algorand_Market_data_title">Algorand Market data (%1$s)</string>
+    <string name= "Aragon_Market_data_title">Aragon Market data (%1$s)</string>
     <string name= "Augur_Market_data_title">Augur Market data (%1$s)</string>
+    <string name= "Balancer_Market_data_title">Balancer Market data (%1$s)</string>
     <string name= "BAT_Market_data_title">Basic Attention Token Market data (%1$s)</string>
     <string name= "Bitcoin_Market_data_title">Bitcoin Market data (%1$s)</string>
     <string name= "Bitcoin_Cash_Market_data_title">Bitcoin Cash Market data (%1$s)</string>
     <string name= "Cardano_Market_data_title">Cardano Market data (%1$s)</string>
     <string name= "Compound_Market_data_title">Compound Market data (%1$s)</string>
     <string name= "Cosmos_Market_data_title">Cosmos Market data (%1$s)</string>
+    <string name= "Curve_Market_data_title">Curve Market data (%1$s)</string>
     <string name= "Dai_Market_data_title">Dai Market data (%1$s)</string>
     <string name= "Dash_Market_data_title">Dash Market data (%1$s)</string>
+    <string name= "Decentraland_Market_data_title">Decentraland Market data (%1$s)</string>
     <string name= "Eos_Market_data_title">EOS Market data (%1$s)</string>
     <string name= "Ether_Market_data_title">Ether Market data (%1$s)</string>
     <string name= "Etherc_Market_data_title">Ether Classic Market data (%1$s)</string>
+    <string name= "Filecoin_Market_data_title">Filecoin Market data (%1$s)</string>
     <string name= "Gnosis_Market_data_title">Gnosis Market data (%1$s)</string>
+    <string name= "Graph_Market_data_title">Graph Market data (%1$s)</string>
     <string name= "Kava_Market_data_title">Kava Market data (%1$s)</string>
+    <string name= "Keep_Market_data_title">Keep Market data (%1$s)</string>
     <string name= "Kyber_Network_Market_data_title">Knc Market data (%1$s)</string>
+    <string name= "Kusama_Market_data_title">Kusama Market data (%1$s)</string>
     <string name= "Chainlink_Market_data_title">Link Market data (%1$s)</string>
     <string name= "Litcoin_Market_data_title">Litcoin Market data (%1$s)</string>
     <string name= "Lisk_Market_data_title">Lisk Market data (%1$s)</string>
@@ -117,17 +126,22 @@
     <string name= "Nano_Market_data_title">Nano Market data (%1$s)</string>
     <string name= "OmiseGO_Market_data_title">OmiseGO Market data (%1$s)</string>
     <string name= "Orchid_Market_data_title">Orchid Market data (%1$s)</string>
+    <string name= "Polkadot_Market_data_title">Polkadot Market data (%1$s)</string>
     <string name= "Paxg_Market_data_title">Pax Gold Market data (%1$s)</string>
     <string name= "Quantum_Market_data_title">Quantum Market data (%1$s)</string>
     <string name= "Ripple_Market_data_title">Ripple Market data (%1$s)</string>
     <string name= "Siacoin_Market_data_title">Siacoin Market data (%1$s)</string>
     <string name= "Stellar_Lumens_Market_data_title">Stellar Lumens Market data (%1$s)</string>
     <string name= "Storj_Market_data_title">Storj Market data (%1$s)</string>
+    <string name= "Synthetix_Market_data_title">Synthetix Market data (%1$s)</string>
+    <string name= "tBTC_Market_data_title">tBTC Market data (%1$s)</string>
     <string name= "Tether_Market_data_title">Tether Market data (%1$s)</string>
     <string name= "Tezos_Market_data_title">Tezos Market data (%1$s)</string>
     <string name= "Tron_Market_data_title">Tron Market data (%1$s)</string>
+    <string name= "Uniswap_Market_data_title">Uniswap Market data (%1$s)</string>
     <string name= "USDCoin_Market_data_title">USD Coin Market data (%1$s)</string>
     <string name= "Waves_Market_data_title">Waves Market data (%1$s)</string>
+    <string name= "Yearn_Market_data_title">Yearn Market data (%1$s)</string>
     <string name= "Zcash_Market_data_title">Zcash Market data (%1$s)</string>
 
 

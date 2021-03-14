@@ -2,625 +2,648 @@ package com.watchcoin.Json;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.File;
+
 /**
  * Class used for JSON data deserialization received by the Kraken API
  */
 public class Result {
 
-    @SerializedName("ALGOEUR")
-    private ALGOEUR algoEuroData;
+    @SerializedName(value = "AAVEEUR", alternate = {"AAVEUSD", "AAVEGBP"})
+    private Aave aaveData;
 
-    @SerializedName("ALGOUSD")
-    private ALGOUSD algoUSdollarData;
+    @SerializedName(value = "ALGOEUR", alternate = {"ALGOUSD"})
+    private Algorand algorandData;
 
-    @SerializedName("XREPZEUR")
-    private XREPZEUR augurEuroData;
+    @SerializedName(value = "ANTEUR", alternate = {"ANTUSD"})
+    private Aragon aragonData;
 
-    @SerializedName("XREPZUSD")
-    private XREPZUSD augurUSdollarData;
+    @SerializedName(value = "XREPZEUR", alternate = {"XREPZUSD"})
+    private Augur augurData;
 
-    @SerializedName("BATUSD")
-    private BATUSD batUSdollarData;
+    @SerializedName(value = "BALEUR", alternate = {"BALUSD"})
+    private Balancer balancerData;
 
-    @SerializedName("BATEUR")
-    private BATEUR batEuroData;
+    @SerializedName(value = "BATEUR", alternate = {"BATUSD"})
+    private BasicAttentionToken basicAttentionTokenData;
 
-    @SerializedName("XXBTZCAD")
-    private XXBTZCAD bitcoinCanadiandollarData;
+    @SerializedName(value ="XBTAUD", alternate = {"XXBTZCAD", "XXBTZEUR", "XBTCHF", "XXBTZGBP", "XXBTZUSD", "XXBTZJPY"})
+    private Bitcoin bitcoinData;
 
-    @SerializedName("XXBTZEUR")
-    private XXBTZEUR bitcoinEuroData;
+    @SerializedName(value = "BCHAUD", alternate = {"BCHEUR", "BCHGBP", "BCHUSD"})
+    private BitcoinCash bitcoinCashData;
 
-    @SerializedName("XBTCHF")
-    private XBTCHF bitcoinSwissFrancData;
+    @SerializedName(value = "COMPEUR", alternate = {"COMPUSD"})
+    private Compound compoundData;
 
-    @SerializedName("XXBTZGBP")
-    private XXBTZGBP bitcoinPoundData;
+    @SerializedName(value = "ATOMEUR", alternate = {"ATOMUSD"})
+    private Cosmos cosmosData;
 
-    @SerializedName("XXBTZUSD")
-    private XXBTZUSD bitcoinUSdollarData;
+    @SerializedName(value = "ADAEUR", alternate = {"ADAUSD"})
+    private Cardano cardanoData;
 
-    @SerializedName("XXBTZJPY")
-    private XXBTZJPY bitcoinYenData;
+    @SerializedName(value = "CRVEUR", alternate = {"CRVUSD"})
+    private Curve curveData;
 
-    @SerializedName("BCHEUR")
-    private BCHEUR bitcoinCashEuroData;
+    @SerializedName(value = "DAIEUR", alternate = {"DAIUSD"})
+    private DAI daiData;
 
-    @SerializedName("BCHGBP")
-    private BCHGBP bitcoinCashPoundData;
+    @SerializedName(value = "DASHEUR", alternate = {"DASHUSD"})
+    private Dash dashData;
 
-    @SerializedName("BCHUSD")
-    private BCHUSD bitcoinCashUSdollarData;
+    @SerializedName(value = "MANAEUR", alternate = {"MANAUSD"})
+    private Decentraland decentralandData;
 
-    @SerializedName("ATOMEUR")
-    private ATOMEUR cosmosEuroData;
+    @SerializedName(value = "EOSEUR", alternate = {"EOSUSD"})
+    private EOS eosData;
 
-    @SerializedName("ATOMUSD")
-    private ATOMUSD cosmosUSdollarData;
+    @SerializedName(value ="ETHAUD", alternate = {"XETHZCAD", "XETHZEUR", "ETHCHF", "XETHZGBP", "XETHZJPY", "XETHZUSD"})
+    private Ethereum ethereumData;
 
-    @SerializedName("ADAEUR")
-    private ADAEUR cardanoEuroData;
+    @SerializedName(value = "XETCZEUR", alternate = {"XETCZUSD"})
+    private EthereumClassic ethereumClassicData;
 
-    @SerializedName("ADAUSD")
-    private ADAUSD cardanoUSdollarData;
+    @SerializedName(value = "FILEUR", alternate = {"FILUSD"})
+    private Filecoin filecoinData;
 
-    @SerializedName("DAIEUR")
-    private DAIEUR daiEuroData;
+    @SerializedName(value = "GRTEUR", alternate = {"GRTUSD"})
+    private Graph graphData;
 
-    @SerializedName("DAIUSD")
-    private DAIUSD daiUSdollarData;
+    @SerializedName(value = "GNOEUR", alternate = {"GNOUSD"})
+    private Gnosis gnosisData;
 
-    @SerializedName("DASHEUR")
-    private DASHEUR dashEuroData;
+    @SerializedName(value = "KAVAEUR", alternate = {"KAVAUSD"})
+    private KAVA kavaData;
 
-    @SerializedName("DASHUSD")
-    private DASHUSD dashUSdollarData;
+    @SerializedName(value = "KEEPEUR", alternate = {"KEEPUSD"})
+    private Keep keepData;
 
-    @SerializedName("EOSEUR")
-    private EOSEUR eosEuroData;
+    @SerializedName(value = "KNCEUR", alternate = {"KNCUSD"})
+    private KyberNetworkToken kyberNetworkData;
 
-    @SerializedName("EOSUSD")
-    private EOSUSD eosUSdollarData;
+    @SerializedName(value = "KSMEUR", alternate = {"KSMUSD"})
+    private Kusama kusamaData;
 
-    @SerializedName("XETHZCAD")
-    private XETHZCAD etherCanadiandollarData;
+    @SerializedName(value = "LINKEUR", alternate =  {"LINKUSD"})
+    private Chainlink chainlinkData;
 
-    @SerializedName("XETHZEUR")
-    private XETHZEUR etherEuroData;
+    @SerializedName(value ="LTCAUD", alternate = {"LTCGBP", "XLTCZEUR", "XLTCZUSD"})
+    private Litecoin litecoinData;
 
-    @SerializedName("ETHCHF")
-    private ETHCHF etherSwissFrancData;
+    @SerializedName(value = "LSKEUR", alternate = {"LSKUSD"})
+    private Lisk liskData;
 
-    @SerializedName("XETHZGBP")
-    private XETHZGBP etherPoundData;
+    @SerializedName(value = "XXMRZEUR", alternate = {"XXMRZUSD"})
+    private Monero moneroData;
 
-    @SerializedName("XETHZJPY")
-    private XETHZJPY etherYenData;
+    @SerializedName(value = "NANOEUR", alternate = {"NANOUSD"})
+    private Nano nanoData;
 
-    @SerializedName("XETHZUSD")
-    private XETHZUSD etherUSdollarData;
+    @SerializedName(value = "OMGEUR", alternate = {"OMGUSD"})
+    private OmiseGO omisegoData;
 
-    @SerializedName("XETCZEUR")
-    private XETCZEUR etherClassicEuroData;
+    @SerializedName(value = "OXTEUR", alternate = {"OXTUSD"})
+    private Orchid orchidData;
 
-    @SerializedName("XETCZUSD")
-    private XETCZUSD etherClassicUSdollarData;
+    @SerializedName(value = "PAXGEUR", alternate = {"PAXGUSD"})
+    private PaxGold paxGoldData;
 
-    @SerializedName("GNOEUR")
-    private GNOEUR gnosisEuroData;
+    @SerializedName(value = "DOTEUR", alternate = {"DOTUSD"})
+    private Polkadot polkadotData;
 
-    @SerializedName("GNOUSD")
-    private GNOUSD gnosisUSdollarData;
+    @SerializedName(value = "QTUMEUR", alternate = {"QTUMUSD"})
+    private Quantum quantumData;
 
-    @SerializedName("LINKEUR")
-    private LINKEUR linkEuroData;
+    @SerializedName(value = "XRPAUD", alternate = {"XXRPZCAD", "XXRPZEUR", "XRPGBP", "XXRPZUSD", "XXRPZJPY"})
+    private Ripple rippleData;
 
-    @SerializedName("LINKUSD")
-    private LINKUSD linkUSdollarData;
+    @SerializedName(value = "SCEUR", alternate = {"SCUSD"})
+    private Siacoin siacoinData;
 
-    @SerializedName("XLTCZEUR")
-    private XLTCZEUR litcoinEuroData;
+    @SerializedName(value = "XXLMZEUR", alternate = {"XXLMZUSD"})
+    private StellarLumens stellarLumensData;
 
-    @SerializedName("LTCGBP")
-    private LTCGBP litcoinPoundData;
+    @SerializedName(value = "STORJEUR", alternate = {"STORJUSD"})
+    private Storj storjData;
 
-    @SerializedName("XLTCZUSD")
-    private XLTCZUSD litcoinUSdollarData;
+    @SerializedName(value = "SNXEUR", alternate = {"SNXUSD"})
+    private Synthetix synthetixData;
 
-    @SerializedName("LSKEUR")
-    private LSKEUR liskEuroData;
+    @SerializedName(value = "TBTCEUR", alternate = {"TBTCUSD"})
+    private tBTC tBTCData;
 
-    @SerializedName("LSKUSD")
-    private LSKUSD liskUSdollarData;
+    @SerializedName(value = "USDTAUD", alternate = {"USDTCHF", "USDTEUR", "USDTUSD", "USDTJPY"})
+    private Tether tetherData;
 
-    @SerializedName("XXMRZEUR")
-    private XXMRZEUR moneroEuroData;
+    @SerializedName(value = "XTZEUR", alternate = {"XTZUSD"})
+    private Tezos tezosData;
 
-    @SerializedName("XXMRZUSD")
-    private XXMRZUSD moneroUSdollarData;
+    @SerializedName(value = "TRXEUR", alternate = {"TRXUSD"})
+    private Tron tronData;
 
-    @SerializedName("NANOEUR")
-    private NANOEUR nanoEuroData;
+    @SerializedName(value = "UNIEUR", alternate = {"UNIUSD"})
+    private Uniswap uniswapData;
 
-    @SerializedName("NANOUSD")
-    private NANOUSD nanoUSdollarData;
+    @SerializedName(value = "USDCEUR", alternate = {"USDCUSD"})
+    private USDCToken usdcData;
 
-    @SerializedName("OMGEUR")
-    private OMGEUR omisegoEuroData;
+    @SerializedName(value = "WAVESEUR", alternate = {"WAVESUSD"})
+    private Waves wavesData;
 
-    @SerializedName("OMGUSD")
-    private OMGUSD omisegoUSdollarData;
+    @SerializedName(value = "YFIEUR", alternate = {"YFIUSD"})
+    private Yearn yearnData;
 
-    @SerializedName("OXTEUR")
-    private OXTEUR orchidEuroData;
+    @SerializedName(value = "XZECZEUR", alternate = {"XZECZUSD"})
+    private Zcash zcashData;
 
-    @SerializedName("OXTUSD")
-    private OXTUSD orchidUSdollarData;
 
-    @SerializedName("PAXGEUR")
-    private PAXGEUR paxgEuroData;
+    public Aave getAaveData() {
 
-    @SerializedName("PAXGUSD")
-    private PAXGUSD paxgUSdollarData;
+        return this.aaveData;
+    }
+
+    public void setAaveData(Aave aaveData) {
+
+        this.aaveData = aaveData;
+    }
+
+    public Algorand getAlgorandData() {
+
+        return this.algorandData;
+    }
+
+    public void setAlgorandData(Algorand algorandData) {
+
+        this.algorandData = algorandData;
+    }
+
+    public Aragon getAragonData() {
+
+        return this.aragonData;
+    }
+
+    public void setAragonData(Aragon aragonData) {
+
+        this.aragonData = aragonData;
+    }
+
+    public Augur getAugurData() {
 
-    @SerializedName("QTUMEUR")
-    private QTUMEUR quantumEuroData;
+        return this.augurData;
+    }
+
+    public void setAugurData(Augur augurData) {
+
+        this.augurData = augurData;
+    }
 
-    @SerializedName("QTUMUSD")
-    private QTUMUSD quantumUSollarData;
+    public Balancer getBalancerData() {
 
-    @SerializedName("XXRPZCAD")
-    private XXRPZCAD rippleCanadiandollarData;
+        return this.balancerData;
+    }
+
+    public void setBalancerData(Balancer balancerData) {
 
-    @SerializedName("XXRPZEUR")
-    private XXRPZEUR rippleEuroData;
+        this.balancerData = balancerData;
+    }
 
-    @SerializedName("XRPGBP")
-    private XRPGBP ripplePoundData;
+    public BasicAttentionToken getBasicAttentionTokenData() {
 
-    @SerializedName("XXRPZUSD")
-    private XXRPZUSD rippleUSdollarData;
+        return this.basicAttentionTokenData;
+    }
 
-    @SerializedName("XXRPZJPY")
-    private XXRPZJPY rippleYenData;
+    public void setBasicAttentionTokenData(BasicAttentionToken basicAttentionTokenData) {
 
-    @SerializedName("SCEUR")
-    private SCEUR siacoinEuroData;
+        this.basicAttentionTokenData = basicAttentionTokenData;
+    }
 
-    @SerializedName("SCUSD")
-    private SCUSD siacoinUDdollarData;
+    public Bitcoin getBitcoinData() {
 
-    @SerializedName("XXLMZEUR")
-    private XXLMZEUR stellarLumensEuroData;
+        return this.bitcoinData;
+    }
 
-    @SerializedName("XXLMZUSD")
-    private XXLMZUSD stellarLumensUSdollarData;
+    public void setBitcoinData(Bitcoin bitcoinData) {
 
-    @SerializedName("USDTCHF")
-    private USDTCHF tetherSwissFrancData;
+        this.bitcoinData = bitcoinData;
+    }
 
-    @SerializedName("USDTEUR")
-    private USDTEUR tetherEuroData;
+    public BitcoinCash getBitcoinCashData() {
 
-    @SerializedName("USDTZUSD")
-    private USDTZUSD tetherUSdollarData;
+        return this.bitcoinCashData;
+    }
 
-    @SerializedName("USDTJPY")
-    private USDTJPY tetherYenData;
+    public void setBitcoinCashData(BitcoinCash bitcoinCashData) {
 
-    @SerializedName("XTZEUR")
-    private XTZEUR tezosEuroData;
+        this.bitcoinCashData = bitcoinCashData;
+    }
 
-    @SerializedName("XTZUSD")
-    private XTZUSD tezosUSdollarData;
+    public Compound getCompoundData() {
 
-    @SerializedName("TRXEUR")
-    private TRXEUR tronEuroData;
+        return this.compoundData;
+    }
 
-    @SerializedName("TRXUSD")
-    private TRXUSD tronUSdollarData;
+    public void setCompoundData(Compound compoundData) {
 
-    @SerializedName("USDCEUR")
-    private USDCEUR usdcEuroData;
+        this.compoundData = compoundData;
+    }
 
-    @SerializedName("USDCUSD")
-    private USDCUSD usdcUSdollarData;
+    public Cosmos getCosmosData() {
 
-    @SerializedName("WAVESUSD")
-    private WAVESUSD wavesUSdollarData;
+        return this.cosmosData;
+    }
 
-    @SerializedName("WAVESEUR")
-    private WAVESEUR wavesEuroData;
+    public void setCosmosData(Cosmos cosmosData) {
 
-    @SerializedName("XZECZEUR")
-    private XZECZEUR zcashEuroData;
+        this.cosmosData = cosmosData;
+    }
 
-    @SerializedName("XZECZUSD")
-    private XZECZUSD zcashUSdollarData;
+    public Cardano getCardanoData() {
 
+        return this.cardanoData;
+    }
 
-    public ALGOEUR getAlgorandEuroData() {
+    public Curve getCurveData() {
 
-        return this.algoEuroData;
+        return this.curveData;
     }
 
-    public ALGOUSD getAlgorandUSdollarData() {
+    public void setCurveData(Curve curveData) {
 
-        return this.algoUSdollarData;
+        this.curveData = curveData;
     }
 
-    public XREPZEUR getAugurEuroData() {
+    public void setCardanoData(Cardano cardanoData) {
 
-        return this.augurEuroData;
+        this.cardanoData = cardanoData;
     }
 
-    public XREPZUSD getAugurUSdollarData() {
+    public DAI getDaiData() {
 
-        return this.augurUSdollarData;
+        return this.daiData;
     }
 
-    public BATUSD getBatUSdollarData() {
+    public void setDaiData(DAI daiData) {
 
-        return this.batUSdollarData;
+        this.daiData = daiData;
     }
 
-    public BATEUR getBatEuroData() {
+    public Dash getDashData() {
 
-        return this.batEuroData;
+        return this.dashData;
     }
 
-    public XXBTZCAD getBitcoinCanadiandollarData() {
+    public void setDashData(Dash dashData) {
 
-        return this.bitcoinCanadiandollarData;
+        this.dashData = dashData;
     }
 
-    public XXBTZEUR getBitcoinEuroData() {
+    public Decentraland getDecentralandData() {
 
-        return this.bitcoinEuroData;
+        return this.decentralandData;
     }
 
-    public XBTCHF getBitcoinSwissFrancData() {
+    public void setDecentralandData(Decentraland decentralandData) {
 
-        return this.bitcoinSwissFrancData;
+        this.decentralandData = decentralandData;
     }
 
-    public XXBTZGBP getBitcoinPoundData() {
+    public EOS getEosData() {
 
-        return this.bitcoinPoundData;
+        return this.eosData;
     }
 
-    public XXBTZUSD getBitcoinUSdollarData() {
+    public void setEosData(EOS eosData) {
 
-        return this.bitcoinUSdollarData;
+        this.eosData = eosData;
     }
 
-    public XXBTZJPY getBitcoinYenData() {
+    public Ethereum getEthereumData() {
 
-        return this.bitcoinYenData;
+        return this.ethereumData;
     }
 
-    public BCHEUR getBitcoinCashEuroData() {
+    public void setEthereumData(Ethereum ethereumData) {
 
-        return this.bitcoinCashEuroData;
+        this.ethereumData = ethereumData;
     }
 
-    public BCHGBP getBitcoinCashPoundData() {
+    public EthereumClassic getEthereumClassicData() {
 
-        return this.bitcoinCashPoundData;
+        return this.ethereumClassicData;
     }
 
-    public BCHUSD getBitcoinCashUSdollarData() {
+    public void setEthereumClassicData(EthereumClassic ethereumClassicData) {
 
-        return this.bitcoinCashUSdollarData;
+        this.ethereumClassicData = ethereumClassicData;
     }
 
-    public ATOMEUR getCosmosEuroData() {
+    public Filecoin getFilecoinData() {
 
-        return this.cosmosEuroData;
+        return this.filecoinData;
     }
 
-    public ATOMUSD getCosmosUSdollarData() {
+    public void setFilecoinData(Filecoin filecoinData) {
 
-        return this.cosmosUSdollarData;
+        this.filecoinData = filecoinData;
     }
 
-    public ADAEUR getCardanoEuroData() {
+    public Gnosis getGnosisData() {
 
-        return this.cardanoEuroData;
+        return this.gnosisData;
     }
 
-    public ADAUSD getCardanoUSdollarData() {
+    public void setGnosisData(Gnosis gnosisData) {
 
-        return this.cardanoUSdollarData;
+        this.gnosisData = gnosisData;
     }
 
-    public DAIEUR getDaiEuroData() {
+    public Graph getGraphData() {
 
-        return this.daiEuroData;
+        return this.graphData;
     }
 
-    public DAIUSD getDaiUSdollarData() {
+    public void setGraphData(Graph graphData) {
 
-        return this.daiUSdollarData;
+        this.graphData = graphData;
     }
 
-    public DASHEUR getDashEuroData() {
+    public KAVA getKavaData() {
 
-        return this.dashEuroData;
+        return this.kavaData;
     }
 
-    public DASHUSD getDashUSdollarData() {
+    public void setKavaData(KAVA kavaData) {
 
-        return this.dashUSdollarData;
+        this.kavaData =  kavaData;
     }
 
-    public EOSEUR getEosEuroData() {
+    public Keep getKeepData() {
 
-        return this.eosEuroData;
+        return this.keepData;
     }
 
-    public EOSUSD getEosUSdollarData() {
+    public void setKeepData(Keep keepData) {
 
-        return this.eosUSdollarData;
+        this.keepData =  keepData;
     }
 
-    public XETHZEUR getEtherEuroData() {
+    public KyberNetworkToken getKyberNetworkData() {
 
-        return this.etherEuroData;
+        return this.kyberNetworkData;
     }
 
-    public ETHCHF getEtherSwissFrancData() {
+    public void setKyberNetworkData(KyberNetworkToken kyberNetworkData) {
 
-        return this.etherSwissFrancData;
+        this.kyberNetworkData = kyberNetworkData;
     }
 
-    public XETHZCAD getEtherCanadiandollarData() {
+    public Kusama getKusamaData() {
 
-        return this.etherCanadiandollarData;
+        return this.kusamaData;
     }
 
-    public XETHZGBP getEtherPoundData() {
+    public void setKusamaData(Kusama kusamaData) {
 
-        return this.etherPoundData;
+        this.kusamaData = kusamaData;
     }
 
-    public XETHZJPY getEtherYenData() {
+    public Chainlink getChainlinkData() {
 
-        return this.etherYenData;
+        return this.chainlinkData;
     }
 
-    public XETHZUSD getEtherUSdollarData() {
+    public void setChainlinkData(Chainlink chainlinkData) {
 
-        return this.etherUSdollarData;
+        this.chainlinkData = chainlinkData;
     }
 
-    public XETCZEUR getEtherClassicEuroData() {
+    public Litecoin getLitecoinData() {
 
-        return this.etherClassicEuroData;
+        return this.litecoinData;
     }
 
-    public XETCZUSD getEtherClassicUSdollarData() {
+    public void setLitecoinData(Litecoin litecoinData) {
 
-        return this.etherClassicUSdollarData;
+        this.litecoinData = litecoinData;
     }
 
-    public GNOEUR getGnosisEuroData() {
+    public Lisk getLiskData() {
 
-        return this.gnosisEuroData;
+        return this.liskData;
     }
 
-    public GNOUSD getGnosisUSdollarData() {
+    public void setLiskData(Lisk liskData) {
 
-        return this.gnosisUSdollarData;
+        this.liskData = liskData;
     }
 
-    public LINKEUR getLinkEuroData() {
+    public Monero getMoneroData() {
 
-        return this.linkEuroData;
+        return this.moneroData;
     }
 
-    public LINKUSD getLinkUSdollarData() {
+    public void setMoneroData(Monero moneroData) {
 
-        return this.linkUSdollarData;
+        this.moneroData = moneroData;
     }
 
-    public XLTCZEUR getLitecoinEuroData() {
+    public Nano getNanoData() {
 
-        return this.litcoinEuroData;
+        return this.nanoData;
     }
 
-    public LTCGBP getLitecoinPoundData() {
+    public void setNanoData(Nano nanoData) {
 
-        return this.litcoinPoundData;
+        this.nanoData = nanoData;
     }
 
-    public XLTCZUSD getLitecoinUSdollarData() {
+    public OmiseGO getOmiseGOData() {
 
-        return this.litcoinUSdollarData;
+        return this.omisegoData;
     }
 
-    public LSKEUR getLiskEuroData() {
+    public void setOmiseGOData(OmiseGO omiseGOData) {
 
-        return this.liskEuroData;
+        this.omisegoData = omiseGOData;
     }
 
-    public LSKUSD getLiskUSdollarData() {
+    public Orchid getOrchidData() {
 
-        return this.liskUSdollarData;
+        return this.orchidData;
     }
 
-    public XXMRZEUR getMoneroEuroData() {
+    public void setOrchidData(Orchid orchidData) {
 
-        return this.moneroEuroData;
+        this.orchidData = orchidData;
     }
 
-    public XXMRZUSD getMoneroUSdollarData() {
+    public PaxGold getPaxGoldData() {
 
-        return this.moneroUSdollarData;
+        return this.paxGoldData;
     }
 
-    public NANOEUR getNanoEuroData() {
+    public void setPaxGoldData(PaxGold paxGoldData) {
 
-        return this.nanoEuroData;
+        this.paxGoldData = paxGoldData;
     }
 
-    public NANOUSD getNanoUSdollarData() {
+    public Polkadot getPolkadotData() {
 
-        return this.nanoUSdollarData;
+        return this.polkadotData;
     }
 
-    public OMGEUR getOmiseGOEuroData() {
+    public void setPolkadotData(Polkadot polkadotData) {
 
-        return this.omisegoEuroData;
+        this.polkadotData = polkadotData;
     }
 
-    public OMGUSD getOmiseGOUSdollarData() {
+    public Quantum getQuantumData() {
 
-        return this.omisegoUSdollarData;
+        return this.quantumData;
     }
 
-    public OXTEUR getOrchidEuroData() {
+    public void setQuantumData(Quantum quantumData) {
 
-        return this.orchidEuroData;
+        this.quantumData = quantumData;
     }
 
-    public OXTUSD getOrchidUSdollarData() {
+    public Ripple getRippleData() {
 
-        return this.orchidUSdollarData;
+        return this.rippleData;
     }
 
-    public PAXGEUR getPaxgEuroData() {
+    public void setRippleData(Ripple rippleData) {
 
-        return this.paxgEuroData;
+        this.rippleData = rippleData;
     }
 
-    public PAXGUSD getPaxgUSdollarData() {
+    public Siacoin getSiacoinData() {
 
-        return this.paxgUSdollarData;
+        return this.siacoinData;
     }
 
-    public QTUMEUR getQuantumEuroData() {
+    public void setSiacoinData(Siacoin siacoinData) {
 
-        return this.quantumEuroData;
+        this.siacoinData = siacoinData;
     }
 
-    public QTUMUSD getQuantumUSollarData() {
+    public StellarLumens getStellarLumensData() {
 
-        return this.quantumUSollarData;
+        return this.stellarLumensData;
     }
 
-    public XXRPZEUR getRippleEuroData() {
+    public void setStellarLumensData(StellarLumens stellarLumensData) {
 
-        return this.rippleEuroData;
+        this.stellarLumensData = stellarLumensData;
     }
 
-    public XRPGBP getRipplePoundData() {
+    public Storj getStorjData() {
 
-        return this.ripplePoundData;
+        return this.storjData;
     }
 
-    public XXRPZUSD getRippleUSdollarData() {
+    public void setStorjData(Storj storjData) {
 
-        return this.rippleUSdollarData;
+        this.storjData = storjData;
     }
 
-    public XXRPZCAD getRippleCanadiandollarData() {
+    public Synthetix getSynthetixData() {
 
-        return this.rippleCanadiandollarData;
+        return this.synthetixData;
     }
 
-    public XXRPZJPY getRippleYenData() {
+    public void setSynthetixData(Synthetix synthetixData) {
 
-        return this.rippleYenData;
+        this.synthetixData = synthetixData;
     }
 
-    public SCEUR getSiacoinEuroData() {
+    public tBTC gettBTCData() {
 
-        return this.siacoinEuroData;
+        return this.tBTCData;
     }
 
-    public SCUSD getSiacoinUSdollarData() {
+    public void settBTCData(tBTC tBTCData) {
 
-        return this.siacoinUDdollarData;
+        this.tBTCData = tBTCData;
     }
 
-    public XXLMZEUR getStellarLumensEuroData() {
+    public Tether getTetherData() {
 
-        return this.stellarLumensEuroData;
+        return this.tetherData;
     }
 
-    public XXLMZUSD getStellarLumensUSdollarData() {
+    public void setTetherData(Tether tetherData) {
 
-        return this.stellarLumensUSdollarData;
+        this.tetherData = tetherData;
     }
 
-    public USDTCHF getTetherSwissFrancData() {
+    public Tezos getTezosData() {
 
-        return this.tetherSwissFrancData;
+        return this.tezosData;
     }
 
-    public USDTEUR getTetherEuroData() {
+    public void setTezosData(Tezos tezosData) {
 
-        return this.tetherEuroData;
+        this.tezosData = tezosData;
     }
 
-    public USDTZUSD getTetherUSdollarData() {
+    public Tron getTronData() {
 
-        return this.tetherUSdollarData;
+        return this.tronData;
     }
 
-    public USDTJPY getTetherYenData() {
+    public void setTronData(Tron tronData) {
 
-        return this.tetherYenData;
+        this.tronData = tronData;
     }
 
-    public XTZEUR getTezosEuroData() {
+    public Uniswap getUniswapData() {
 
-        return this.tezosEuroData;
+        return this.uniswapData;
     }
 
-    public XTZUSD getTezosUSdollarData() {
+    public void setUniswapData(Uniswap uniswapData) {
 
-        return this.tezosUSdollarData;
+        this.uniswapData = uniswapData;
     }
 
-    public TRXEUR getTronEuroData() {
+    public USDCToken getUsdcTokenData() {
 
-        return this.tronEuroData;
+        return this.usdcData;
     }
 
-    public TRXUSD getTronUSdollarData() {
+    public void setUsdcTokenData(USDCToken UsdcTokenData) {
 
-        return this.tronUSdollarData;
+        this.usdcData = UsdcTokenData;
     }
 
-    public USDCEUR getUsdcEuroData() {
+    public Waves getWavesData() {
 
-        return this.usdcEuroData;
+        return this.wavesData;
     }
 
-    public USDCUSD getUsdcUSdollarData() {
+    public void setWavesData(Waves wavesData) {
 
-        return this.usdcUSdollarData;
+        this.wavesData = wavesData;
     }
 
-    public WAVESUSD getWavesUSdollarData() {
+    public Yearn getYearnData() {
 
-        return this.wavesUSdollarData;
+        return this.yearnData;
     }
 
-    public WAVESEUR getWavesEuroData() {
+    public void setYearnData(Yearn yearnData) {
 
-        return this.wavesEuroData;
+        this.yearnData = yearnData;
     }
 
-    public XZECZEUR getZcashEuroData() {
+    public Zcash getZcashData() {
 
-        return this.zcashEuroData;
+        return this.zcashData;
     }
 
-    public XZECZUSD getZcashUSdollarData() {
+    public void setZcashData(Zcash zCashData) {
 
-        return this.zcashUSdollarData;
+        this.zcashData = zCashData;
     }
 }

@@ -3,15 +3,66 @@ package com.watchcoin.WebClient;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
+import com.google.android.material.dialog.InsetDialogOnTouchListener;
 import com.google.gson.Gson;
 import com.watchcoin.Data.DataPolling;
 import com.watchcoin.Data.ErrorMessageEvent;
 import com.watchcoin.Data.UpdateMarketDataEvent;
 import com.watchcoin.IHM.IHMConsole;
+import com.watchcoin.Json.Aave;
+import com.watchcoin.Json.Algorand;
+import com.watchcoin.Json.Aragon;
+import com.watchcoin.Json.Augur;
+import com.watchcoin.Json.Balancer;
+import com.watchcoin.Json.BasicAttentionToken;
+import com.watchcoin.Json.Bitcoin;
+import com.watchcoin.Json.BitcoinCash;
+import com.watchcoin.Json.Cardano;
+import com.watchcoin.Json.Chainlink;
+import com.watchcoin.Json.Compound;
+import com.watchcoin.Json.Cosmos;
 import com.watchcoin.Json.CurrencyData;
+import com.watchcoin.Json.Curve;
+import com.watchcoin.Json.DAI;
+import com.watchcoin.Json.Dash;
+import com.watchcoin.Json.Decentraland;
+import com.watchcoin.Json.EOS;
+import com.watchcoin.Json.Ethereum;
+import com.watchcoin.Json.EthereumClassic;
+import com.watchcoin.Json.Filecoin;
+import com.watchcoin.Json.Gnosis;
+import com.watchcoin.Json.Graph;
+import com.watchcoin.Json.KAVA;
+import com.watchcoin.Json.Keep;
+import com.watchcoin.Json.Kusama;
+import com.watchcoin.Json.KyberNetworkToken;
+import com.watchcoin.Json.Lisk;
+import com.watchcoin.Json.Litecoin;
+import com.watchcoin.Json.Monero;
+import com.watchcoin.Json.Nano;
+import com.watchcoin.Json.OmiseGO;
+import com.watchcoin.Json.Orchid;
+import com.watchcoin.Json.PaxGold;
+import com.watchcoin.Json.Polkadot;
+import com.watchcoin.Json.Quantum;
+import com.watchcoin.Json.Ripple;
+import com.watchcoin.Json.Siacoin;
+import com.watchcoin.Json.StellarLumens;
+import com.watchcoin.Json.Storj;
+import com.watchcoin.Json.Synthetix;
+import com.watchcoin.Json.Tether;
+import com.watchcoin.Json.Tezos;
+import com.watchcoin.Json.Tron;
+import com.watchcoin.Json.USDCToken;
+import com.watchcoin.Json.Uniswap;
+import com.watchcoin.Json.Waves;
+import com.watchcoin.Json.Yearn;
+import com.watchcoin.Json.Zcash;
+import com.watchcoin.Json.tBTC;
 import com.watchcoin.R;
 
 import org.greenrobot.eventbus.EventBus;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,7 +78,7 @@ import static com.watchcoin.MainActivity.preferencesApp;
  * KrakenWebClient is a background task executed at regular intervals for provide the market data
  * for each cryptocurrency selected (settings menu)
  */
-public class KrakenWebClient extends AsyncTask<String, String, String> {
+public class KrakenWebClient extends AsyncTask<String, Object, Object> {
 
 
     private static final String TAG = "KrakenWebClient";
@@ -36,6 +87,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
     private IHMConsole ihmConsole;
     private DataPolling dataPolling;
+    private JSONObject cryptoCurrencyData;
     private CurrencyData currencyData;
     private Gson gson;
     private SharedPreferences sharedPreferencesApp = preferencesApp;
@@ -57,7 +109,7 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
 
     @Override
-    protected String doInBackground(String... params) {
+    protected Object doInBackground(String... params) {
 
         // If internet connection is not available
         if (!ihmConsole.isNetworkAvailable()) {
@@ -66,20 +118,18 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
             return "networkKO";
         }
 
+        try {
+            cryptoCurrencyData = dataPolling.PublicDataQuery();
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+        }
+
         // According to the type of request
         switch (params[0]) {
 
             // (TimerTask process)
             case "Data market":
-
-                //String cryptoCurrencyData = dataPolling.PublicDataQuery();
-                JSONObject cryptoCurrencyData = null;
-                try {
-                    cryptoCurrencyData = dataPolling.PublicDataQuery();
-                } catch (JSONException e) {
-
-                    e.printStackTrace();
-                }
 
                 if (cryptoCurrencyData != null) {
 
@@ -106,7 +156,8 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 ihmConsole.setCurrencyDataMap(cryptoCurrencyDataMap);
 
                 // return dataPolling.PublicDataQuery();
-                return "Data market";
+                //return "Data market";
+                return cryptoCurrencyData;
 
 
             // (Currency selected manually)
@@ -124,42 +175,52 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
 
     @Override
-    protected void onPostExecute(String s) {
+    protected void onPostExecute(Object s) {
         super.onPostExecute(s);
 
-        // According the result of background process
-        switch (s) {
+        if (s instanceof JSONObject) {
 
-            // If internet connection is not available
-            case "networkKO" :
+            cryptoCurrencyData = (JSONObject) s;
+            updateData("Data market");
+        }
+        else {
 
-                // Display error message
-                EventBus.getDefault().post(new ErrorMessageEvent("networkKO"));
+            // According the result of background process
+            switch (s.toString()) {
 
-                break;
+                // If internet connection is not available
+                case "networkKO" :
 
-            // If currency datas are not recupered
-            case "noMarketData" :
+                    // Display error message
+                    EventBus.getDefault().post(new ErrorMessageEvent("networkKO"));
 
-                // Display error message
-                EventBus.getDefault().post(new ErrorMessageEvent("noMarketData"));
+                    break;
 
-                break;
+                // If currency datas are not recupered
+                case "noMarketData" :
 
-            // If request error is occured
-            case "requestExecutionError" :
+                    // Display error message
+                    EventBus.getDefault().post(new ErrorMessageEvent("noMarketData"));
 
-                // Display error message
-                EventBus.getDefault().post(new ErrorMessageEvent("requestExecutionError"));
+                    break;
 
-                break;
+                // If request error is occured
+                case "requestExecutionError" :
 
-            default:
+                    // Display error message
+                    EventBus.getDefault().post(new ErrorMessageEvent("requestExecutionError"));
 
-                // Update data displayed
-                updateData(s);
+                    break;
 
-                break;
+                default:
+
+                    // Update data displayed
+                    updateData(s.toString());
+
+                    break;
+
+
+            }
         }
     }
 
@@ -208,21 +269,29 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
             switch (krakenAsset) {
 
-                // Algorand (ALGO) | Augur (REP) | Basic Attention Token (BAT) | Cardano (ADA) | Compound (COMP)
-                // Cosmos (ATOM) | Dai (DAI) | DASH (DASH) | EOS (EOS) | Ether Classic (ETC) | Gnosis (GNO) | Chainlink (LINK)
-                // Kava (KAVA) | Kyber Network (KNC) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG) | Quantum (QTUM)
-                // Siacoin (SC) | Stellar Lumens (XLM) | Storj (STORJ) | Tezos (XTZ) | Tron (TRX) | USD Coin (USDC)
-                // Waves (WAVES) | Zcash (ZEC)
+                // Algorand (ALGO) | Aragon (ANT) | Augur (REP) | Balancer (BAL) | Basic Attention Token (BAT) | Cardano (ADA) | Compound (COMP)
+                // Cosmos (ATOM) | Curve (CRV)| Kusama (KSM) | Dai (DAI) | DASH (DASH) | Decentraland (MANA) | EOS (EOS) | Ether Classic (ETC) | Filecoin (FIL) | Graph (GRT) | Gnosis (GNO) | Chainlink (LINK)
+                // Kava (KAVA) | Keep (KEEP) | Kyber Network (KNC) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG) | Polkadot (DOT)
+                // Quantum (QTUM) | Siacoin (SC) | Stellar Lumens (XLM) | Storj (STORJ) | Synthetix (SNX) |  tBTC (TBTC) | Tezos (XTZ) | Tron (TRX) | Uniswap (UNI) | USD Coin (USDC)
+                // Waves (WAVES) | Yearn (YFI)  | Zcash (ZEC)
                 case "ALGO":
+                case "ANT" :
+                case "BAL" :
                 case "BAT" :
                 case "ADA" :
                 case "ATOM" :
                 case "COMP":
+                case "CRV" :
+                case "KSM" :
                 case "DAI" :
                 case "DASH" :
+                case "MANA" :
                 case "EOS" :
+                case "FIL" :
                 case "GNO" :
+                case "GRT" :
                 case "KAVA" :
+                case "KEEP" :
                 case "KNC" :
                 case "LINK" :
                 case "LSK" :
@@ -230,13 +299,18 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                 case "OMG" :
                 case "OXT" :
                 case "PAXG" :
+                case "DOT" :
                 case "QTUM" :
                 case "SC" :
                 case "STORJ" :
+                case "SNX" :
+                case "TBTC" :
                 case "XTZ" :
                 case "TRX" :
+                case "UNI" :
                 case "USDC" :
                 case "WAVES" :
+                case "YFI" :
 
                     // EUR and USD
                     if (americanDollarSelected) {
@@ -247,6 +321,28 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
                     if (eurosSelected) {
                         assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
                                 ihmConsole.getString(R.string.Euro)).concat(","));
+                    }
+
+                    break;
+
+
+                // Aave (AAVE)
+                case "AAVE" :
+
+                    // EUR, GBP and USD
+                    if (americanDollarSelected) {
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.US_dollar)).concat(","));
+                    }
+
+                    if (eurosSelected) {
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.Euro)).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(String.format(ihmConsole.getString(R.string.Kraken_pair), krakenAsset,
+                                ihmConsole.getString(R.string.Pounds)).concat(","));
                     }
 
                     break;
@@ -519,7 +615,6 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
 
         // Send update market data event to MarketDataFragment (EventBus process)
         EventBus.getDefault().post(new UpdateMarketDataEvent(cryptoCurrencyDataMap));
-
     }
 
 
@@ -535,6 +630,405 @@ public class KrakenWebClient extends AsyncTask<String, String, String> {
         if (ihmConsole.getCurrencyData() != null) {
 
             currencyData = ihmConsole.getCurrencyData();
+
+            String currencySelectedFormat = currencySelected.replace("/","");
+
+            // Specific pair name
+            switch (currencySelectedFormat) {
+
+                // Augur pair name
+                case "REPEUR" :
+                    currencySelectedFormat = "XREPZEUR";
+                    break;
+
+                case "REPUSD" :
+                    currencySelectedFormat = "XREPZUSD";
+                    break;
+
+                // Bitcoin pair name
+                case "XBTCAD":
+                    currencySelectedFormat = "XXBTZCAD";
+                    break;
+
+                case "XBTEUR":
+                    currencySelectedFormat = "XXBTZEUR";
+                    break;
+
+                 case "XBTGBP":
+                     currencySelectedFormat = "XXBTZGBP";
+                     break;
+
+                 case "XBTJPY":
+                     currencySelectedFormat = "XXBTZJPY";
+                     break;
+
+                 case "XBTUSD":
+                     currencySelectedFormat = "XXBTZUSD";
+                     break;
+
+                 // Etherum pair name
+                 case "ETHCAD":
+                     currencySelectedFormat = "XETHZCAD";
+                     break;
+
+                 case "ETHEUR":
+                     currencySelectedFormat = "XETHZEUR";
+                     break;
+
+                 case "ETHGBP":
+                     currencySelectedFormat = "XETHZGBP";
+                     break;
+
+                 case "ETHJPY":
+                     currencySelectedFormat = "XETHZJPY";
+                     break;
+
+                 case "ETHUSD":
+                     currencySelectedFormat = "XETHZUSD";
+                     break;
+
+                // Etherum Classic pair name
+                case "ETCEUR":
+                    currencySelectedFormat = "XETCZEUR";
+                    break;
+
+                case "ETCUSD":
+                    currencySelectedFormat = "XETCZUSD";
+                    break;
+
+                // Litecoin pair name
+                case "LTCEUR" :
+                    currencySelectedFormat = "XLTCZEUR";
+                    break;
+
+                case "LTCUSD" :
+                    currencySelectedFormat = "XLTCZUSD";
+                    break;
+
+                // Monero pair name
+                case "XMREUR" :
+                    currencySelectedFormat = "XXMRZEUR";
+                    break;
+
+                case "XMRUSD" :
+                    currencySelectedFormat = "XXMRZUSD";
+                    break;
+
+                // Ripple pair name
+                case "XRPCAD" :
+                    currencySelectedFormat = "XXRPZCAD";
+                    break;
+
+                case "XRPEUR" :
+                    currencySelectedFormat = "XXRPZEUR";
+                    break;
+
+                case "XRPJPY" :
+                    currencySelectedFormat = "XXRPZJPY";
+                    break;
+
+                case "XRPUSD" :
+                    currencySelectedFormat = "XXRPZUSD";
+                    break;
+
+                // Stellar lumens pair
+                case "XLMEUR" :
+                    currencySelectedFormat = "XXLMZEUR";
+                    break;
+
+                case "XLMUSD" :
+                    currencySelectedFormat = "XXLMZUSD";
+                    break;
+
+                // Tether pair name
+                case "USDTUSD" :
+                    currencySelectedFormat = "USDTZUSD";
+                    break;
+
+                // Zcash pair name
+                case "ZECEUR" :
+                    currencySelectedFormat = "XZECZEUR";
+                    break;
+
+                case "ZECUSD" :
+                    currencySelectedFormat = "XZECZUSD";
+                    break;
+
+            }
+
+
+            try {
+
+                JSONObject extractCcurrencySelected = cryptoCurrencyData.getJSONObject("result").getJSONObject(currencySelectedFormat);
+
+                switch (currencySelectedFormat.substring(0,3)) {
+
+                    case "AAV" :
+                        Aave aaveData = gson.fromJson(extractCcurrencySelected.toString(), Aave.class);
+                        currencyData.getResult().setAaveData(aaveData);
+                        break;
+
+                    case "ALG" :
+                        Algorand algorandData = gson.fromJson(extractCcurrencySelected.toString(), Algorand.class);
+                        currencyData.getResult().setAlgorandData(algorandData);
+                        break;
+
+                    case "ANT" :
+                        Aragon aragonData = gson.fromJson(extractCcurrencySelected.toString(), Aragon.class);
+                        currencyData.getResult().setAragonData(aragonData);
+                        break;
+
+                    case "BAL" :
+                        Balancer balancerData = gson.fromJson(extractCcurrencySelected.toString(), Balancer.class);
+                        currencyData.getResult().setBalancerData(balancerData);
+                        break;
+
+                    case "BAT" :
+                        BasicAttentionToken basicAttentionToken = gson.fromJson(extractCcurrencySelected.toString(), BasicAttentionToken.class);
+                        currencyData.getResult().setBasicAttentionTokenData(basicAttentionToken);
+                        break;
+
+                    case "LIN" :
+                        Chainlink chainlinkData = gson.fromJson(extractCcurrencySelected.toString(), Chainlink.class);
+                        currencyData.getResult().setChainlinkData(chainlinkData);
+                        break;
+
+                    case "COM":
+                        Compound compoundData = gson.fromJson(extractCcurrencySelected.toString(), Compound.class);
+                        currencyData.getResult().setCompoundData(compoundData);
+                        break;
+
+                    case "ATO":
+                        Cosmos cosmosData = gson.fromJson(extractCcurrencySelected.toString(), Cosmos.class);
+                        currencyData.getResult().setCosmosData(cosmosData);
+                        break;
+
+                    case "XRE" :
+                        Augur augurData = gson.fromJson(extractCcurrencySelected.toString(), Augur.class);
+                        currencyData.getResult().setAugurData(augurData);
+                        break;
+
+                    case "XBT":
+                    case "XXB":
+                        Bitcoin bitcoinData = gson.fromJson(extractCcurrencySelected.toString(), Bitcoin.class);
+                        currencyData.getResult().setBitcoinData(bitcoinData);
+                        break;
+
+                    case "BCH" :
+                        BitcoinCash bitcoinCashData = gson.fromJson(extractCcurrencySelected.toString(), BitcoinCash.class);
+                        currencyData.getResult().setBitcoinCashData(bitcoinCashData);
+                        break;
+
+                    case "ADA" :
+                        Cardano cardanoData = gson.fromJson(extractCcurrencySelected.toString(), Cardano.class);
+                        currencyData.getResult().setCardanoData(cardanoData);
+                        break;
+
+                    case "CRV" :
+                        Curve curveData = gson.fromJson(extractCcurrencySelected.toString(), Curve.class);
+                        currencyData.getResult().setCurveData(curveData);
+                        break;
+
+                    case "DAI" :
+                        DAI daiData = gson.fromJson(extractCcurrencySelected.toString(), DAI.class);
+                        currencyData.getResult().setDaiData(daiData);
+                        break;
+
+                    case "DAS" :
+                        Dash dashData = gson.fromJson(extractCcurrencySelected.toString(), Dash.class);
+                        currencyData.getResult().setDashData(dashData);
+                        break;
+
+                    case "MAN" :
+                        Decentraland dcentralandData = gson.fromJson(extractCcurrencySelected.toString(), Decentraland.class);
+                        currencyData.getResult().setDecentralandData(dcentralandData);
+                        break;
+
+                    case "ETH":
+                    case "XET" :
+
+                        // Same prefix "XET" between Ethereum and Ethereum Classic
+                        if(currencySelectedFormat.startsWith("XETC")) {
+
+                            EthereumClassic ethereumClassicData = gson.fromJson(extractCcurrencySelected.toString(), EthereumClassic.class);
+                            currencyData.getResult().setEthereumClassicData(ethereumClassicData);
+                        }
+                        else {
+
+                            Ethereum ethereumData = gson.fromJson(extractCcurrencySelected.toString(), Ethereum.class);
+                            currencyData.getResult().setEthereumData(ethereumData);
+                        }
+
+                        break;
+
+                    case "EOS" :
+                        EOS eosData = gson.fromJson(extractCcurrencySelected.toString(), EOS.class);
+                        currencyData.getResult().setEosData(eosData);
+                        break;
+
+                    case "FIL" :
+                        Filecoin filecoinData = gson.fromJson(extractCcurrencySelected.toString(), Filecoin.class);
+                        currencyData.getResult().setFilecoinData(filecoinData);
+                        break;
+
+                    case "GRT" :
+                        Graph graphData = gson.fromJson(extractCcurrencySelected.toString(), Graph.class);
+                        currencyData.getResult().setGraphData(graphData);
+                        break;
+
+                    case "GNO" :
+                        Gnosis gnosisData = gson.fromJson(extractCcurrencySelected.toString(), Gnosis.class);
+                        currencyData.getResult().setGnosisData(gnosisData);
+                        break;
+
+                    case "KAV" :
+                        KAVA kavaData = gson.fromJson(extractCcurrencySelected.toString(), KAVA.class);
+                        currencyData.getResult().setKavaData(kavaData);
+                        break;
+
+                    case "KEE" :
+                        Keep keepData = gson.fromJson(extractCcurrencySelected.toString(), Keep.class);
+                        currencyData.getResult().setKeepData(keepData);
+                        break;
+
+                    case "KNC" :
+                        KyberNetworkToken kyberNetworkTokenData = gson.fromJson(extractCcurrencySelected.toString(), KyberNetworkToken.class);
+                        currencyData.getResult().setKyberNetworkData(kyberNetworkTokenData);
+                        break;
+
+                    case "KSM" :
+                        Kusama kusamaData = gson.fromJson(extractCcurrencySelected.toString(), Kusama.class);
+                        currencyData.getResult().setKusamaData(kusamaData);
+                        break;
+
+                    case "LSK" :
+                        Lisk liskData = gson.fromJson(extractCcurrencySelected.toString(), Lisk.class);
+                        currencyData.getResult().setLiskData(liskData);
+                        break;
+
+                    case "LTC" :
+                    case "XLT" :
+                        Litecoin litecoinData = gson.fromJson(extractCcurrencySelected.toString(), Litecoin.class);
+                        currencyData.getResult().setLitecoinData(litecoinData);
+                        break;
+
+                    case "XXM":
+                        Monero moneroData = gson.fromJson(extractCcurrencySelected.toString(), Monero.class);
+                        currencyData.getResult().setMoneroData(moneroData);
+                        break;
+
+                    case "NAN":
+                        Nano nanoData = gson.fromJson(extractCcurrencySelected.toString(), Nano.class);
+                        currencyData.getResult().setNanoData(nanoData);
+                        break;
+
+                    case "OMG" :
+                        OmiseGO omiseGOData = gson.fromJson(extractCcurrencySelected.toString(), OmiseGO.class);
+                        currencyData.getResult().setOmiseGOData(omiseGOData);
+                        break;
+
+                    case "OXT" :
+                        Orchid orchidData = gson.fromJson(extractCcurrencySelected.toString(), Orchid.class);
+                        currencyData.getResult().setOrchidData(orchidData);
+                        break;
+
+                    case "PAX" :
+                        PaxGold paxGoldData = gson.fromJson(extractCcurrencySelected.toString(), PaxGold.class);
+                        currencyData.getResult().setPaxGoldData(paxGoldData);
+                        break;
+
+                    case "DOT" :
+                        Polkadot polkadotData = gson.fromJson(extractCcurrencySelected.toString(), Polkadot.class);
+                        currencyData.getResult().setPolkadotData(polkadotData);
+                        break;
+
+                    case "QTU" :
+                        Quantum quantumData = gson.fromJson(extractCcurrencySelected.toString(), Quantum.class);
+                        currencyData.getResult().setQuantumData(quantumData);
+                        break;
+
+                    case "XRP":
+                    case "XXR" :
+                        Ripple rippleData = gson.fromJson(extractCcurrencySelected.toString(), Ripple.class);
+                        currencyData.getResult().setRippleData(rippleData);
+                        break;
+
+                    case "SCE" :
+                    case "SCU" :
+                        Siacoin siacoinData = gson.fromJson(extractCcurrencySelected.toString(), Siacoin.class);
+                        currencyData.getResult().setSiacoinData(siacoinData);
+                        break;
+
+                    case "SNX" :
+                        Synthetix synthetixData = gson.fromJson(extractCcurrencySelected.toString(), Synthetix.class);
+                        currencyData.getResult().setSynthetixData(synthetixData);
+                        break;
+
+                    case "XXL" :
+                        StellarLumens stellarLumensData = gson.fromJson(extractCcurrencySelected.toString(), StellarLumens.class);
+                        currencyData.getResult().setStellarLumensData(stellarLumensData);
+                        break;
+
+                    case "STO" :
+                        Storj storjData = gson.fromJson(extractCcurrencySelected.toString(), Storj.class);
+                        currencyData.getResult().setStorjData(storjData);
+                        break;
+
+                    case "TBT" :
+                        tBTC tBTCData = gson.fromJson(extractCcurrencySelected.toString(), tBTC.class);
+                        currencyData.getResult().settBTCData(tBTCData);
+                        break;
+
+                    case "TRX" :
+                        Tron tronData = gson.fromJson(extractCcurrencySelected.toString(), Tron.class);
+                        currencyData.getResult().setTronData(tronData);
+                        break;
+
+                    case "UNI" :
+                        Uniswap uniswapData = gson.fromJson(extractCcurrencySelected.toString(), Uniswap.class);
+                        currencyData.getResult().setUniswapData(uniswapData);
+                        break;
+
+                    case "USD" :
+
+                        // Same prefix "USD" between Tether and USD Coin
+                        if(currencySelectedFormat.startsWith("USDC")) {
+
+                            USDCToken usdcTokenData = gson.fromJson(extractCcurrencySelected.toString(), USDCToken.class);
+                            currencyData.getResult().setUsdcTokenData(usdcTokenData);
+                        }
+                        else {
+
+                            Tether tetherData = gson.fromJson(extractCcurrencySelected.toString(), Tether.class);
+                            currencyData.getResult().setTetherData(tetherData);
+                        }
+                        break;
+
+                    case "WAV" :
+                        Waves wavesData = gson.fromJson(extractCcurrencySelected.toString(), Waves.class);
+                        currencyData.getResult().setWavesData(wavesData);
+                        break;
+
+                    case "XTZ" :
+                        Tezos tezosData = gson.fromJson(extractCcurrencySelected.toString(), Tezos.class);
+                        currencyData.getResult().setTezosData(tezosData);
+                        break;
+
+                    case "YFI" :
+                        Yearn yearnData = gson.fromJson(extractCcurrencySelected.toString(), Yearn.class);
+                        currencyData.getResult().setYearnData(yearnData);
+                        break;
+
+                    case "XZE" :
+                        Zcash zcashData = gson.fromJson(extractCcurrencySelected.toString(), Zcash.class);
+                        currencyData.getResult().setZcashData(zcashData);
+                        break;
+                }
+
+            }
+            catch (JSONException e) {
+                e.printStackTrace();
+            }
 
             cryptoCurrencyDataMap = currencyData.extractCurrencyData(currencySelected, ihmConsole.getResources());
         }
