@@ -182,3 +182,29 @@ Cosmos ATOM/USD ATOM/EUR ATOM/CAD
 	(Synthetix)		SNXEUR / SNXUSD
 	(Uniswap)		UNIEUR / UNIUSD
 	(Yearn.finance)	YFIEUR / YFIUSD
+
+
+# Version 1.16 : (20/05/2020)
+
+	- Overhaul of the software networking part
+	
+	- Add Australien dollar and Pound Sterling trading pairs for fourteen new assets
+	
+	(Cardano) ADA/AUD ADA/GBP
+	(Cosmos) ATOM/AUD ATOM/GBP
+	(Polkadot) DOT/AUD DOT/GBP
+	(Filecoin) FIL/AUD FIL/GBP
+	(The Graph) GRT/AUD GRT/GBP
+	(Kusama) KSM/AUD KSM/GBP
+	(LINK) 	LINK/AUD LINK/GBP
+	(Synthetix)	SNXAUD / SNXGBP
+	(USD Coin) USDC/AUD USDC/GBP
+	(StellarLumens) XLM/AUD XLM/GBP
+	(Tezos) XTZ/AUD XTZ/GBP
+	(Yearn.finance)	YFIAUD	/ YFIGBP
+	(Aave) AAVEAUD
+	(Algorand) ALGO/GBP
+	
+	- One currency pairs added : 	
+	
+	(Flow)FLOW/USD FLOW/EUR FLOW/GBP
