@@ -27,10 +27,11 @@ public class CurrencyData {
 
     public HashMap<String, String> extractCurrencyData(String currency, Resources resources) {
 
-        HashMap<String, String> cryptoCurrencyDataMap = new HashMap<String, String>();
+        HashMap<String, String> cryptoCurrencyDataMap = new HashMap<>();
 
         switch(currency) {
 
+            case "AAVE/AUD" :
             case "AAVE/EUR" :
             case "AAVE/GBP" :
             case "AAVE/USD" :
@@ -49,8 +50,8 @@ public class CurrencyData {
 
                 break;
 
-
             case "ALGO/EUR" :
+            case "ALGO/GBP" :
             case "ALGO/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getAlgorandData().getAskArray().get(0));
@@ -176,7 +177,9 @@ public class CurrencyData {
 
                 break;
 
+            case "ATOM/AUD" :
             case "ATOM/EUR" :
+            case "ATOM/GBP" :
             case "ATOM/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getCosmosData().getAskArray().get(0));
@@ -193,7 +196,9 @@ public class CurrencyData {
 
                 break;
 
+            case "ADA/AUD":
             case "ADA/EUR" :
+            case "ADA/GBP" :
             case "ADA/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getCardanoData().getAskArray().get(0));
@@ -351,6 +356,8 @@ public class CurrencyData {
 
                 break;
 
+            case "FIL/AUD" :
+            case "FIL/GBP" :
             case "FIL/EUR" :
             case "FIL/USD" :
 
@@ -365,6 +372,24 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getFilecoinData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getFilecoinData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getFilecoinData().getTradesArray().get(1)));
+
+                break;
+
+            case "FLOW/GBP" :
+            case "FLOW/EUR" :
+            case "FLOW/USD" :
+
+                cryptoCurrencyDataMap.put("askPriceValue", result.getFlowData().getAskArray().get(0));
+                cryptoCurrencyDataMap.put("bidPriceValue", result.getFlowData().getBidArray().get(0));
+                cryptoCurrencyDataMap.put("lastPriceValue", result.getFlowData().getLastPriceArray().get(0));
+                cryptoCurrencyDataMap.put("highPriceValue", result.getFlowData().getHighPriceArray().get(0));
+                cryptoCurrencyDataMap.put("lowPriceValue", result.getFlowData().getLowPriceArray().get(0));
+                cryptoCurrencyDataMap.put("avgPriceValue", result.getFlowData().getAvgPriceArray().get(0));
+                cryptoCurrencyDataMap.put("openPriceValue", result.getFlowData().getOpeningPrice());
+                cryptoCurrencyDataMap.put("volumeValue", result.getFlowData().getVolumeArray().get(0));
+                cryptoCurrencyDataMap.put("volume24Value", result.getFlowData().getVolumeArray().get(1));
+                cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getFlowData().getTradesArray().get(0)));
+                cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getFlowData().getTradesArray().get(1)));
 
                 break;
 
@@ -385,7 +410,9 @@ public class CurrencyData {
 
                 break;
 
+            case "GRT/AUD" :
             case "GRT/EUR" :
+            case "GRT/GBP" :
             case "GRT/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getGraphData().getAskArray().get(0));
@@ -453,8 +480,10 @@ public class CurrencyData {
 
                 break;
 
-            case "KSM/USD" :
+            case "KSM/AUD" :
             case "KSM/EUR" :
+            case "KSM/GBP" :
+            case "KSM/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getKusamaData().getAskArray().get(0));
                 cryptoCurrencyDataMap.put("bidPriceValue", result.getKusamaData().getBidArray().get(0));
@@ -470,11 +499,11 @@ public class CurrencyData {
 
                 break;
 
-            case "LINK/USD" :
+            case "LINK/AUD" :
             case "LINK/EUR" :
+            case "LINK/GBP" :
+            case "LINK/USD" :
 
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.Euro_symbol)));
                 cryptoCurrencyDataMap.put("askPriceValue", result.getChainlinkData().getAskArray().get(0));
                 cryptoCurrencyDataMap.put("bidPriceValue", result.getChainlinkData().getBidArray().get(0));
                 cryptoCurrencyDataMap.put("lastPriceValue", result.getChainlinkData().getLastPriceArray().get(0));
@@ -630,7 +659,9 @@ public class CurrencyData {
 
                 break;
 
+            case "DOT/AUD":
             case "DOT/EUR":
+            case "DOT/GBP":
             case "DOT/USD":
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getPolkadotData().getAskArray().get(0));
@@ -702,7 +733,9 @@ public class CurrencyData {
 
                 break;
 
+            case "XLM/AUD" :
             case "XLM/EUR" :
+            case "XLM/GBP" :
             case "XLM/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getStellarLumensData().getAskArray().get(0));
@@ -736,8 +769,11 @@ public class CurrencyData {
 
                 break;
 
+            case "SNX/AUD" :
+            case "SNX/GBP" :
             case "SNX/EUR":
             case "SNX/USD" :
+
                 cryptoCurrencyDataMap.put("askPriceValue", result.getSynthetixData().getAskArray().get(0));
                 cryptoCurrencyDataMap.put("bidPriceValue", result.getSynthetixData().getBidArray().get(0));
                 cryptoCurrencyDataMap.put("lastPriceValue", result.getSynthetixData().getLastPriceArray().get(0));
@@ -749,10 +785,12 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.getSynthetixData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.getSynthetixData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.getSynthetixData().getTradesArray().get(1)));
+
                 break;
 
             case "TBTC/EUR":
             case "TBTC/USD" :
+
                 cryptoCurrencyDataMap.put("askPriceValue", result.gettBTCData().getAskArray().get(0));
                 cryptoCurrencyDataMap.put("bidPriceValue", result.gettBTCData().getBidArray().get(0));
                 cryptoCurrencyDataMap.put("lastPriceValue", result.gettBTCData().getLastPriceArray().get(0));
@@ -764,9 +802,12 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("volume24Value", result.gettBTCData().getVolumeArray().get(1));
                 cryptoCurrencyDataMap.put("tradeVolumeValue", String.valueOf(result.gettBTCData().getTradesArray().get(0)));
                 cryptoCurrencyDataMap.put("tradeVolume24Value", String.valueOf(result.gettBTCData().getTradesArray().get(1)));
+
                 break;
 
+            case "XTZ/AUD" :
             case "XTZ/EUR" :
+            case "XTZ/GBP" :
             case "XTZ/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getTezosData().getAskArray().get(0));
@@ -817,6 +858,8 @@ public class CurrencyData {
 
                 break;
 
+            case "USDC/AUD" :
+            case "USDC/GBP" :
             case "USDC/EUR" :
             case "USDC/USD" :
 
@@ -851,7 +894,9 @@ public class CurrencyData {
 
                 break;
 
+            case "YFI/AUD" :
             case "YFI/EUR" :
+            case "YFI/GBP" :
             case "YFI/USD" :
 
                 cryptoCurrencyDataMap.put("askPriceValue", result.getYearnData().getAskArray().get(0));
@@ -895,6 +940,10 @@ public class CurrencyData {
 
         switch (currency) {
 
+            case "AAVE/AUD":
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Aave_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "AAVE/EUR":
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Aave_Market_data_title), resources.getString(R.string.Euro_symbol)));
                 break;
@@ -909,6 +958,10 @@ public class CurrencyData {
 
             case "ALGO/EUR":
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Algorand_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "ALGO/GBP":
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Algorand_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "ALGO/USD" :
@@ -999,16 +1052,32 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Compound_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "ATOM/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cosmos_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "ATOM/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cosmos_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "ATOM/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cosmos_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "ATOM/USD" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cosmos_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "ADA/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cardano_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "ADA/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cardano_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "ADA/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Cardano_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "ADA/USD" :
@@ -1091,16 +1160,44 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Eos_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "FIL/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Filecoin_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "FIL/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Filecoin_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "FIL/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Filecoin_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "FIL/USD" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Filecoin_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "FLOW/EUR" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Flow_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "FLOW/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Flow_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                break;
+
+            case "FLOW/USD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Flow_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                break;
+
+            case "GRT/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Graph_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "GRT/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Graph_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "GRT/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Graph_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "GRT/USD" :
@@ -1139,20 +1236,36 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kyber_Network_Market_data_title), resources.getString(R.string.Euro_symbol)));
                 break;
 
-            case "KSM/USD" :
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kusama_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+            case "KSM/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kusama_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
                 break;
 
             case "KSM/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kusama_Market_data_title), resources.getString(R.string.Euro_symbol)));
                 break;
 
-            case "LINK/USD" :
-                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+            case "KSM/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kusama_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                break;
+
+            case "KSM/USD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Kusama_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                break;
+
+            case "LINK/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
                 break;
 
             case "LINK/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "LINK/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                break;
+
+            case "LINK/USD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Chainlink_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
             case "LSK/EUR" :
@@ -1219,8 +1332,16 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Paxg_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "DOT/AUD":
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Polkadot_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "DOT/EUR":
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Polkadot_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "DOT/GBP":
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Polkadot_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "DOT/USD":
@@ -1267,8 +1388,16 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Siacoin_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "XLM/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Stellar_Lumens_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "XLM/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Stellar_Lumens_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "XLM/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Stellar_Lumens_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "XLM/USD" :
@@ -1281,6 +1410,14 @@ public class CurrencyData {
 
             case "STORJ/USD" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Storj_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
+                break;
+
+            case "SNX/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Synthetix_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
+            case "SNX/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Synthetix_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "SNX/EUR" :
@@ -1319,8 +1456,16 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tether_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "XTZ/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tezos_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "XTZ/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tezos_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "XTZ/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Tezos_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "XTZ/USD" :
@@ -1343,6 +1488,14 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Uniswap_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "USDC/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.USDCoin_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
+            case "USDC/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.USDCoin_Market_data_title), resources.getString(R.string.Pounds_symbol)));
+                break;
+
             case "USDC/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.USDCoin_Market_data_title), resources.getString(R.string.Euro_symbol)));
                 break;
@@ -1359,8 +1512,16 @@ public class CurrencyData {
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Waves_Market_data_title), resources.getString(R.string.US_dollar_symbol)));
                 break;
 
+            case "YFI/AUD" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Yearn_Market_data_title), resources.getString(R.string.Australian_dollar_symbol)));
+                break;
+
             case "YFI/EUR" :
                 cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Yearn_Market_data_title), resources.getString(R.string.Euro_symbol)));
+                break;
+
+            case "YFI/GBP" :
+                cryptoCurrencyDataMap.put("marketDataCurrency", String.format(resources.getString(R.string.Yearn_Market_data_title), resources.getString(R.string.Pounds_symbol)));
                 break;
 
             case "YFI/USD" :

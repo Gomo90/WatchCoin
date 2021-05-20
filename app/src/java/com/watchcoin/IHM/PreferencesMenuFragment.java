@@ -48,7 +48,7 @@ public class PreferencesMenuFragment extends PreferenceFragmentCompat implements
      */
     private void displayFragment(Fragment fragment) {
 
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
 
         fragmentTransaction.replace(R.id.ContainerMain, fragment);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);

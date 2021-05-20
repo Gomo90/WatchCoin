@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/MarketDataTitle"
-                android:paddingLeft="3dp"
+                android:paddingStart="3dp"
                 android:paddingBottom="20dp"
                 android:text="@string/Data_update_label"
                 android:textSize="@dimen/refresh_label_size"
@@ -63,7 +63,7 @@
 
                 <TextView
                     android:id="@+id/AskPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -79,7 +79,7 @@
 
                 <TextView
                     android:id="@+id/BidPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -95,7 +95,7 @@
 
                 <TextView
                     android:id="@+id/LastPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -111,7 +111,7 @@
 
                 <TextView
                     android:id="@+id/HighPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -127,7 +127,7 @@
 
                 <TextView
                     android:id="@+id/LowPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -143,7 +143,7 @@
 
                 <TextView
                     android:id="@+id/AvgPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -159,7 +159,7 @@
 
                 <TextView
                     android:id="@+id/OpenPriceValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -179,7 +179,7 @@
 
                 <TextView
                     android:id="@+id/VolumeValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -195,7 +195,7 @@
 
                 <TextView
                     android:id="@+id/Volume24hValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -215,7 +215,7 @@
 
                 <TextView
                     android:id="@+id/TradeVolumeValue"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -231,7 +231,7 @@
 
                 <TextView
                     android:id="@+id/TradeVolume24Value"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textSize="@dimen/marketdata_value_size"
                     android:textStyle="bold" />
             </TableRow>

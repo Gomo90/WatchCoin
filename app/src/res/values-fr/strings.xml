@@ -37,6 +37,7 @@
     <string name= "Etherc_Market_data_title">Données de marché : Ether Classic (%1$s)</string>
     <string name= "Ether_Market_data_title">Données de marché : Ether (%1$s)</string>
     <string name= "Filecoin_Market_data_title">Données de marché : Filecoin (%1$s)</string>
+    <string name= "Flow_Market_data_title">Données de marché : Flow (%1$s)</string>
     <string name= "Gnosis_Market_data_title">Données de marché : Gnosis (%1$s)</string>
     <string name= "Graph_Market_data_title">Données de marché : Graph (%1$s)</string>
     <string name= "Kava_Market_data_title">Données de marché : Kava (%1$s)</string>

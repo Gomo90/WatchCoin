@@ -62,8 +62,10 @@
     <string name= "Ripple_JPY_pair" translatable="false">XXRPZJPY</string>
     <string name= "Ripple_USD_pair" translatable="false">XXRPZUSD</string>
 
+    <string name= "Stellarlumens_AUD_pair" translatable="false">XXLMZAUD</string>
     <string name= "Stellarlumens_EUR_pair" translatable="false">XXLMZEUR</string>
-    <string name= "Stellatlumens_USD_pair" translatable="false">XXLMZUSD</string>
+    <string name= "Stellarlumens_GBP_pair" translatable="false">XXLMZGBP</string>
+    <string name= "Stellarlumens_USD_pair" translatable="false">XXLMZUSD</string>
 
     <string name= "Tether_AUD_pair" translatable="false">USDTAUD</string>
     <string name= "Tether_EUR_pair" translatable="false">USDTEUR</string>
@@ -113,6 +115,7 @@
     <string name= "Ether_Market_data_title">Ether Market data (%1$s)</string>
     <string name= "Etherc_Market_data_title">Ether Classic Market data (%1$s)</string>
     <string name= "Filecoin_Market_data_title">Filecoin Market data (%1$s)</string>
+    <string name= "Flow_Market_data_title">Flow Market data (%1$s)</string>
     <string name= "Gnosis_Market_data_title">Gnosis Market data (%1$s)</string>
     <string name= "Graph_Market_data_title">Graph Market data (%1$s)</string>
     <string name= "Kava_Market_data_title">Kava Market data (%1$s)</string>
@@ -194,5 +197,6 @@
     <!-- Languages details-->
     <string name= "Language_configuration_title">Language</string>
     <string name= "Language_configuration_summary">Change the language of the application</string>
+
 
 </resources>

@@ -73,19 +73,19 @@ public class MarketDataFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Market Data displayed
-        title = (TextView) view.findViewById(R.id.MarketDataTitle);
-        dateRefresh = (TextView) view.findViewById(R.id.DateRefreshLabel);
-        askPrice = (TextView) view.findViewById(R.id.AskPriceValue);
-        bidPrice = (TextView) view.findViewById(R.id.BidPriceValue);
-        lastPrice = (TextView) view.findViewById(R.id.LastPriceValue);
-        highPrice = (TextView) view.findViewById(R.id.HighPriceValue);
-        lowPrice = (TextView) view.findViewById(R.id.LowPriceValue);
-        avgPrice = (TextView) view.findViewById(R.id.AvgPriceValue);
-        openPrice = (TextView) view.findViewById(R.id.OpenPriceValue);
-        volume = (TextView) view.findViewById(R.id.VolumeValue);
-        volume24H = (TextView) view.findViewById(R.id.Volume24hValue);
-        tradeVolume = (TextView) view.findViewById(R.id.TradeVolumeValue);
-        tradeVolume24H = (TextView) view.findViewById(R.id.TradeVolume24Value);
+        title = view.findViewById(R.id.MarketDataTitle);
+        dateRefresh = view.findViewById(R.id.DateRefreshLabel);
+        askPrice = view.findViewById(R.id.AskPriceValue);
+        bidPrice = view.findViewById(R.id.BidPriceValue);
+        lastPrice = view.findViewById(R.id.LastPriceValue);
+        highPrice = view.findViewById(R.id.HighPriceValue);
+        lowPrice = view.findViewById(R.id.LowPriceValue);
+        avgPrice = view.findViewById(R.id.AvgPriceValue);
+        openPrice = view.findViewById(R.id.OpenPriceValue);
+        volume = view.findViewById(R.id.VolumeValue);
+        volume24H = view.findViewById(R.id.Volume24hValue);
+        tradeVolume = view.findViewById(R.id.TradeVolumeValue);
+        tradeVolume24H = view.findViewById(R.id.TradeVolume24Value);
 
 
         if (marketDataDisplayed) {

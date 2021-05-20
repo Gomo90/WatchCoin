@@ -23,11 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private static int splashScreenTime = 3000;
-
-    private final String configChanged = "configChanged";
-    private final String configLanguageChanged = "configLanguageChanged";
-    private String languageApp;
+    private final static int splashScreenTime = 3000;
 
     public static SharedPreferences preferencesApp;
 
@@ -50,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
         Editor preferencesEditor = preferencesApp.edit();
 
         // Set configChanged flag = false (first execution)
-        preferencesEditor.putBoolean(configChanged, Boolean.FALSE);
+        preferencesEditor.putBoolean("configChanged", Boolean.FALSE);
 
         // Set configLanguageChanged flag = false (first execution)
-        preferencesEditor.putBoolean(configLanguageChanged, Boolean.FALSE);
+        preferencesEditor.putBoolean("configLanguageChanged", Boolean.FALSE);
 
         // Check if the language configuration exist
-        languageApp = preferencesApp.getString("language_configuration", "NoLanguage");
+        String languageApp = preferencesApp.getString("language_configuration", "NoLanguage");
 
         if (!languageApp.equals("NoLanguage")) {
 
@@ -80,18 +76,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        preferencesEditor.commit();
+        preferencesEditor.apply();
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
+            Intent i = new Intent(MainActivity.this, IHMConsole.class);
+            startActivity(i);
 
-                Intent i = new Intent(MainActivity.this, IHMConsole.class);
-                startActivity(i);
-
-                finish();
-            }
+            finish();
         }, splashScreenTime);
     }
 

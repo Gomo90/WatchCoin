@@ -6,7 +6,7 @@ package com.watchcoin.Data;
  */
 public class ErrorMessageEvent {
 
-    private String errorMessageType;
+    private final String errorMessageType;
 
 
     public ErrorMessageEvent(String errorMessageType) {

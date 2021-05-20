@@ -5,25 +5,24 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import androidx.preference.MultiSelectListPreference;
+import android.util.DisplayMetrics;
+
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
+import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import android.util.DisplayMetrics;
 
 import com.watchcoin.MainActivity;
 import com.watchcoin.R;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
-
-import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Stream;
 
 
 /**
@@ -38,13 +37,9 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
     private IHMConsole ihmConsoleActivity;
 
-    private SharedPreferences preferencesApp = MainActivity.preferencesApp;
+    private final SharedPreferences preferencesApp = MainActivity.preferencesApp;
 
-    private EditTextPreference krakenUrlAPIValue;
-
-    private MultiSelectListPreference krakenAssetMultiSelectListPreference;
-
-    private List<String> MultiSelectLists = Arrays.asList("kraken_assets_list", "defi_kraken_assets_list");
+    private final List<String> MultiSelectLists = Arrays.asList("kraken_assets_list", "defi_kraken_assets_list");
 
 
     @Override
@@ -54,7 +49,7 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
             DialogFragment dialogFragment = MultiSelectListPreferenceDialog.newInstance(preference.getKey());
             dialogFragment.setTargetFragment(this,0);
-            dialogFragment.show(this.getFragmentManager(), FRAGMENT_TAG_DIALOG);
+            dialogFragment.show(this.getParentFragmentManager(), FRAGMENT_TAG_DIALOG);
 
         }
         else {
@@ -78,7 +73,7 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
                 addPreferencesFromResource(R.xml.coin_exchange_platforms_details);
 
-                krakenUrlAPIValue = (EditTextPreference) findPreference("kraken_url_api");
+                EditTextPreference krakenUrlAPIValue = findPreference("kraken_url_api");
                 krakenUrlAPIValue.setText(MainActivity.preferencesApp.getString("kraken_url_api", getString(R.string.Kraken_api_default_value)));
                 krakenUrlAPIValue.setSummary(MainActivity.preferencesApp.getString("kraken_url_api", getString(R.string.Kraken_api_default_value)));
 
@@ -160,7 +155,7 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
 
                 // Set configChanged = true
                 preferencesEditor.putBoolean("configChanged", Boolean.TRUE);
-                preferencesEditor.commit();
+                preferencesEditor.apply();
             }
         }
 
@@ -249,10 +244,10 @@ public class PreferencesDetailsFragment extends PreferenceFragmentCompat impleme
     // Set number of assets selected for each platform
     private void setNumberAssetsSelected(String assetsList) {
 
-        krakenAssetMultiSelectListPreference = (MultiSelectListPreference) findPreference(assetsList);
+        MultiSelectListPreference krakenAssetMultiSelectListPreference = findPreference(assetsList);
 
         // Default value if asset list don't exist in shared preferences
-        Set<String> defaultValue = new HashSet<String>();
+        Set<String> defaultValue = new HashSet<>();
 
         krakenAssetMultiSelectListPreference.setSummary(String.format(ihmConsoleActivity.getString(R.string.Number_kraken_assets_selected),
                 MainActivity.preferencesApp.getStringSet(assetsList, defaultValue).size()));

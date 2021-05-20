@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class UpdateMarketDataEvent {
 
-    private HashMap<String, String> cryptoCurrencyDataMap;
+    private final HashMap<String, String> cryptoCurrencyDataMap;
 
 
     public UpdateMarketDataEvent(HashMap<String, String> cryptoCurrencyDataMap) {

@@ -45,6 +45,7 @@
         <item>Ether (ETH)</item>
         <item>Ether Classic (ETC)</item>
         <item>Filecoin (FIL)</item>
+        <item>Flow (FLOW)</item>
         <item>Gnosis (GNO)</item>
         <item>Graph (GRT)</item>
         <item>Keep (KEEP)</item>
@@ -92,6 +93,7 @@
         <item>ETH</item>
         <item>ETC</item>
         <item>FIL</item>
+        <item>FLOW</item>
         <item>GNO</item>
         <item>GRT</item>
         <item>KEEP</item>

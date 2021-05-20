@@ -1,12 +1,11 @@
 package com.watchcoin.WebClient;
 
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 
-import com.google.android.material.dialog.InsetDialogOnTouchListener;
+import com.android.volley.Request;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
-import com.watchcoin.Data.DataPolling;
-import com.watchcoin.Data.ErrorMessageEvent;
+import com.watchcoin.Data.MySingleton;
 import com.watchcoin.Data.UpdateMarketDataEvent;
 import com.watchcoin.IHM.IHMConsole;
 import com.watchcoin.Json.Aave;
@@ -30,6 +29,7 @@ import com.watchcoin.Json.EOS;
 import com.watchcoin.Json.Ethereum;
 import com.watchcoin.Json.EthereumClassic;
 import com.watchcoin.Json.Filecoin;
+import com.watchcoin.Json.Flow;
 import com.watchcoin.Json.Gnosis;
 import com.watchcoin.Json.Graph;
 import com.watchcoin.Json.KAVA;
@@ -62,7 +62,6 @@ import com.watchcoin.Json.tBTC;
 import com.watchcoin.R;
 
 import org.greenrobot.eventbus.EventBus;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -78,26 +77,28 @@ import static com.watchcoin.MainActivity.preferencesApp;
  * KrakenWebClient is a background task executed at regular intervals for provide the market data
  * for each cryptocurrency selected (settings menu)
  */
-public class KrakenWebClient extends AsyncTask<String, Object, Object> {
-
+public class KrakenWebClient {
 
     private static final String TAG = "KrakenWebClient";
 
-    private HashMap<String, String> cryptoCurrencyDataMap = new HashMap<String, String>();
+    private String krakenApiAddress;
+    private String krakenAssets;
+    private final int krakenApiVersion = 0;
+
+    private HashMap<String, String> cryptoCurrencyDataMap = new HashMap<>();
 
     private IHMConsole ihmConsole;
-    private DataPolling dataPolling;
-    private JSONObject cryptoCurrencyData;
+    JSONObject dataMarket;
     private CurrencyData currencyData;
     private Gson gson;
-    private SharedPreferences sharedPreferencesApp = preferencesApp;
+    private final SharedPreferences sharedPreferencesApp = preferencesApp;
 
 
     public KrakenWebClient (IHMConsole ihmConsole) {
 
         this.ihmConsole = ihmConsole;
 
-        dataPolling = new DataPolling();
+        dataMarket = new JSONObject();
 
         setDataPollingConfiguration();
 
@@ -107,132 +108,81 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
         cryptoCurrencyDataMap.clear();
     }
 
+    /**
+     * Request for get the public market data of cryptocurrency
+     */
+    public void launchPublicQuery(KrakenWebClientListener krakenWebClientListener) {
 
-    @Override
-    protected Object doInBackground(String... params) {
+        boolean configChanged = sharedPreferencesApp.getBoolean("configChanged", Boolean.FALSE);
 
-        // If internet connection is not available
-        if (!ihmConsole.isNetworkAvailable()) {
+        // If the application configuration was changed
+        if (configChanged) {
 
-            // Display error message (onPostExecute)
-            return "networkKO";
+            // update data polling
+            setDataPollingConfiguration();
         }
 
         try {
-            cryptoCurrencyData = dataPolling.PublicDataQuery();
-        } catch (JSONException e) {
 
+            String krakenAddress = String.format("%s/%s/public/%s", krakenApiAddress, krakenApiVersion, "Ticker");
+
+            // https://developer.android.com/training/volley/request#java
+            // https://www.youtube.com/watch?v=xPi-z3nOcn8
+            JSONObject body = new JSONObject();
+            body.put("pair", krakenAssets);
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, krakenAddress, body,
+                    response -> {
+                        dataMarket = new JSONObject();
+                        dataMarket = response;
+
+                        if (dataMarket != null && dataMarket.length() > 0) {
+
+                            currencyData = gson.fromJson(dataMarket.toString(), CurrencyData.class);
+                        }
+                        else {
+                            krakenWebClientListener.onResponse(response);
+                            return;
+                        }
+
+                        // If currency datas are not recupered
+                        if (currencyData.getResult() == null) {
+
+                            krakenWebClientListener.onResponse("requestExecutionError");
+                            return;
+                        }
+
+                        // Save currency data market (when currency selected manually)
+                        ihmConsole.setCurrencyData(currencyData);
+
+                        // Extract the data of the currency selected
+                        extractCurrencyData(ihmConsole.getCurrencySelected());
+
+                        // Save currency data selected (data restoration onResume method MarketDataFragment)
+                        ihmConsole.setCurrencyDataMap(cryptoCurrencyDataMap);
+
+                        updateData("Data market");
+
+                        krakenWebClientListener.onResponse(response);
+                    }, error -> krakenWebClientListener.onError(error.getMessage()));
+
+            MySingleton.getInstance(ihmConsole.getApplicationContext()).addToRequestQueue(jsonObjectRequest);
+
+        } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        // According to the type of request
-        switch (params[0]) {
-
-            // (TimerTask process)
-            case "Data market":
-
-                if (cryptoCurrencyData != null) {
-
-                    currencyData = gson.fromJson(cryptoCurrencyData.toString(), CurrencyData.class);
-                }
-                else {
-
-                    return "noMarketData";
-                }
-
-                // If currency datas are not recupered
-                if (currencyData.getResult() == null) {
-
-                    return "requestExecutionError";
-                }
-
-                // Save currency data market (when currency selected manually)
-                ihmConsole.setCurrencyData(currencyData);
-
-                // Extract the data of the currency selected
-                extractCurrencyData(ihmConsole.getCurrencySelected());
-
-                // Save currency data selected (data restoration onResume method MarketDataFragment)
-                ihmConsole.setCurrencyDataMap(cryptoCurrencyDataMap);
-
-                // return dataPolling.PublicDataQuery();
-                //return "Data market";
-                return cryptoCurrencyData;
-
-
-            // (Currency selected manually)
-            default :
-
-                // Extract the data of the currency selected
-                extractCurrencyData(ihmConsole.getCurrencySelected());
-
-                // Save currency data selected (data restoration onResume method MarketDataFragment)
-                ihmConsole.setCurrencyDataMap(cryptoCurrencyDataMap);
-
-                return "Select currency data";
-        }
-    }
-
-
-    @Override
-    protected void onPostExecute(Object s) {
-        super.onPostExecute(s);
-
-        if (s instanceof JSONObject) {
-
-            cryptoCurrencyData = (JSONObject) s;
-            updateData("Data market");
-        }
-        else {
-
-            // According the result of background process
-            switch (s.toString()) {
-
-                // If internet connection is not available
-                case "networkKO" :
-
-                    // Display error message
-                    EventBus.getDefault().post(new ErrorMessageEvent("networkKO"));
-
-                    break;
-
-                // If currency datas are not recupered
-                case "noMarketData" :
-
-                    // Display error message
-                    EventBus.getDefault().post(new ErrorMessageEvent("noMarketData"));
-
-                    break;
-
-                // If request error is occured
-                case "requestExecutionError" :
-
-                    // Display error message
-                    EventBus.getDefault().post(new ErrorMessageEvent("requestExecutionError"));
-
-                    break;
-
-                default:
-
-                    // Update data displayed
-                    updateData(s.toString());
-
-                    break;
-
-
-            }
-        }
-    }
-
-    public void launchPublicQuery() {
-
-        this.execute("Data market");
     }
 
 
     public void getDataOfCurrency(String currencySelected) {
 
-        this.execute(currencySelected);
+        // Extract the data of the currency selected
+        extractCurrencyData(currencySelected);
+
+        // Save currency data selected (data restoration onResume method MarketDataFragment)
+        ihmConsole.setCurrencyDataMap(cryptoCurrencyDataMap);
+
+        updateData("getDataOfCurrency");
     }
 
 
@@ -244,7 +194,7 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
         StringBuilder assetsList = new StringBuilder();
 
         // Set kraken API address
-        dataPolling.setKrakenApiAddress(preferencesApp.getString("kraken_url_api", ihmConsole.getDefaultKrakenApiAddress()));
+        setKrakenApiAddress(preferencesApp.getString("kraken_url_api", ihmConsole.getDefaultKrakenApiAddress()));
 
         // Fiat currencies configuration
         boolean australianDollarSelected = sharedPreferencesApp.getBoolean("australian_dollar_checkbox", Boolean.FALSE);
@@ -261,56 +211,41 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
         krakenAssetsList.addAll(sharedPreferencesApp.getStringSet("kraken_assets_list", null));
         krakenAssetsList.addAll(sharedPreferencesApp.getStringSet("defi_kraken_assets_list", null));
 
-        // Build the asset list chain for the data polling instance
-        assetsList.append("pair=");
-
         // Datas initialisation for the ecurrency spinner
         for (String krakenAsset : krakenAssetsList) {
 
             switch (krakenAsset) {
 
-                // Algorand (ALGO) | Aragon (ANT) | Augur (REP) | Balancer (BAL) | Basic Attention Token (BAT) | Cardano (ADA) | Compound (COMP)
-                // Cosmos (ATOM) | Curve (CRV)| Kusama (KSM) | Dai (DAI) | DASH (DASH) | Decentraland (MANA) | EOS (EOS) | Ether Classic (ETC) | Filecoin (FIL) | Graph (GRT) | Gnosis (GNO) | Chainlink (LINK)
-                // Kava (KAVA) | Keep (KEEP) | Kyber Network (KNC) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG) | Polkadot (DOT)
-                // Quantum (QTUM) | Siacoin (SC) | Stellar Lumens (XLM) | Storj (STORJ) | Synthetix (SNX) |  tBTC (TBTC) | Tezos (XTZ) | Tron (TRX) | Uniswap (UNI) | USD Coin (USDC)
-                // Waves (WAVES) | Yearn (YFI)  | Zcash (ZEC)
-                case "ALGO":
+                // Aragon (ANT) | Augur (REP) | Balancer (BAL) | Basic Attention Token (BAT) | Compound (COMP)
+                // Curve (CRV) | Dai (DAI) | DASH (DASH) | Decentraland (MANA) | EOS (EOS) | Ether Classic (ETC) | Gnosis (GNO)
+                // Kava (KAVA) | Keep (KEEP) | Kyber Network (KNC) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG)
+                // Quantum (QTUM) | Siacoin (SC) | Storj (STORJ) | tBTC (TBTC) |  Tron (TRX) | Uniswap (UNI) |
+                // Waves (WAVES) | Zcash (ZEC)
                 case "ANT" :
                 case "BAL" :
                 case "BAT" :
-                case "ADA" :
-                case "ATOM" :
                 case "COMP":
                 case "CRV" :
-                case "KSM" :
                 case "DAI" :
                 case "DASH" :
                 case "MANA" :
                 case "EOS" :
-                case "FIL" :
                 case "GNO" :
-                case "GRT" :
                 case "KAVA" :
                 case "KEEP" :
                 case "KNC" :
-                case "LINK" :
                 case "LSK" :
                 case "NANO" :
                 case "OMG" :
                 case "OXT" :
                 case "PAXG" :
-                case "DOT" :
                 case "QTUM" :
                 case "SC" :
                 case "STORJ" :
-                case "SNX" :
                 case "TBTC" :
-                case "XTZ" :
                 case "TRX" :
                 case "UNI" :
-                case "USDC" :
                 case "WAVES" :
-                case "YFI" :
 
                     // EUR and USD
                     if (americanDollarSelected) {
@@ -326,8 +261,9 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
                     break;
 
 
-                // Aave (AAVE)
-                case "AAVE" :
+                // Algorand (ALGO) | Flow (FLOW)
+                case "ALGO" :
+                case "FLOW" :
 
                     // EUR, GBP and USD
                     if (americanDollarSelected) {
@@ -395,8 +331,21 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
 
                     break;
 
-                // Bitcoin Cash (BCH)
+                // Aave (AAVE) | Bitcoin Cash (BCH) | Cardano (ADA) | Cosmos (ATOM) | Filecoin (FIL) | Graph (GRT) | Kusama (KSM) | Chainlink (LINK) | Polkadot (DOT) |
+                // Synthetix (SNX) | Tezos (XTZ) | USD Coin (USDC) | Yearn (YFI)
+                case "AAVE" :
                 case "BCH" :
+                case "ADA" :
+                case "ATOM" :
+                case "FIL" :
+                case "GRT" :
+                case "KSM" :
+                case "LINK" :
+                case "DOT" :
+                case "SNX" :
+                case "XTZ" :
+                case "USDC" :
+                case "YFI" :
 
                     // AUD, EUR, GBP and USD
                     if (australianDollarSelected) {
@@ -538,9 +487,17 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
                 // Stellar Lumens (XLM)
                 case "XLM" :
 
-                    // EUR and USD
+                    // AUD, GBP, EUR and USD
                     if (americanDollarSelected) {
-                        assetsList.append(ihmConsole.getString(R.string.Stellatlumens_USD_pair).concat(","));
+                        assetsList.append(ihmConsole.getString(R.string.Stellarlumens_USD_pair).concat(","));
+                    }
+
+                    if (australianDollarSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Stellarlumens_AUD_pair).concat(","));
+                    }
+
+                    if (britishPoundsSelected) {
+                        assetsList.append(ihmConsole.getString(R.string.Stellarlumens_GBP_pair).concat(","));
                     }
 
                     if (eurosSelected) {
@@ -592,9 +549,9 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
             }
         }
 
+        // Build the asset list chain for the data polling instance
         assetsList.delete(assetsList.length()-1, assetsList.length());
-
-        dataPolling.setKrakenAssets(assetsList.toString());
+        setKrakenAssets(assetsList.toString());
     }
 
 
@@ -602,7 +559,7 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
      * Update data displayed in the user interface
      * @param requestType : The type of request
      */
-    private void updateData(String requestType) {
+    public void updateData(String requestType) {
 
 
         // If the type of request concern the update of market data
@@ -732,8 +689,16 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
                     break;
 
                 // Stellar lumens pair
+                case "XLMAUD" :
+                    currencySelectedFormat = "XXLMZAUD";
+                    break;
+
                 case "XLMEUR" :
                     currencySelectedFormat = "XXLMZEUR";
+                    break;
+
+                case "XLMGBP" :
+                    currencySelectedFormat = "XXLMZGBP";
                     break;
 
                 case "XLMUSD" :
@@ -756,10 +721,9 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
 
             }
 
-
             try {
 
-                JSONObject extractCcurrencySelected = cryptoCurrencyData.getJSONObject("result").getJSONObject(currencySelectedFormat);
+                JSONObject extractCcurrencySelected = dataMarket.getJSONObject("result").getJSONObject(currencySelectedFormat);
 
                 switch (currencySelectedFormat.substring(0,3)) {
 
@@ -871,14 +835,19 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
                         currencyData.getResult().setFilecoinData(filecoinData);
                         break;
 
-                    case "GRT" :
-                        Graph graphData = gson.fromJson(extractCcurrencySelected.toString(), Graph.class);
-                        currencyData.getResult().setGraphData(graphData);
+                    case "FLO" :
+                        Flow flowData = gson.fromJson(extractCcurrencySelected.toString(), Flow.class);
+                        currencyData.getResult().setFlowData(flowData);
                         break;
 
                     case "GNO" :
                         Gnosis gnosisData = gson.fromJson(extractCcurrencySelected.toString(), Gnosis.class);
                         currencyData.getResult().setGnosisData(gnosisData);
+                        break;
+
+                    case "GRT" :
+                        Graph graphData = gson.fromJson(extractCcurrencySelected.toString(), Graph.class);
+                        currencyData.getResult().setGraphData(graphData);
                         break;
 
                     case "KAV" :
@@ -1032,5 +1001,27 @@ public class KrakenWebClient extends AsyncTask<String, Object, Object> {
 
             cryptoCurrencyDataMap = currencyData.extractCurrencyData(currencySelected, ihmConsole.getResources());
         }
+    }
+
+    /*** Getter/Setter data ***/
+
+    public String getKrakenApiAddress() {
+
+        return this.krakenApiAddress;
+    }
+
+    public void setKrakenApiAddress (String krakenApiAddress) {
+
+        this.krakenApiAddress = krakenApiAddress;
+    }
+
+    public String getKrakenAssets() {
+
+        return this.krakenAssets;
+    }
+
+    public void setKrakenAssets (String krakenAssets) {
+
+        this.krakenAssets = krakenAssets;
     }
 }

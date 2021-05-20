@@ -39,6 +39,7 @@
     <string name= "Gnosis_Market_data_title">Dados do mercado : Gnosis (%1$s)</string>
     <string name= "Graph_Market_data_title">Dados do mercado : Graph (%1$s)</string>
     <string name= "Filecoin_Market_data_title">Dados do mercado : Filecoin (%1$s)</string>
+    <string name= "Flow_Market_data_title">Dados do mercado : Flow (%1$s)</string>
     <string name= "Kava_Market_data_title">Dados do mercado : Kava (%1$s)</string>
     <string name= "Keep_Market_data_title">Dados do mercado : Keep (%1$s)</string>
     <string name= "Kyber_Network_Market_data_title">Dados do mercado : Knc (%1$s)</string>

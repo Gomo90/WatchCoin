@@ -6,16 +6,6 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import com.google.android.material.navigation.NavigationView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,11 +14,23 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.navigation.NavigationView;
 import com.watchcoin.Data.ErrorMessageEvent;
 import com.watchcoin.Data.UpdateMarketDataEvent;
 import com.watchcoin.Json.CurrencyData;
 import com.watchcoin.R;
 import com.watchcoin.WebClient.KrakenWebClient;
+import com.watchcoin.WebClient.KrakenWebClientListener;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -47,14 +49,12 @@ import static com.watchcoin.MainActivity.preferencesApp;
 public class IHMConsole extends AppCompatActivity
         implements AdapterView.OnItemSelectedListener, NavigationView.OnNavigationItemSelectedListener, FragmentManager.OnBackStackChangedListener, View.OnClickListener {
 
-
     private static final String TAG = "IHMConsole";
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private ActionBarDrawerToggle navigationViewToggle;
 
-    private Spinner  refreshTime;
     private Spinner  eCurrency;
 
     private int intervalTime = 60000;  // 60000 = 1 min
@@ -66,9 +66,7 @@ public class IHMConsole extends AppCompatActivity
     private LinearLayout toolbarLayout;
     private TextView intervalLabel;
 
-    private KrakenWebClient krakenWebClient, krakenWebClient2;
-
-    private IHMConsole ihmConsoleInstance = this;
+    private KrakenWebClient krakenWebClient;
 
     private CurrencyData currencyData;
     private HashMap<String, String> currencyDataMap;
@@ -76,7 +74,7 @@ public class IHMConsole extends AppCompatActivity
     private MarketDataFragment marketDataFragment;
     private PreferencesMenuFragment preferencesMenuFragment;
 
-    private SharedPreferences sharedPreferencesApp = preferencesApp;
+    private final SharedPreferences sharedPreferencesApp = preferencesApp;
 
 
 
@@ -87,14 +85,14 @@ public class IHMConsole extends AppCompatActivity
 
 
         // Toolbar actions
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbarLayout = (LinearLayout) findViewById(R.id.toolbarLayout);
+        toolbar = findViewById(R.id.toolbar);
+        toolbarLayout = findViewById(R.id.toolbarLayout);
         setSupportActionBar(toolbar);
 
-        intervalLabel = (TextView) findViewById(R.id.IntervalLabel);
+        intervalLabel = findViewById(R.id.IntervalLabel);
 
         // Navigation drawer
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+        drawerLayout = findViewById(R.id.drawerlayout);
 
         navigationViewToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.Navigation_drawer_open, R.string.Navigation_drawer_close);
@@ -104,7 +102,7 @@ public class IHMConsole extends AppCompatActivity
         navigationViewToggle.setToolbarNavigationClickListener(this);
 
         // Navigation view
-        navigationView = (NavigationView) findViewById(R.id.NavigationView);
+        navigationView = findViewById(R.id.NavigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
         if (savedInstanceState == null) {
@@ -118,11 +116,11 @@ public class IHMConsole extends AppCompatActivity
         krakenWebClient = new KrakenWebClient(this);
 
         // Refresh time values
-        refreshTime = (Spinner) findViewById(R.id.IntervalValue);
+        Spinner refreshTime = findViewById(R.id.IntervalValue);
         refreshTime.setOnItemSelectedListener(this);
 
         // Ecurrency values
-        eCurrency = (Spinner) findViewById(R.id.Ecurrency);
+        eCurrency = findViewById(R.id.Ecurrency);
 
         // Populate the currency spinner
         setCurrencySpinnerValues();
@@ -133,9 +131,7 @@ public class IHMConsole extends AppCompatActivity
         // If internet connection is available
         if (isNetworkAvailable()) {
 
-            // Market data request
-            krakenWebClient.launchPublicQuery();
-            krakenWebClient = null;
+            getMarketData();
         }
         else {
 
@@ -175,7 +171,7 @@ public class IHMConsole extends AppCompatActivity
     public void onBackPressed() {
 
         boolean configChanged = sharedPreferencesApp.getBoolean("configChanged", Boolean.FALSE);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+        drawerLayout = findViewById(R.id.drawerlayout);
 
         // If the navigation drawer is displayed
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -205,11 +201,7 @@ public class IHMConsole extends AppCompatActivity
 
 
             case R.id.Ecurrency :
-
-                    krakenWebClient = null;
-                    krakenWebClient = new KrakenWebClient(ihmConsoleInstance);
                     krakenWebClient.getDataOfCurrency(parent.getItemAtPosition(position).toString());
-
                 break;
 
 
@@ -269,7 +261,7 @@ public class IHMConsole extends AppCompatActivity
         }
 
         // Close navigation view
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+        drawerLayout = findViewById(R.id.drawerlayout);
         drawerLayout.closeDrawer(GravityCompat.START);
 
         return true;
@@ -283,7 +275,7 @@ public class IHMConsole extends AppCompatActivity
     public boolean isNetworkAvailable() {
 
         ConnectivityManager connectManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectManager.getActiveNetworkInfo();
+        NetworkInfo networkInfo = connectManager != null ? connectManager.getActiveNetworkInfo() : null;
 
         return (networkInfo != null && networkInfo.isConnected());
     }
@@ -313,8 +305,7 @@ public class IHMConsole extends AppCompatActivity
             @Override
             public void run() {
 
-                krakenWebClient = new KrakenWebClient(ihmConsoleInstance);
-                krakenWebClient.launchPublicQuery();
+                getMarketData();
             }
         };
     }
@@ -327,7 +318,7 @@ public class IHMConsole extends AppCompatActivity
      */
     public void setCurrencySpinnerValues() {
 
-        ArrayList<String> CurrencyValues = new ArrayList<String>();
+        ArrayList<String> CurrencyValues = new ArrayList<>();
 
         // If the cryptocurrency configuration is present
         if ((sharedPreferencesApp.contains("kraken_assets_list") &&
@@ -351,7 +342,7 @@ public class IHMConsole extends AppCompatActivity
                 // US dollar activated by default
                 SharedPreferences.Editor preferencesEditor = sharedPreferencesApp.edit();
                 preferencesEditor.putBoolean("us_dollar_checkbox", Boolean.TRUE);
-                preferencesEditor.commit();
+                preferencesEditor.apply();
 
                 americanDollarSelected = true;
             }
@@ -367,18 +358,15 @@ public class IHMConsole extends AppCompatActivity
 
                 switch (krakenAsset) {
 
-                    // Algorand (ALGO) | Aragon (ANT) | Augur (REP) | Balancer (BAL) | Basic Attention Token (BAT) | Cardano (ADA) | Compound (COMP)
-                    // Cosmos (ATOM) | Curve (CRV) | Dai (DAI) | DASH (DASH) | Decentraland (MANA) | EOS (EOS) | Ether Classic (ETC) | Filecoin (FIL) | Graph (GRT) | Gnosis (GNO) | Chainlink (LINK)
-                    // Kava (KAVA) | Keep (KEEP) | Kyber Network (KNC) | Kusama (KSM) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG) | Polkdot (DOT)
-                    // Quantum (QTUM) | Siacoin (SC) | Stellar Lumens (XLM) | Storj (STORJ) | Synthetix (SNX) |  tBTC (TBTC) | Tezos (XTZ) | Tron (TRX) | Uniswap (UNI) | USD Coin (USDC)
-                    // Waves (WAVES) | Yearn (YFI) | Zcash (ZEC)
-                    case "ALGO":
+                    // Aragon (ANT) | Augur (REP) | Balancer (BAL) | Basic Attention Token (BAT) | Compound (COMP)
+                    // Curve (CRV) | Dai (DAI) | DASH (DASH) | Decentraland (MANA) | EOS (EOS) | Ether Classic (ETC) | Gnosis (GNO)
+                    // Kava (KAVA) | Keep (KEEP) | Kyber Network (KNC) | Lisk (LSK) | Monero (XMR) | Nano (NANO) | OmiseGO (OMG) | Orchid (OXT) | Pax Gold (PAXG)
+                    // Quantum (QTUM) | Siacoin (SC) | Storj (STORJ) | tBTC (TBTC) | Tron (TRX) | Uniswap (UNI) |
+                    // Waves (WAVES) | Zcash (ZEC)
                     case "ANT" :
                     case "REP":
                     case "BAL" :
                     case "BAT":
-                    case "ADA" :
-                    case "ATOM" :
                     case "COMP" :
                     case "CRV" :
                     case "DAI" :
@@ -386,33 +374,23 @@ public class IHMConsole extends AppCompatActivity
                     case "MANA" :
                     case "EOS" :
                     case "ETC" :
-                    case "FIL" :
-                    case "GRT" :
                     case "GNO" :
                     case "KAVA" :
                     case "KEEP" :
                     case "KNC" :
-                    case "KSM" :
-                    case "LINK" :
                     case "LSK" :
                     case "XMR" :
                     case "NANO" :
                     case "OMG" :
                     case "OXT" :
                     case "PAXG" :
-                    case "DOT" :
                     case "QTUM" :
                     case "SC" :
                     case "STORJ" :
-                    case "SNX":
-                    case "XLM" :
                     case "TBTC" :
-                    case "XTZ" :
                     case "TRX" :
                     case "UNI" :
-                    case "USDC" :
                     case "WAVES" :
-                    case "YFI" :
                     case "ZEC" :
 
                         // EUR and USD
@@ -426,8 +404,9 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
-                    // Aave (AAVE)
-                    case "AAVE" :
+                    // Algorand (ALGO) | Flow (FLOW)
+                    case "ALGO" :
+                    case "FLOW" :
 
                         // EUR, GBP, USD
                         if (americanDollarSelected) {
@@ -479,9 +458,23 @@ public class IHMConsole extends AppCompatActivity
 
                         break;
 
-                    // Bitcoin Cash (BCH) | Litecoin (LTC)
+                    //  Aave (AAVE) | Bitcoin Cash (BCH) | Cardano (ADA) | Chainlink (LINK) | Cosmos (ATOM) |  Filecoin (FIL) | Graph (GRT) |  Kusama (KSM) | Litecoin (LTC) | Polkdot (DOT) |
+                    // Stellar Lumens (XLM) | Synthetix (SNX) | Tezos (XTZ) | USD Coin (USDC) | Yearn (YFI)
+                    case "AAVE" :
                     case "BCH" :
+                    case "ADA" :
+                    case "LINK" :
+                    case "ATOM" :
+                    case "FIL" :
+                    case "GRT" :
                     case "LTC" :
+                    case "KSM" :
+                    case "DOT":
+                    case "XLM" :
+                    case "SNX" :
+                    case "XTZ" :
+                    case "USDC" :
+                    case "YFI" :
 
                         // AUD, EUR, GBP and USD
                         if (australianDollarSelected) {
@@ -578,26 +571,13 @@ public class IHMConsole extends AppCompatActivity
 
 //            preferencesEditor.putStringSet("kraken_assets_list", setDefaultCryptocurrency);
 
-            preferencesEditor.commit();
+            preferencesEditor.apply();
         }
 
-        ArrayAdapter<String> eCurrencyValues = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_dropdown_item,
+        ArrayAdapter<String> eCurrencyValues = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 CurrencyValues);
 
         eCurrency.setAdapter(eCurrencyValues);
-
-    }
-
-
-    /**
-     * Get market data manually with a other krakenWebClient instance
-     * (in parallel of refreshDataTimer instance)
-     */
-    public void getCurrencyMarketData() {
-
-        krakenWebClient2 = new KrakenWebClient(this);
-        krakenWebClient2.launchPublicQuery();
-        krakenWebClient2 = null;
     }
 
 
@@ -624,12 +604,12 @@ public class IHMConsole extends AppCompatActivity
         setCurrencySpinnerValues();
 
         // Update market data with the new fiat currencies configuration
-        getCurrencyMarketData();
+        getMarketData();
 
         // Set configChanged = false
         SharedPreferences.Editor preferencesEditor = sharedPreferencesApp.edit();
         preferencesEditor.putBoolean("configChanged", Boolean.FALSE);
-        preferencesEditor.commit();
+        preferencesEditor.apply();
     }
 
     public void updateViewLanguage() {
@@ -646,6 +626,10 @@ public class IHMConsole extends AppCompatActivity
             // Update market data title
             switch (eCurrency.getSelectedItem().toString()) {
 
+                case "AAVE/AUD" :
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Aave_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
                 case "AAVE/USD" :
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Aave_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
@@ -656,6 +640,10 @@ public class IHMConsole extends AppCompatActivity
 
                 case "AAVE/GBP" :
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Aave_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
+                case "ALGO/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Algorand_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
 
                 case "ALGO/USD":
@@ -758,12 +746,20 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Compound_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
-                case "ATOM/USD":
-                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.US_dollar_symbol)));
+                case "ATOM/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.Australian_dollar_symbol)));
                     break;
 
-                case "ATOM/EUR":
+                case "ATOM/EUR" :
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "ATOM/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
+                case "ATOM/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Cosmos_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "CRV/EUR":
@@ -842,6 +838,14 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Etherc_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "FIL/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Filecoin_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
+                case "FIL/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Filecoin_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
                 case "FIL/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Filecoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
@@ -850,12 +854,32 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Filecoin_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "GRT/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Graph_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
                 case "GRT/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Graph_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "GRT/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Graph_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
                 case "GRT/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Graph_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "FLOW/EUR":
+                    //currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Flow_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "FLOW/GBP":
+                    //currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Flow_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
+                case "FLOW/USD":
+                    //currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Flow_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "GNO/EUR":
@@ -890,20 +914,36 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Kyber_Network_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
-                case "KSM/USD":
-                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Kusama_Market_data_title), getString(R.string.US_dollar_symbol)));
+                case "KSM/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Kusama_Market_data_title), getString(R.string.Australian_dollar_symbol)));
                     break;
 
                 case "KSM/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Kusama_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
-                case "LINK/USD":
-                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.US_dollar_symbol)));
+                case "KSM/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Kusama_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
+                case "KSM/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Kusama_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "LINK/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.Australian_dollar_symbol)));
                     break;
 
                 case "LINK/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "LINK/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
+                case "LINK/USD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Chainlink_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
                 case "LTC/AUD":
@@ -998,8 +1038,16 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Paxg_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
+                case "DOT/AUD" :
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Polkadot_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
                 case "DOT/EUR" :
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Polkadot_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "DOT/GBP" :
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Polkadot_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
 
                 case "DOT/USD" :
@@ -1046,8 +1094,16 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Siacoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "XLM/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Stellar_Lumens_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
                 case "XLM/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Stellar_Lumens_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "XLM/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Stellar_Lumens_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
 
                 case "XLM/USD":
@@ -1062,6 +1118,14 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Storj_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "SNX/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Synthetix_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
+                case "SNX/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Synthetix_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
                 case "SNX/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Synthetix_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
@@ -1070,8 +1134,16 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Synthetix_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "XTZ/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
                 case "XTZ/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.Euro_symbol)));
+                    break;
+
+                case "XTZ/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Tezos_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
 
                 case "XTZ/USD":
@@ -1094,11 +1166,19 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Uniswap_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
-                case "USD/EUR":
+                case "USDC/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.USDCoin_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
+                case "USDC/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.USDCoin_Market_data_title), getString(R.string.Pounds_symbol)));
+                    break;
+
+                case "USDC/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.USDCoin_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
-                case "USD/USD":
+                case "USDC/USD":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.USDCoin_Market_data_title), getString(R.string.US_dollar_symbol)));
                     break;
 
@@ -1110,8 +1190,16 @@ public class IHMConsole extends AppCompatActivity
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Waves_Market_data_title), getString(R.string.Euro_symbol)));
                     break;
 
+                case "YFI/AUD":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Yearn_Market_data_title), getString(R.string.Australian_dollar_symbol)));
+                    break;
+
                 case "YFI/EUR":
                     currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Yearn_Market_data_title), getString(R.string.US_dollar_symbol)));
+                    break;
+
+                case "YFI/GBP":
+                    currencyDataMap.put("marketDataCurrency", String.format(getString(R.string.Yearn_Market_data_title), getString(R.string.Pounds_symbol)));
                     break;
 
                 case "YFI/USD":
@@ -1170,7 +1258,7 @@ public class IHMConsole extends AppCompatActivity
                 // Set configChanged = false
                 SharedPreferences.Editor preferencesEditor = sharedPreferencesApp.edit();
                 preferencesEditor.putBoolean("configLanguageChanged", Boolean.FALSE);
-                preferencesEditor.commit();
+                preferencesEditor.apply();
 
             }
         }
@@ -1197,6 +1285,29 @@ public class IHMConsole extends AppCompatActivity
         getSupportFragmentManager().popBackStack();
     }
 
+    private void getMarketData() {
+
+        // Market data request
+        krakenWebClient.launchPublicQuery(new KrakenWebClientListener() {
+            @Override
+            public void onError(String message) {
+                EventBus.getDefault().post(new ErrorMessageEvent(message));
+            }
+
+            @Override
+            public void onResponse(Object response) {
+
+                if (response == null) {
+                    // Display error message
+                    EventBus.getDefault().post(new ErrorMessageEvent("noMarketData"));
+                }
+                else if (response instanceof String) {
+
+                    EventBus.getDefault().post(new ErrorMessageEvent(response.toString()));
+                }
+            }
+        });
+    }
 
     /*** Getter/Setter currency data ***/
 

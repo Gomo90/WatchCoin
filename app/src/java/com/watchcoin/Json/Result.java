@@ -2,17 +2,15 @@ package com.watchcoin.Json;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.File;
-
 /**
  * Class used for JSON data deserialization received by the Kraken API
  */
 public class Result {
 
-    @SerializedName(value = "AAVEEUR", alternate = {"AAVEUSD", "AAVEGBP"})
+    @SerializedName(value = "AAVEEUR", alternate = {"AAVEAUD", "AAVEUSD", "AAVEGBP"})
     private Aave aaveData;
 
-    @SerializedName(value = "ALGOEUR", alternate = {"ALGOUSD"})
+    @SerializedName(value = "ALGOEUR", alternate = {"ALGOGBP", "ALGOUSD"})
     private Algorand algorandData;
 
     @SerializedName(value = "ANTEUR", alternate = {"ANTUSD"})
@@ -36,10 +34,10 @@ public class Result {
     @SerializedName(value = "COMPEUR", alternate = {"COMPUSD"})
     private Compound compoundData;
 
-    @SerializedName(value = "ATOMEUR", alternate = {"ATOMUSD"})
+    @SerializedName(value = "ATOMEUR", alternate = {"ATOMAUD, ATOMGBP, ATOMUSD"})
     private Cosmos cosmosData;
 
-    @SerializedName(value = "ADAEUR", alternate = {"ADAUSD"})
+    @SerializedName(value = "ADAEUR", alternate = {"ADAAUD, ADAGBP, ADAUSD"})
     private Cardano cardanoData;
 
     @SerializedName(value = "CRVEUR", alternate = {"CRVUSD"})
@@ -63,11 +61,14 @@ public class Result {
     @SerializedName(value = "XETCZEUR", alternate = {"XETCZUSD"})
     private EthereumClassic ethereumClassicData;
 
-    @SerializedName(value = "FILEUR", alternate = {"FILUSD"})
+    @SerializedName(value = "FILEUR", alternate = {"FILAUD", "FILGBP", "FILUSD"})
     private Filecoin filecoinData;
 
-    @SerializedName(value = "GRTEUR", alternate = {"GRTUSD"})
+    @SerializedName(value = "GRTEUR", alternate = {"GRTAUD", "GRTGBP", "GRTUSD"})
     private Graph graphData;
+
+    @SerializedName(value = "FLOWEUR", alternate = {"FLOWUSD", "FLOWGBP"})
+    private Flow flowData;
 
     @SerializedName(value = "GNOEUR", alternate = {"GNOUSD"})
     private Gnosis gnosisData;
@@ -81,10 +82,10 @@ public class Result {
     @SerializedName(value = "KNCEUR", alternate = {"KNCUSD"})
     private KyberNetworkToken kyberNetworkData;
 
-    @SerializedName(value = "KSMEUR", alternate = {"KSMUSD"})
+    @SerializedName(value = "KSMEUR", alternate = {"KSMAUD", "KSMGBP", "KSMUSD"})
     private Kusama kusamaData;
 
-    @SerializedName(value = "LINKEUR", alternate =  {"LINKUSD"})
+    @SerializedName(value = "LINKEUR", alternate =  {"LINKAUD", "LINKGBP", "LINKUSD"})
     private Chainlink chainlinkData;
 
     @SerializedName(value ="LTCAUD", alternate = {"LTCGBP", "XLTCZEUR", "XLTCZUSD"})
@@ -108,7 +109,7 @@ public class Result {
     @SerializedName(value = "PAXGEUR", alternate = {"PAXGUSD"})
     private PaxGold paxGoldData;
 
-    @SerializedName(value = "DOTEUR", alternate = {"DOTUSD"})
+    @SerializedName(value = "DOTEUR", alternate = {"DOTAUD", "DOTGBP", "DOTUSD"})
     private Polkadot polkadotData;
 
     @SerializedName(value = "QTUMEUR", alternate = {"QTUMUSD"})
@@ -120,13 +121,13 @@ public class Result {
     @SerializedName(value = "SCEUR", alternate = {"SCUSD"})
     private Siacoin siacoinData;
 
-    @SerializedName(value = "XXLMZEUR", alternate = {"XXLMZUSD"})
+    @SerializedName(value = "XXLMZEUR", alternate = {"XXLMZAUD", "XXLMZGBP", "XXLMZUSD"})
     private StellarLumens stellarLumensData;
 
     @SerializedName(value = "STORJEUR", alternate = {"STORJUSD"})
     private Storj storjData;
 
-    @SerializedName(value = "SNXEUR", alternate = {"SNXUSD"})
+    @SerializedName(value = "SNXEUR", alternate = {"SNXAUD", "SNXGBP", "SNXUSD"})
     private Synthetix synthetixData;
 
     @SerializedName(value = "TBTCEUR", alternate = {"TBTCUSD"})
@@ -135,7 +136,7 @@ public class Result {
     @SerializedName(value = "USDTAUD", alternate = {"USDTCHF", "USDTEUR", "USDTUSD", "USDTJPY"})
     private Tether tetherData;
 
-    @SerializedName(value = "XTZEUR", alternate = {"XTZUSD"})
+    @SerializedName(value = "XTZEUR", alternate = {"XTZAUD", "XTZGBP", "XTZUSD"})
     private Tezos tezosData;
 
     @SerializedName(value = "TRXEUR", alternate = {"TRXUSD"})
@@ -144,13 +145,13 @@ public class Result {
     @SerializedName(value = "UNIEUR", alternate = {"UNIUSD"})
     private Uniswap uniswapData;
 
-    @SerializedName(value = "USDCEUR", alternate = {"USDCUSD"})
+    @SerializedName(value = "USDCEUR", alternate = {"USDCAUD", "USDCGBP", "USDCUSD"})
     private USDCToken usdcData;
 
     @SerializedName(value = "WAVESEUR", alternate = {"WAVESUSD"})
     private Waves wavesData;
 
-    @SerializedName(value = "YFIEUR", alternate = {"YFIUSD"})
+    @SerializedName(value = "YFIEUR", alternate = {"YFIAUD", "YFIGBP", "YFIUSD"})
     private Yearn yearnData;
 
     @SerializedName(value = "XZECZEUR", alternate = {"XZECZUSD"})
@@ -345,6 +346,16 @@ public class Result {
     public void setFilecoinData(Filecoin filecoinData) {
 
         this.filecoinData = filecoinData;
+    }
+
+    public Flow getFlowData() {
+
+        return this.flowData;
+    }
+
+    public void setFlowData(Flow flowData) {
+
+        this.flowData = flowData;
     }
 
     public Gnosis getGnosisData() {
